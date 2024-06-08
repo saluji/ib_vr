@@ -3,7 +3,32 @@ guid: 662b1951ebf0c9b46bad8f1d677b6d35
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: bbfc1178122bcfa4e98d3d01a036088e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glow_disc.002
+    second: {fileID: 2100000, guid: 4f4cdcbc04a7fd74cbf0ef7acd609a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hull.002
+    second: {fileID: 2100000, guid: c43d477a89cfb6f4885cd4707f99e1c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hull_dark.002
+    second: {fileID: 2100000, guid: 9a03f8dce1f307640bdfe4a0404514e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hull_lights.002
+    second: {fileID: 2100000, guid: 78f44f697dec4f94cb7834d2dd6d662d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
