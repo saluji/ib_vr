@@ -23,4 +23,11 @@ public class Spawn : MonoBehaviour
             //rb[i].velocity = Vector3.zero;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+
+        }
+    }
 }
