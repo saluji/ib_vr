@@ -1,23 +1,26 @@
+using System;
+using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class SpawnBall : MonoBehaviour
+public class Spawn : MonoBehaviour
 {
-    [SerializeField] Transform spawnPoint;
-    private Rigidbody rb;
+    [SerializeField] GameObject[] spawnObject;
+    [SerializeField] Transform[] spawnPoint;
+    //private Rigidbody[] rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    public void SpawnObject()
     {
-
-    }
-    //Spawn ball when pressing B || Y
-    public void Spawn()
-    {
-        transform.position = spawnPoint.transform.position;
-        transform.rotation = spawnPoint.transform.rotation;
-        rb.velocity = Vector3.zero;
+        for (int i = 0; i < spawnObject.Length - 1; i++)
+        {
+            spawnObject[i].transform.position = spawnPoint[i].transform.position;
+            //transform.position = spawnPoint.transform.position;
+            //transform.rotation = spawnPoint.transform.rotation;
+            //rb[i].velocity = Vector3.zero;
+        }
     }
 }
