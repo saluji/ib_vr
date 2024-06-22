@@ -8,11 +8,14 @@ public class SpawnBasketball : MonoBehaviour
 {
     [SerializeField] GameObject[] spawnObject;
     [SerializeField] Transform[] spawnPoint;
-    //private Rigidbody[] rb;
+    /*[SerializeField] Rigidbody[] rb;
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
-    }
+        for (int i = 0; i < spawnObject.Length - 1; i++)
+        {
+            rb[i] = GetComponent<Rigidbody>();
+        }
+    }*/
     public void SpawnObject()
     {
         for (int i = 0; i < spawnObject.Length - 1; i++)
@@ -21,13 +24,6 @@ public class SpawnBasketball : MonoBehaviour
             //transform.position = spawnPoint.transform.position;
             //transform.rotation = spawnPoint.transform.rotation;
             //rb[i].velocity = Vector3.zero;
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            print("Button activated");
         }
     }
 }
