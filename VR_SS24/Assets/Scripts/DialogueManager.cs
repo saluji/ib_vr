@@ -1,40 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using System.CodeDom.Compiler;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
     void Start()
     {
+        textComponent.text = string.Empty;
         textComponent.text = lines[0];
     }
     void Update()
     {
-        for (int i = 0; i < lines.Length - 1; i++)
+        for (int index = 0; index < lines.Length - 1; index++)
         {
-            if (Input.GetKeyUp(KeyCode.E) && i != lines.Length - 1)
+            if (Input.GetKeyUp(KeyCode.E) && index < lines.Length - 1)
             {
-                i++;
-                NextLine(i);
+                NextText(index);
             }
-            if (Input.GetKeyUp(KeyCode.Q) && i != 0)
+            if (Input.GetKeyUp(KeyCode.Q) && index + 1 > 0)
             {
-                i--;
-                PreviousLine(i);
+                PreviousText(index);
             }
         }
     }
-    void NextLine(int i)
+    public void NextText(int index)
     {
+        index++;
         textComponent.text = string.Empty;
-        textComponent.text = lines[i];
+        textComponent.text = lines[index];
     }
-    void PreviousLine(int i)
+    public void PreviousText(int index)
     {
+        index--;
         textComponent.text = string.Empty;
-        textComponent.text = lines[i];
+        textComponent.text = lines[index];
     }
 }
