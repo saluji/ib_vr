@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public enum gravitationalForce { Space, Earth, Moon, Jupiter }
 public class GravityManager : MonoBehaviour
@@ -5,6 +6,9 @@ public class GravityManager : MonoBehaviour
     public gravitationalForce gravitationalForce;
     void Start()
     {
+#if UNITY_EDITOR
+        Debug.Log("Hi");
+#endif
         switch (gravitationalForce)
         {
             case gravitationalForce.Space:
