@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
 using System.CodeDom.Compiler;
+using Unity.VisualScripting;
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public string[] lines;
+    [SerializeField] TextMeshProUGUI textComponent;
+    [SerializeField] string[] lines;
     private int index = 0;
     void Start()
     {
