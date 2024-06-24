@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dart : MonoBehaviour
-{
-    public Rigidbody rb;
+{private Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
