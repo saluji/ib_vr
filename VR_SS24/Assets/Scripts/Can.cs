@@ -14,7 +14,7 @@ public class Can : MonoBehaviour
     {
         rb.isKinematic = false;
     }
-    public void OnTriggerEnter()
+    private void OnTriggerEnter()
     {
         rb.isKinematic = false;
     }
