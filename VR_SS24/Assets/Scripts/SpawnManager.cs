@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject dart;
     [SerializeField] GameObject can;
     [SerializeField] GameObject tennisball;
+    [SerializeField] Dart dartScript;
     [SerializeField] GameObject basketballButton;
     [SerializeField] GameObject dartButton;
     [SerializeField] GameObject canButton;
@@ -17,7 +18,6 @@ public class SpawnManager : MonoBehaviour
     private int basketballAmount = 5;
     private int dartAmount = 3;
     private int canAmount = 6;
-    private Rigidbody dartRb;
     void Awake()
     {
         /*if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -34,7 +34,6 @@ public class SpawnManager : MonoBehaviour
         SpawnDart();
         SpawnCan();
         SpawnTennisball();
-        dartRb = dart.GetComponent<Rigidbody>();
         SpawnBasketball();
     }
     public void SpawnBasketball()
@@ -62,20 +61,18 @@ public class SpawnManager : MonoBehaviour
     {
         Instantiate(tennisball, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
     }
-
-    public void OnCollisionEnter(Collision other)
+    public void DestroySpawnedObject()
     {
-        if (other.gameObject.CompareTag("Target"))
-        {
-            dartRb.isKinematic = true;
-        }
+        Destroy(basketball.gameObject);
+        Destroy(dart.gameObject);
+        Destroy(can.gameObject);
+        Destroy(tennisball.gameObject);
+    }
+    private void OnCollisionEnter(Collision other)
+    {
         if (other.gameObject.CompareTag("Delete"))
         {
             DestroySpawnedObject();
         }
-    }
-    public void DestroySpawnedObject()
-    {
-        Destroy(gameObject);
     }
 }

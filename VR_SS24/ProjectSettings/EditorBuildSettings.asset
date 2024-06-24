@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Erwin_00Spaceship.unity
+    path: Assets/Scenes/Erwin_Test.unity
     guid: c4f3110bf9c52cf4886ea3772e21729a
   - enabled: 1
     path: Assets/Scenes/Erwin_01Planet.unity
