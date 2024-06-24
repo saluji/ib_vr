@@ -6,7 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject ballButton;
+    [SerializeField] Dart dart;
+    [SerializeField] Can can;
+    [SerializeField] GameObject basketballButton;
     [SerializeField] GameObject dartButton;
     [SerializeField] GameObject canButton;
     [SerializeField] GameObject[] spawnBallObject;
@@ -15,6 +17,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] spawnDartPosition;
     [SerializeField] GameObject[] spawnCanObject;
     [SerializeField] Transform[] spawnCanPosition;
+    [SerializeField] GameObject spawnTennisballObject;
+    [SerializeField] Transform spawnTennisballPosition;
     /*[SerializeField] Rigidbody[] rb;
     void Start()
     {
@@ -23,14 +27,32 @@ public class SpawnManager : MonoBehaviour
             rb[i] = GetComponent<Rigidbody>();
         }
     }*/
-    public void SpawnBall()
+    public void SpawnBasketball()
     {
         for (int i = 0; i < spawnBallObject.Length - 1; i++)
         {
             spawnBallObject[i].transform.position = spawnBallPosition[i].transform.position;
-            //transform.position = spawnPoint.transform.position;
-            //transform.rotation = spawnPoint.transform.rotation;
+            spawnBallObject[i].transform.rotation = spawnBallPosition[i].transform.rotation;
             //rb[i].velocity = Vector3.zero;
+        }
+    }
+    public void SpawnDart()
+    {
+        dart.rb.isKinematic = false;
+        for (int i = 0; i < spawnDartObject.Length - 1; i++)
+        {
+            spawnDartObject[i].transform.position = spawnDartPosition[i].transform.position;
+            spawnDartObject[i].transform.rotation = spawnDartPosition[i].transform.rotation;
+        }
+    }
+    public void SpawnCan()
+    {
+        can.rb.isKinematic = true;
+        spawnTennisballObject.transform.position = spawnTennisballPosition.transform.position;
+        for (int i = 0; i < spawnCanObject.Length - 1; i++)
+        {
+            spawnCanObject[i].transform.position = spawnCanPosition[i].transform.position;
+            spawnCanObject[i].transform.rotation = spawnCanPosition[i].transform.rotation;
         }
     }
 }

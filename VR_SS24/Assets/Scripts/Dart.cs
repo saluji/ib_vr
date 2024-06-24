@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dart : MonoBehaviour
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,9 +15,5 @@ public class Dart : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-    }
-    public void ResetPosition()
-    {
-        rb.isKinematic = false;
     }
 }
