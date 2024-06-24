@@ -16,4 +16,8 @@ public class UIManager : MonoBehaviour
         previousButton.gameObject.SetActive((textScript.index > 0) ? true : false);
         nextButton.gameObject.SetActive((textScript.index < textScript.text.Length - 1) ? true : false);
     }
+    public void Slider()
+    {
+        
+    }
 }
