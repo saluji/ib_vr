@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             .With("Left", "<Keyboard>/leftArrow")
             .With("Right", "<Keyboard>/d")
             .With("Right", "<Keyboard>/rightArrow");
-        
+
         jump = new InputAction("PlayerJump", binding: "<Gamepad>/a");
         jump.AddBinding("<Keyboard>/space");
 
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(jumpPressed && isGrounded)
+        if (jumpPressed && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }

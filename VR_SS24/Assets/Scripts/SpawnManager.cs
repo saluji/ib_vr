@@ -3,14 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] GameObject basketball;
+    public GameObject basketball;
     [SerializeField] GameObject dart;
     [SerializeField] GameObject can;
     [SerializeField] GameObject tennisball;
-    [SerializeField] Dart dartScript;
-    [SerializeField] GameObject basketballButton;
-    [SerializeField] GameObject dartButton;
-    [SerializeField] GameObject canButton;
     [SerializeField] Transform[] spawnBallPosition;
     [SerializeField] Transform[] spawnDartPosition;
     [SerializeField] Transform[] spawnCanPosition;
@@ -60,19 +56,5 @@ public class SpawnManager : MonoBehaviour
     public void SpawnTennisball()
     {
         Instantiate(tennisball, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
-    }
-    public void DestroySpawnedObject()
-    {
-        Destroy(basketball.gameObject);
-        Destroy(dart.gameObject);
-        Destroy(can.gameObject);
-        Destroy(tennisball.gameObject);
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Delete"))
-        {
-            DestroySpawnedObject();
-        }
     }
 }

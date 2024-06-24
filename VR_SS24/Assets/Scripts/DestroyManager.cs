@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DestroyManager : MonoBehaviour
 {
-    //[SerializeField] SpawnManager spawnScript;
     public void DestroyObject()
     {
         Destroy(gameObject);
