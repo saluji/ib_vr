@@ -5,35 +5,31 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
+    private int index = 0;
     void Start()
     {
+        // Set text to first line of text
         textComponent.text = string.Empty;
         textComponent.text = lines[0];
     }
-    void Update()
+    // Show next text dialogue
+    public void NextText()
     {
-        for (int index = 0; index < lines.Length - 1; index++)
+        if (index < lines.Length - 1)
         {
-            if (Input.GetKeyUp(KeyCode.E) && index < lines.Length - 1)
-            {
-                NextText(index);
-            }
-            if (Input.GetKeyUp(KeyCode.Q) && index + 1 > 0)
-            {
-                PreviousText(index);
-            }
+            index++;
+            textComponent.text = string.Empty;
+            textComponent.text = lines[index];
         }
     }
-    public void NextText(int index)
+    // Show previous text dialogue
+    public void PreviousText()
     {
-        index++;
-        textComponent.text = string.Empty;
-        textComponent.text = lines[index];
-    }
-    public void PreviousText(int index)
-    {
-        index--;
-        textComponent.text = string.Empty;
-        textComponent.text = lines[index];
+        if (index > 0)
+        {
+            index--;
+            textComponent.text = string.Empty;
+            textComponent.text = lines[index];
+        }
     }
 }
