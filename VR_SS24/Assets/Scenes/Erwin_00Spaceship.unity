@@ -37487,7 +37487,7 @@ MonoBehaviour:
   basketball: {fileID: 3621232982613703136, guid: 67f64951a0c87d34c9ee6325162d626b, type: 3}
   dart: {fileID: 7653573945513053747, guid: 42e40d7b2d1edb543a54c00847c267f7, type: 3}
   can: {fileID: 5646400807866911036, guid: 58d65cbc6db43c64ab4ef633f3f2e43c, type: 3}
-  tennisball: {fileID: 0}
+  tennisball: {fileID: 2576141718537184075, guid: 32b4a84ef8787f34b9cc5d11f4d419ad, type: 3}
   basketballButton: {fileID: 444847669}
   dartButton: {fileID: 1310388753}
   canButton: {fileID: 1128320752}
@@ -37497,21 +37497,10 @@ MonoBehaviour:
   - {fileID: 330023245}
   - {fileID: 1536449849}
   - {fileID: 1117516549}
-  spawnDartObject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   spawnDartPosition:
   - {fileID: 610830767}
   - {fileID: 1265651410}
   - {fileID: 835810422}
-  spawnCanObject:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   spawnCanPosition:
   - {fileID: 1316410934}
   - {fileID: 449851123}
@@ -37519,7 +37508,6 @@ MonoBehaviour:
   - {fileID: 2132852586}
   - {fileID: 1010461113}
   - {fileID: 1888020797}
-  spawnTennisballObject: {fileID: 0}
   spawnTennisballPosition: {fileID: 208431636}
 --- !u!1 &561980362
 GameObject:
@@ -39172,12 +39160,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1132711752}
   - {fileID: 2107930004}
   - {fileID: 1258068516}
-  - {fileID: 1132711752}
+  - {fileID: 2009998685}
+  - {fileID: 466816358}
   - {fileID: 1829269898}
   - {fileID: 33085649}
-  - {fileID: 466816358}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804901908
@@ -41441,6 +41430,18 @@ MonoBehaviour:
       - m_Target: {fileID: 466816359}
         m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
         m_MethodName: SpawnCan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 466816359}
+        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
+        m_MethodName: SpawnTennisball
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47137,6 +47138,37 @@ Transform:
   - {fileID: 7616961}
   - {fileID: 310624657}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009998684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009998685}
+  m_Layer: 0
+  m_Name: LoadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2009998685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009998684}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 763797014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025036095
 GameObject:
