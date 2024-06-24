@@ -46439,7 +46439,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1829269899}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: PreviousText
+        m_MethodName: PreviousIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48750,7 +48750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1829269899}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: NextText
+        m_MethodName: NextIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

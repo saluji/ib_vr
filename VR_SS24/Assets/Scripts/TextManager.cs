@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-public class DialogueManager : MonoBehaviour
+public class TextManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textComponent;
     public string[] lines;
@@ -12,24 +12,28 @@ public class DialogueManager : MonoBehaviour
         textComponent.text = string.Empty;
         textComponent.text = lines[0];
     }
-    public void NextText()
+    public void NextIndex()
     {
         // Show next text and stop index if on last page
         if (index < lines.Length - 1)
         {
             index++;
-            textComponent.text = string.Empty;
-            textComponent.text = lines[index];
+            ShowText();
         }
     }
-    public void PreviousText()
+    public void PreviousIndex()
     {
         // Show previous text and stop index if on first page
         if (index > 0)
         {
             index--;
-            textComponent.text = string.Empty;
-            textComponent.text = lines[index];
+            ShowText();
         }
+    }
+    public void ShowText()
+    {
+        // Show next text
+        textComponent.text = string.Empty;
+        textComponent.text = lines[index];
     }
 }
