@@ -42168,7 +42168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509aea467b6780d43b503ebdb6055436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravitationalForce: 1
+  gravitationalForce: 3
 --- !u!4 &1258068516
 Transform:
   m_ObjectHideFlags: 0
