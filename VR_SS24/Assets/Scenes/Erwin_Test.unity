@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109a196cb7d629c40904561310adbc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueScript: {fileID: 1829269899}
+  textScript: {fileID: 1829269899}
   nextButton: {fileID: 2135148482}
   previousButton: {fileID: 1677232696}
 --- !u!43 &125472035
@@ -47542,7 +47542,7 @@ GameObject:
   - component: {fileID: 1829269898}
   - component: {fileID: 1829269899}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: TextManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47576,9 +47576,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 374876589}
-  lines:
+  text:
   - First page
-  - Middle page
+  - middle page
   - Last page
   index: 0
 --- !u!1001 &1868031647
