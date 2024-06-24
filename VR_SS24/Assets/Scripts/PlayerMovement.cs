@@ -8,18 +8,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public CharacterController controller;
-
     public float speed = 12f;
     public float gravity = -10f;
     public float jumpHeight = 2f;
-
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    
-
     Vector3 velocity;
     bool isGrounded;
 

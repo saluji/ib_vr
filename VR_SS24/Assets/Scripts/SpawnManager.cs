@@ -1,17 +1,15 @@
-using System;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField] Dart dart;
-    [SerializeField] Can can;
+    [SerializeField] GameObject basketball;
+    [SerializeField] GameObject dart;
+    [SerializeField] GameObject can;
+    [SerializeField] GameObject tennisball;
     [SerializeField] GameObject basketballButton;
     [SerializeField] GameObject dartButton;
     [SerializeField] GameObject canButton;
-    [SerializeField] GameObject[] spawnBallObject;
     [SerializeField] Transform[] spawnBallPosition;
     [SerializeField] GameObject[] spawnDartObject;
     [SerializeField] Transform[] spawnDartPosition;
@@ -19,40 +17,66 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] spawnCanPosition;
     [SerializeField] GameObject spawnTennisballObject;
     [SerializeField] Transform spawnTennisballPosition;
-    /*[SerializeField] Rigidbody[] rb;
-    void Start()
+    private int basketballAmount = 5;
+    private int dartAmount = 3;
+    private int canAmount = 6;
+    private Rigidbody dartRb;
+    void Awake()
     {
-        for (int i = 0; i < spawnObject.Length - 1; i++)
+        for (int i = 0; i < basketballAmount; i++)
         {
-            rb[i] = GetComponent<Rigidbody>();
+            Instantiate(basketball, spawnBallPosition[i].transform.position, spawnBallPosition[i].transform.rotation);
         }
-    }*/
+        for (int i = 0; i < dartAmount; i++)
+        {
+            Instantiate(dart, spawnDartPosition[i].transform.position, spawnDartPosition[i].transform.rotation);
+        }
+        for (int i = 0; i < canAmount; i++)
+        {
+            Instantiate(can, spawnCanPosition[i].transform.position, spawnCanPosition[i].transform.rotation);
+        }
+        dartRb = dart.GetComponent<Rigidbody>();
+        Instantiate(tennisball, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
+    }
     public void SpawnBasketball()
     {
-        for (int i = 0; i < spawnBallObject.Length - 1; i++)
+        /*for (int i = 0; i < basketballAmount - 1; i++)
         {
-            spawnBallObject[i].transform.position = spawnBallPosition[i].transform.position;
-            spawnBallObject[i].transform.rotation = spawnBallPosition[i].transform.rotation;
-            //rb[i].velocity = Vector3.zero;
-        }
+            basketballAmount[i].transform.position = spawnBallPosition[i].transform.position;
+            basketballAmount[i].transform.rotation = spawnBallPosition[i].transform.rotation;
+            //ballRb[i].velocity = Vector3.zero;
+        }*/
     }
     public void SpawnDart()
     {
-        dart.rb.isKinematic = false;
-        for (int i = 0; i < spawnDartObject.Length - 1; i++)
+        /*for (int i = 0; i < dartAmount; i++)
         {
             spawnDartObject[i].transform.position = spawnDartPosition[i].transform.position;
             spawnDartObject[i].transform.rotation = spawnDartPosition[i].transform.rotation;
-        }
+        }*/
     }
     public void SpawnCan()
     {
-        can.rb.isKinematic = true;
-        spawnTennisballObject.transform.position = spawnTennisballPosition.transform.position;
-        for (int i = 0; i < spawnCanObject.Length - 1; i++)
+        //tennisballRb.velocity = Vector3.zero;
+
+        /*spawnTennisballObject.transform.position = spawnTennisballPosition.transform.position;
+        spawnTennisballObject.transform.rotation = spawnTennisballPosition.transform.rotation;
+
+        for (int i = 0; i < canAmount; i++)
         {
             spawnCanObject[i].transform.position = spawnCanPosition[i].transform.position;
             spawnCanObject[i].transform.rotation = spawnCanPosition[i].transform.rotation;
+        }*/
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Target"))
+        {
+            dartRb.isKinematic = true;
+        }
+        if (other.gameObject.CompareTag("Delete"))
+        {
+            Destroy(gameObject);
         }
     }
 }
