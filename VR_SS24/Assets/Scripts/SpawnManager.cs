@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,7 +14,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] spawnDartPosition;
     [SerializeField] Transform[] spawnCanPosition;
     [SerializeField] Transform spawnTennisballPosition;
-    public GameObject[] basketballList;
+    //public GameObject[] basketballList;
+    public List<GameObject> basketballList;
     public int basketballCounter;
     public int dartCounter;
     public int canCounter;
@@ -23,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     {
         counter = 0;
         basketballCounter = spawnBallPosition.Length;
+        basketballList = 
         dartCounter = spawnDartPosition.Length;
         canCounter = spawnCanPosition.Length;
         /*if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -49,6 +52,7 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < basketballCounter; i++)
         {
+            //CheckToDestroy(basketballList[i], basketballList.Length);
             basketballList[i] = Instantiate(basketballPrefab, spawnBallPosition[i].transform.position, spawnBallPosition[i].transform.rotation);
         }
     }
@@ -69,6 +73,14 @@ public class SpawnManager : MonoBehaviour
     public void SpawnTennisball()
     {
         Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
+    }
+    public void CheckToDestroy(GameObject checkDestroy, int list)
+    {
+        if (counter == 1)
+        {
+            //basketballList.Length = 1;
+            DestroyObject(checkDestroy);
+        }
     }
     public void DestroyObject(GameObject objectToDestroy)
     {

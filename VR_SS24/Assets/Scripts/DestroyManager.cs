@@ -5,10 +5,6 @@ using UnityEngine;
 public class DestroyManager : MonoBehaviour
 {
     [SerializeField] SpawnManager spawnManager;
-    void Awake()
-    {
-        //counter = spawnManager.basketballAmount;
-    }
     public void DestroyObject(GameObject objectToDestroy)
     {
         Destroy(objectToDestroy.gameObject);

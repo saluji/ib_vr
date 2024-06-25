@@ -1,25 +1,30 @@
 using System;
 using UnityEngine;
-public enum gravitationalForce { Space, Earth, Moon, Jupiter }
+public enum GravitationalForceMode { Space = 0, Earth, Moon, Jupiter }
 public class GravityManager : MonoBehaviour
 {
-    public gravitationalForce gravitationalForce;
+    public GravitationalForceMode CurrentGravitationalForce;
     void Start()
     {
-        switch (gravitationalForce)
+        SetGravityMode(GravitationalForceMode.Earth);
+    }
+    public void SetGravityMode(GravitationalForceMode newMode)
+    {
+        switch (newMode)
         {
-            case gravitationalForce.Space:
+            case GravitationalForceMode.Space:
                 Physics.gravity = new Vector3(0, 0, 0);
                 break;
-            case gravitationalForce.Earth:
+            case GravitationalForceMode.Earth:
                 Physics.gravity = new Vector3(0, -9.81f, 0);
                 break;
-            case gravitationalForce.Moon:
+            case GravitationalForceMode.Moon:
                 Physics.gravity = new Vector3(0, -1.622f, 0);
                 break;
-            case gravitationalForce.Jupiter:
+            case GravitationalForceMode.Jupiter:
                 Physics.gravity = new Vector3(0, -24.79f, 0);
                 break;
         }
+        CurrentGravitationalForce = newMode;
     }
 }

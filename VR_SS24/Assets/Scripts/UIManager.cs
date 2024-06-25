@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     }
     public void Slider()
     {
-        
+        GravitationalForceMode mode = (GravitationalForceMode) gravitySlider.value;
+        gravityManager.SetGravityMode(mode);
     }
 }
