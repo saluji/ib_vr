@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class DestroyManager : MonoBehaviour
 {
-    public void DestroyObject()
+    [SerializeField] SpawnManager spawnManager;
+    void Awake()
     {
-        Destroy(gameObject);
+        //counter = spawnManager.basketballAmount;
+    }
+    public void DestroyObject(GameObject objectToDestroy)
+    {
+        Destroy(objectToDestroy.gameObject);
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Delete"))
         {
-            DestroyObject();
+            spawnManager.basketballCounter--;
+            Destroy(gameObject);
         }
     }
 }

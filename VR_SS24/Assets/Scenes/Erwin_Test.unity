@@ -254,8 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109a196cb7d629c40904561310adbc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textScript: {fileID: 1829269899}
-  gravityScript: {fileID: 1258068515}
+  textManager: {fileID: 1829269899}
+  gravityManager: {fileID: 1258068515}
   nextButton: {fileID: 830472734}
   previousButton: {fileID: 1555918904}
   gravitySlider: {fileID: 1058126381}
@@ -37468,10 +37468,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15d262b83b36e4498f3c74b48a30e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basketball: {fileID: 3621232982613703136, guid: 67f64951a0c87d34c9ee6325162d626b, type: 3}
-  dart: {fileID: 7653573945513053747, guid: 42e40d7b2d1edb543a54c00847c267f7, type: 3}
-  can: {fileID: 5646400807866911036, guid: 58d65cbc6db43c64ab4ef633f3f2e43c, type: 3}
-  tennisball: {fileID: 2576141718537184075, guid: 32b4a84ef8787f34b9cc5d11f4d419ad, type: 3}
+  basketballPrefab: {fileID: 3621232982613703136, guid: 67f64951a0c87d34c9ee6325162d626b, type: 3}
+  dartPrefab: {fileID: 7653573945513053747, guid: 42e40d7b2d1edb543a54c00847c267f7, type: 3}
+  canPrefab: {fileID: 5646400807866911036, guid: 58d65cbc6db43c64ab4ef633f3f2e43c, type: 3}
+  tennisballPrefab: {fileID: 2576141718537184075, guid: 32b4a84ef8787f34b9cc5d11f4d419ad, type: 3}
+  destroyManager: {fileID: 1278912522}
+  basketball: {fileID: 0}
   spawnBallPosition:
   - {fileID: 1890752797}
   - {fileID: 466600471}
@@ -37481,7 +37483,7 @@ MonoBehaviour:
   spawnDartPosition:
   - {fileID: 610830767}
   - {fileID: 1265651410}
-  - {fileID: 835810422}
+  - {fileID: 1265651410}
   spawnCanPosition:
   - {fileID: 1316410934}
   - {fileID: 449851123}
@@ -37490,6 +37492,10 @@ MonoBehaviour:
   - {fileID: 1010461113}
   - {fileID: 1888020797}
   spawnTennisballPosition: {fileID: 208431636}
+  basketballCounter: 0
+  dartCounter: 0
+  canCounter: 0
+  tennisballcounter: 1
 --- !u!1 &578546332
 GameObject:
   m_ObjectHideFlags: 0
@@ -40183,7 +40189,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 3
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -42086,6 +42092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de5cfa8b20d15e4b960479b0709fd01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnManager: {fileID: 466816359}
 --- !u!1 &1310388753
 GameObject:
   m_ObjectHideFlags: 0

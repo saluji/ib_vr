@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3633658731794054312}
   - component: {fileID: 3707926706765325649}
   - component: {fileID: 1806343124857058806}
-  - component: {fileID: -2442641199804999245}
   m_Layer: 0
   m_Name: Tennisball
   m_TagString: Untagged
@@ -287,16 +286,3 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-2442641199804999245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2576141718537184075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de5cfa8b20d15e4b960479b0709fd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnScript: {fileID: 0}

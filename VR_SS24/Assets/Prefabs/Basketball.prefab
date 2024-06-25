@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7891256606287859053}
   - component: {fileID: 1236577933731376372}
   - component: {fileID: 5426935076167643600}
-  - component: {fileID: 4408798080129156331}
+  - component: {fileID: 3444662313960613104}
   m_Layer: 0
-  m_Name: Basetball
+  m_Name: Basketball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &4408798080129156331
+--- !u!114 &3444662313960613104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,7 +296,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3621232982613703136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de5cfa8b20d15e4b960479b0709fd01, type: 3}
+  m_Script: {fileID: 11500000, guid: 03007cf481766c745a26d7ce36f3fd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnScript: {fileID: 0}

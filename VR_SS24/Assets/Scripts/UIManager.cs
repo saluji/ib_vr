@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] TextManager textScript;
-    [SerializeField] GravityManager gravityScript;
+    [SerializeField] TextManager textManager;
+    [SerializeField] GravityManager gravityManager;
     [SerializeField] Button nextButton;
     [SerializeField] Button previousButton;
     [SerializeField] Slider gravitySlider;
@@ -13,8 +13,8 @@ public class UIManager : MonoBehaviour
     }
     public void ShowButton()
     {
-        previousButton.gameObject.SetActive((textScript.index > 0) ? true : false);
-        nextButton.gameObject.SetActive((textScript.index < textScript.text.Length - 1) ? true : false);
+        previousButton.gameObject.SetActive((textManager.index > 0) ? true : false);
+        nextButton.gameObject.SetActive((textManager.index < textManager.text.Length - 1) ? true : false);
     }
     public void Slider()
     {
