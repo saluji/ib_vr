@@ -25,7 +25,7 @@ public class SpawnManager : MonoBehaviour
     {
         counter = 0;
         basketballCounter = spawnBallPosition.Length;
-        basketballList = 
+        //basketballList = spawnBallPosition.Length;
         dartCounter = spawnDartPosition.Length;
         canCounter = spawnCanPosition.Length;
         /*if (SceneManager.GetActiveScene().buildIndex == 0)
