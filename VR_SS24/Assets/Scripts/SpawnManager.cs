@@ -9,20 +9,22 @@ public class SpawnManager : MonoBehaviour
     public GameObject canPrefab;
     public GameObject tennisballPrefab;
     [SerializeField] DestroyManager destroyManager;
-    [SerializeField] Basketball basketball;
-    public Transform[] spawnBallPosition;
-    public Transform[] spawnDartPosition;
-    public Transform[] spawnCanPosition;
-    public Transform spawnTennisballPosition;
+    [SerializeField] Transform[] spawnBallPosition;
+    [SerializeField] Transform[] spawnDartPosition;
+    [SerializeField] Transform[] spawnCanPosition;
+    [SerializeField] Transform spawnTennisballPosition;
+    public GameObject[] basketballList;
     public int basketballCounter;
     public int dartCounter;
     public int canCounter;
     public int tennisballcounter = 1;
+    public int counter;
     void Awake()
     {
+        counter = 0;
         basketballCounter = spawnBallPosition.Length;
         dartCounter = spawnDartPosition.Length;
-        canCounter= spawnCanPosition.Length;
+        canCounter = spawnCanPosition.Length;
         /*if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             SpawnDart();
@@ -39,11 +41,15 @@ public class SpawnManager : MonoBehaviour
         SpawnTennisball();
         SpawnBasketball();
     }
+    void Start()
+    {
+        counter++;
+    }
     public void SpawnBasketball()
     {
-        for (int i = 0; i < basketball.basketballCounter; i++)
+        for (int i = 0; i < basketballCounter; i++)
         {
-            Instantiate(basketballPrefab, spawnBallPosition[i].transform.position, spawnBallPosition[i].transform.rotation);
+            basketballList[i] = Instantiate(basketballPrefab, spawnBallPosition[i].transform.position, spawnBallPosition[i].transform.rotation);
         }
     }
     public void SpawnDart()
@@ -63,5 +69,9 @@ public class SpawnManager : MonoBehaviour
     public void SpawnTennisball()
     {
         Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
+    }
+    public void DestroyObject(GameObject objectToDestroy)
+    {
+        Destroy(objectToDestroy.gameObject);
     }
 }

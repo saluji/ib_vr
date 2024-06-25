@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028459, g: 0.22571501, b: 0.3069237, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37473,7 +37473,6 @@ MonoBehaviour:
   canPrefab: {fileID: 5646400807866911036, guid: 58d65cbc6db43c64ab4ef633f3f2e43c, type: 3}
   tennisballPrefab: {fileID: 2576141718537184075, guid: 32b4a84ef8787f34b9cc5d11f4d419ad, type: 3}
   destroyManager: {fileID: 1278912522}
-  basketball: {fileID: 0}
   spawnBallPosition:
   - {fileID: 1890752797}
   - {fileID: 466600471}
@@ -37492,6 +37491,12 @@ MonoBehaviour:
   - {fileID: 1010461113}
   - {fileID: 1888020797}
   spawnTennisballPosition: {fileID: 208431636}
+  basketballList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   basketballCounter: 0
   dartCounter: 0
   canCounter: 0
