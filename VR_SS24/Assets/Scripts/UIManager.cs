@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GravityManager gravityManager;
     [SerializeField] Button nextButton;
     [SerializeField] Button previousButton;
-    [SerializeField] Slider gravitySlider;
+    public Slider gravitySlider;
+
     void Start()
     {
         previousButton.gameObject.SetActive(false);
@@ -21,5 +22,11 @@ public class UIManager : MonoBehaviour
     {
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
         gravityManager.SetGravityMode(mode);
+
+        // set gravity text from enum int string
+        // textManager.gravityTextComponent.text = string.Empty;
+        // textManager.gravityTextComponent.text = text[gravitySlider.value.ToString()];
+        // textManager.gravityText = gravitySlider.value.ToString();
+        textManager.ChangeGravityText(gravitySlider);
     }
 }
