@@ -6,6 +6,7 @@ public class TextManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textComponent;
     [SerializeField] TextMeshProUGUI gravityTextComponent;
     [SerializeField] UIManager uIManager;
+    [SerializeField] GravityManager gravityManager;
     public string[] text;
     public string gravityText;
     public int index;
@@ -47,7 +48,8 @@ public class TextManager : MonoBehaviour
     }
     public void ChangeGravityText(Slider gravitySlider)
     {
+        // change gravity text on terminal 
         gravityTextComponent.text = string.Empty;
-        gravityTextComponent.text = uIManager.gravitySlider.value.ToString();
+        gravityTextComponent.text = ((GravitationalForceMode)uIManager.gravitySlider.value).ToString();
     }
 }

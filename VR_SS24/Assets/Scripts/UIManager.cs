@@ -23,10 +23,7 @@ public class UIManager : MonoBehaviour
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
         gravityManager.SetGravityMode(mode);
 
-        // set gravity text from enum int string
-        // textManager.gravityTextComponent.text = string.Empty;
-        // textManager.gravityTextComponent.text = text[gravitySlider.value.ToString()];
-        // textManager.gravityText = gravitySlider.value.ToString();
+        // set gravity text
         textManager.ChangeGravityText(gravitySlider);
     }
 }
