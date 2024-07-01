@@ -3,9 +3,10 @@ using TMPro;
 public class TextManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI textComponent;
+    // [SerializeField] TextMeshProUGUI gravityText;
     public string[] text;
     public int index;
-    void Start()
+    void Awake()
     {
         // Set text to first line of text
         index = 0;

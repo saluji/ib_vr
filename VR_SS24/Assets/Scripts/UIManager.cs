@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextManager textManager;
@@ -18,7 +19,7 @@ public class UIManager : MonoBehaviour
     }
     public void Slider()
     {
-        GravitationalForceMode mode = (GravitationalForceMode) gravitySlider.value;
+        GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
         gravityManager.SetGravityMode(mode);
     }
 }
