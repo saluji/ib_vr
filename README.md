@@ -13,19 +13,17 @@ Supervised by Prof. Florian Machill (Virtual Reality SS24)
 
 ## Third Party Credits
 
-SciFi Low Poly Assets (for educational purposes)
-* https://assetstore.unity.com/packages/3d/environments/sci-fi/polygon-sci-fi-city-low-poly-3d-art-by-synty-115950
+<a href="https://assetstore.unity.com/packages/3d/environments/sci-fi/polygon-sci-fi-city-low-poly-3d-art-by-synty-115950" target="_blank">SciFi Low Poly Assets</a> (for educational purposes) by <a href="https://assetstore.unity.com/publishers/5217" target="_blank">Synty Studios
 
-Oculus hand model with animations
-* https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands
+<a href="https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands" target="_blank">Oculus hand model with animations</a>
 
-Some XR scripts taken from the 'Create with VR' Course
-* https://learn.unity.com/course/create-with-vr
+<a href="https://learn.unity.com/course/create-with-vr" target="_blank">Some XR scripts taken from the 'Create with VR' course</a>
 
-AI Voice
-* https://ttsmaker.com/
+<a href="https://ttsmaker.com/" target="_blank">AI Voice Generator</a>
 
 <a href="https://www.freepik.com/font/black-future" target="_blank">Black Future Font</a>
+
+<a href="https://developer.oculus.com/downloads/package/oculus-controller-art/" target="_blank">Meta Quest 2 Controller Image</a>
 
 2D Sprites from <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>
 * <a href="https://www.flaticon.com/free-icon/vr-control_9487809?term=controls+vr&page=1&position=5&origin=search&related_id=9487809" target="_blank">Controller</a>
