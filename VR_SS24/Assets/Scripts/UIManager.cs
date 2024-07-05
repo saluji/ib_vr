@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
     }
 
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
     {
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         {
+            Debug.Log("Show Jupiter");
             ShowJupiterButton();
         }
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsMoonVisitable)

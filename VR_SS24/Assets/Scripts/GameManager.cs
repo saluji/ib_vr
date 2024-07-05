@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     bool isEarthVisitable = false;
 
     // task for minigames in ship
+    // public static bool isPracticingDart;
+    // public static bool isPracticingCan;
     bool isPracticingDart;
     bool isPracticingCan;
 
