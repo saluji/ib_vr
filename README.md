@@ -13,6 +13,10 @@ Supervised by Prof. Florian Machill (Virtual Reality SS24)
 
 ## Third Party Credits
 Oculus hand model with animations
-- https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands
+* https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands
+
 Some XR scripts taken from the 'Create with VR' Course
-- https://learn.unity.com/course/create-with-vr
+* https://learn.unity.com/course/create-with-vr
+
+Black Future Font
+* https://www.freepik.com/font/black-future
