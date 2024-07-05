@@ -4,33 +4,32 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public int buildIndex;
+    // int buildIndex;
+    public int buildIndex = 0;
+
     void Awake()
     {
         // buildIndex = SceneManager.GetActiveScene().buildIndex;
-        buildIndex = 1;
+        // buildIndex = 1;
     }
     public void LoadSpace()
     {
         buildIndex = 0;
-        LoadLevel(buildIndex);
+        SceneManager.LoadScene(buildIndex);
     }
-    public void LoadJupiter()
+    public void SetJupiter()
     {
         buildIndex = 1;
-        LoadLevel(buildIndex);
     }
-    public void LoadMoon()
+    public void SetMoon()
     {
         buildIndex = 2;
-        LoadLevel(buildIndex);
     }
-    public void LoadEarth()
+    public void SetEarth()
     {
         buildIndex = 3;
-        LoadLevel(buildIndex);
     }
-    void LoadLevel(int buildIndex)
+    public void LoadLevel()
     {
         SceneManager.LoadScene(buildIndex);
     }

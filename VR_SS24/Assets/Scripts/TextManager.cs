@@ -6,7 +6,6 @@ public class TextManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textComponent;
     [SerializeField] TextMeshProUGUI gravityTextComponent;
     [SerializeField] UIManager uIManager;
-    [SerializeField] GravityManager gravityManager;
     public string[] text;
     public string gravityText;
     public int index;
