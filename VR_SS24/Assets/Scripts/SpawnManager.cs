@@ -15,34 +15,33 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform spawnDartPosition;
     [SerializeField] Transform spawnCanPosition;
     [SerializeField] Transform spawnTennisballPosition;
-    // [SerializeField] float spawnDelay = 1;
-    // Rigidbody dartRb;
+    Rigidbody dartRb;
 
     void Awake()
     {
-        // if (SceneManager.GetActiveScene().buildIndex == 0)
-        // {
-        //     SpawnDart();
-        //     SpawnCan();
-        //     SpawnTennisball();
-        // }
-        // else
-        // {
-        //     SpawnBasketball();
-        // }
-        SpawnDart();
-        SpawnCan();
-        SpawnTennisball();
-        SpawnBasketball();
-        // dartRb = dartPrefab.GetComponent<Rigidbody>();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SpawnDart();
+            SpawnCan();
+            SpawnTennisball();
+            dartRb = dartPrefab.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            SpawnBasketball();
+        }
+        // SpawnDart();
+        // SpawnCan();
+        // SpawnTennisball();
+        // SpawnBasketball();
     }
     public void SpawnBasketball()
     {
-        // for (int i = 0; i < 5; i++)
-        // {
-        Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
-        //     StartCoroutine(SpawnCountdown());
-        // }
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
+            StartCoroutine(SpawnCountdown());
+        }
     }
     public void SpawnDart()
     {
@@ -68,8 +67,8 @@ public class SpawnManager : MonoBehaviour
     // {
     //     Destroy(objectToDestroy.gameObject);
     // }
-    // IEnumerator SpawnCountdown()
-    // {
-    //     yield return new WaitForSeconds(spawnDelay);
-    // }
+    IEnumerator SpawnCountdown()
+    {
+        yield return new WaitForSeconds(5);
+    }
 }

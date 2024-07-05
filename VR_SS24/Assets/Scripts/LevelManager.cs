@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     // int buildIndex;
-    int buildIndex = 0;
+    public int buildIndex = 0;
 
     void Awake()
     {

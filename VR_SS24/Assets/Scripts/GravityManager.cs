@@ -7,14 +7,13 @@ public class GravityManager : MonoBehaviour
 {
     // LevelManager levelManager;
     public GravitationalForceMode CurrentGravitationalForce;
-    // void Awake()
-    // {
+    void Awake()
+    {
         // levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         // SetGravityMode(GravitationalForceMode.Earth);
         // SetGravityMode(GravitationalForceMode.buildIndex);
-        // SetGravityMode(GravitationalForceMode.Space);
-        // SetGravityMode(GravitationalForceMode.levelManager.buildIndex);
-    // }
+        SetGravityMode(GravitationalForceMode.Space);
+    }
 
     // void Start()
     // {
@@ -39,8 +38,8 @@ public class GravityManager : MonoBehaviour
         }
         CurrentGravitationalForce = newMode;
     }
-    // void SetGravityOnAwake()
-    // {
+    void SetGravityOnAwake()
+    {
 
-    // }
+    }
 }

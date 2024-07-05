@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Target
   - Delete
-  - Anchor
-  - Basket
   layers:
   - Default
   - TransparentFX
