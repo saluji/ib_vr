@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/00_Space_Erwin.unity
+    path: Assets/Scenes/00_Space.unity
     guid: b67000a10b38ef54ea15cd62613ac379
   - enabled: 1
-    path: Assets/Scenes/01_Jupiter_Erwin.unity
+    path: Assets/Scenes/01_Jupiter.unity
     guid: dfca0dc0cf609f34fbac470b5ad08386
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
