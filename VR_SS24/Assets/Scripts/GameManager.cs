@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     bool inTaskThree;
     bool inTaskFour;
 
+    // task counter
+    int taskOneCounter;
+    int taskTwoCounter;
+    int taskThreeCounter;
+
     // public bool IsJupiterVisitable { get { return isJupiterVisitable; } }
     public bool IsMoonVisitable { get { return isMoonVisitable; } }
     public bool IsEarthVisitable { get { return isEarthVisitable; } }
@@ -32,6 +37,10 @@ public class GameManager : MonoBehaviour
     public bool InTaskThree { get { return inTaskThree; } }
     public bool InTaskFour { get { return inTaskFour; } }
 
+    public int TaskOneCounter { get { return taskOneCounter; } }
+    public int TaskTwoCounter { get { return taskTwoCounter; } }
+    public int TaskThreeCounter { get { return taskThreeCounter; } }
+
     void Awake()
     {
         isPracticingCan = false;
@@ -41,14 +50,55 @@ public class GameManager : MonoBehaviour
         inTaskTwo = false;
         inTaskThree = false;
         inTaskFour = false;
-    }
-    void Update()
-    {
 
+        taskOneCounter = 0;
+        taskTwoCounter = 0;
+        taskThreeCounter = 0;
+    }
+
+    public void IncreaseTaskOneCounter()
+    {
+        if (inTaskOne)
+            taskOneCounter++;
+    }
+    public void IncreaseTaskTwoCounter()
+    {
+        if (inTaskTwo)
+            taskTwoCounter++;
+    }
+    public void IncreaseTaskThreeCounter()
+    {
+        if (inTaskThree)
+            taskThreeCounter++;
+    }
+
+    public void TaskOne()
+    {
+        inTaskFour = !inTaskOne;
+    }
+
+    public void TaskTwo()
+    {
+        inTaskFour = !inTaskTwo;
+    }
+
+    public void TaskThree()
+    {
+        inTaskFour = !inTaskThree;
     }
 
     public void TaskFour()
     {
         inTaskFour = !inTaskFour;
+    }
+
+    public void MoonVisitable()
+    {
+        isMoonVisitable = true;
+    }
+
+    public void EarthVisitable()
+    {
+        isEarthVisitable = true;
     }
 }

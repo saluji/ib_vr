@@ -13,6 +13,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject jupiterButton;
     [SerializeField] GameObject moonButton;
     [SerializeField] GameObject earthButton;
+    [SerializeField] GameObject taskOneButton;
+    [SerializeField] GameObject taskTwoButton;
+    [SerializeField] GameObject taskThreeButton;
+    [SerializeField] GameObject taskFourButton;
     public Slider gravitySlider;
 
     void Awake()
@@ -23,6 +27,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        // able to visit planet after doing minigame task in ship
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         {
             ShowJupiterButton();
@@ -34,6 +39,18 @@ public class UIManager : MonoBehaviour
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsEarthVisitable)
         {
             ShowEarthButton();
+        }
+        if (gameManager.TaskOneCounter == 3)
+        {
+            ShowTaskTwoButton();
+        }
+        if (gameManager.TaskTwoCounter == 3)
+        {
+            ShowTaskThreeButton();
+        }
+        if (gameManager.TaskThreeCounter == 3)
+        {
+            ShowTaskFourButton();
         }
     }
 
@@ -62,5 +79,17 @@ public class UIManager : MonoBehaviour
     void ShowEarthButton()
     {
         earthButton.SetActive(true);
+    }
+    void ShowTaskTwoButton()
+    {
+        taskTwoButton.SetActive(true);
+    }
+    void ShowTaskThreeButton()
+    {
+        taskThreeButton.SetActive(true);
+    }
+    void ShowTaskFourButton()
+    {
+        taskFourButton.SetActive(true);
     }
 }
