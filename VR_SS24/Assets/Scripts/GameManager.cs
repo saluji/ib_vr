@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// public enum GameState
+// {
+//     TaskZero = 0,
+//     TaskOne,
+//     TaskTwo,
+//     TaskThree,
+//     TaskFour
+// }
+
 public class GameManager : MonoBehaviour
 {
     // visitable planets in ship
@@ -41,6 +50,11 @@ public class GameManager : MonoBehaviour
     public int TaskTwoCounter { get { return taskTwoCounter; } }
     public int TaskThreeCounter { get { return taskThreeCounter; } }
 
+    // public void SetGameState(GameState newState)
+    // {
+    //     switch(newState)
+    // }
+
     void Awake()
     {
         isPracticingCan = false;
@@ -58,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseTaskOneCounter()
     {
-        if (inTaskOne)
+        if (InTaskOne)
             taskOneCounter++;
     }
     public void IncreaseTaskTwoCounter()

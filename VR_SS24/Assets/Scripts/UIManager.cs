@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         // able to visit planet after doing minigame task in ship
+        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         {
             ShowJupiterButton();
