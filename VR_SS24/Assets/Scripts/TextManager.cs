@@ -52,7 +52,7 @@ public class TextManager : MonoBehaviour
     {
         // change gravity text on terminal 
         gravityTextComponent.text = string.Empty;
-        // gravityTextComponent.text = "Gravity Mode:" + (GravitationalForceMode)uIManager.gravitySlider.value).ToString();
         gravityTextComponent.text = "Gravity mode: " + ((GravitationalForceMode)uIManager.gravitySlider.value).ToString();
+        // gravityTextComponent.text = "Gravity Mode:" + (GravitationalForceMode)uIManager.gravitySlider.value).ToString();
     }
 }
