@@ -6,14 +6,15 @@ public enum GravitationalForceMode { Space = 0, Jupiter, Moon, Earth }
 public class GravityManager : MonoBehaviour
 {
     // LevelManager levelManager;
+    // GameManager gameManager;
     public GravitationalForceMode CurrentGravitationalForce;
     // void Awake()
     // {
-        // levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-        // SetGravityMode(GravitationalForceMode.Earth);
-        // SetGravityMode(GravitationalForceMode.buildIndex);
-        // SetGravityMode(GravitationalForceMode.Space);
-        // SetGravityMode(GravitationalForceMode.levelManager.buildIndex);
+    // levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    // SetGravityMode(GravitationalForceMode.Earth);
+    // SetGravityMode(GravitationalForceMode.buildIndex);
+    // SetGravityMode(GravitationalForceMode.Space);
+    // SetGravityMode(GravitationalForceMode.levelManager.buildIndex);
     // }
 
     // void Start()

@@ -21,7 +21,8 @@ public class TextManager : MonoBehaviour
         // Initial text for gravity slider
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         gravityTextComponent.text = string.Empty;
-        gravityTextComponent.text = "Space";
+        // gravityTextComponent.text = "Space";
+        gravityTextComponent.text = "Gravity mode: Space";
     }
     // public void NextIndex()
     // {
@@ -52,6 +53,6 @@ public class TextManager : MonoBehaviour
         // change gravity text on terminal 
         gravityTextComponent.text = string.Empty;
         // gravityTextComponent.text = "Gravity Mode:" + (GravitationalForceMode)uIManager.gravitySlider.value).ToString();
-        gravityTextComponent.text = ((GravitationalForceMode)uIManager.gravitySlider.value).ToString();
+        gravityTextComponent.text = "Gravity mode: " + ((GravitationalForceMode)uIManager.gravitySlider.value).ToString();
     }
 }

@@ -27,17 +27,19 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // able to visit planet after doing minigame task in ship
+        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
+        
+        // able to visit planet after doing minigame task in ship and current gravity is set on jupiter
+        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
         {
             ShowJupiterButton();
         }
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsMoonVisitable)
+        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 2 && gameManager.IsMoonVisitable)
         {
             ShowMoonButton();
         }
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsEarthVisitable)
+        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 3 && gameManager.IsEarthVisitable)
         {
             ShowEarthButton();
         }
