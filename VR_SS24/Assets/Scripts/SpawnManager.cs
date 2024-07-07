@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -9,81 +10,66 @@ public class SpawnManager : MonoBehaviour
     public GameObject dartPrefab;
     public GameObject canPrefab;
     public GameObject tennisballPrefab;
-    [SerializeField] DestroyManager destroyManager;
-    [SerializeField] Transform[] spawnBallPosition;
-    [SerializeField] Transform[] spawnDartPosition;
-    [SerializeField] Transform[] spawnCanPosition;
+    // [SerializeField] DestroyManager destroyManager;
+    [SerializeField] Transform spawnBallPosition;
+    [SerializeField] Transform spawnDartPosition;
+    [SerializeField] Transform spawnCanPosition;
     [SerializeField] Transform spawnTennisballPosition;
-    //public GameObject[] basketballList;
-    public List<GameObject> basketballList;
-    public int basketballCounter;
-    public int dartCounter;
-    public int canCounter;
-    public int tennisballcounter = 1;
-    public int counter;
+    // [SerializeField] float spawnDelay = 1;
+    // Rigidbody dartRb;
+
     void Awake()
     {
-        counter = 0;
-        basketballCounter = spawnBallPosition.Length;
-        basketballList = 
-        dartCounter = spawnDartPosition.Length;
-        canCounter = spawnCanPosition.Length;
-        /*if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            SpawnDart();
-            SpawnCan();
-            SpawnTennisball();
-            dartRb = dart.GetComponent<Rigidbody>();
-        }
-        else
-        {
-            SpawnBasketball();
-        }*/
+        // if (SceneManager.GetActiveScene().buildIndex == 0)
+        // {
+        //     SpawnDart();
+        //     SpawnCan();
+        //     SpawnTennisball();
+        // }
+        // else
+        // {
+        //     SpawnBasketball();
+        // }
         SpawnDart();
         SpawnCan();
         SpawnTennisball();
         SpawnBasketball();
-    }
-    void Start()
-    {
-        counter++;
+        // dartRb = dartPrefab.GetComponent<Rigidbody>();
     }
     public void SpawnBasketball()
     {
-        for (int i = 0; i < basketballCounter; i++)
-        {
-            //CheckToDestroy(basketballList[i], basketballList.Length);
-            basketballList[i] = Instantiate(basketballPrefab, spawnBallPosition[i].transform.position, spawnBallPosition[i].transform.rotation);
-        }
+        // for (int i = 0; i < 5; i++)
+        // {
+        Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
+        //     StartCoroutine(SpawnCountdown());
+        // }
     }
     public void SpawnDart()
     {
-        for (int i = 0; i < dartCounter; i++)
-        {
-            Instantiate(dartPrefab, spawnDartPosition[i].transform.position, spawnDartPosition[i].transform.rotation);
-        }
+        Instantiate(dartPrefab, spawnDartPosition.transform.position, spawnDartPosition.transform.rotation);
     }
     public void SpawnCan()
     {
-        for (int i = 0; i < canCounter; i++)
-        {
-            Instantiate(canPrefab, spawnCanPosition[i].transform.position, spawnCanPosition[i].transform.rotation);
-        }
+        // for (int i = 0; i < 2; i++)
+        // {
+        Instantiate(canPrefab, spawnCanPosition.transform.position, spawnCanPosition.transform.rotation);
+        // StartCoroutine(SpawnCountdown());
+        // }
     }
     public void SpawnTennisball()
     {
         Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
     }
-    public void CheckToDestroy(GameObject checkDestroy, int list)
-    {
-        if (counter == 1)
-        {
-            //basketballList.Length = 1;
-            DestroyObject(checkDestroy);
-        }
-    }
-    public void DestroyObject(GameObject objectToDestroy)
-    {
-        Destroy(objectToDestroy.gameObject);
-    }
+    // public void CheckToDestroy(GameObject checkDestroy)
+    // {
+    //     DestroyObject(checkDestroy);
+    // }
+    // public void DestroyObject(GameObject objectToDestroy)
+    // {
+    //     Destroy(objectToDestroy.gameObject);
+    // }
+    // IEnumerator SpawnCountdown()
+    // {
+    //     yield return new WaitForSeconds(spawnDelay);
+    // }
 }
