@@ -21,6 +21,7 @@ public class Controller : MonoBehaviour
     {
         controllerInput.UIInput.Enable();
         controllerInput.UIInput.ToggleUI.performed += OnUIToggle;
+        controllerInput.UIInput.ResetUIPosition.started += OnResetPosition;
     }
 
     void OnDisable()
@@ -32,31 +33,10 @@ public class Controller : MonoBehaviour
     void OnUIToggle(InputAction.CallbackContext context)
     {
         isUIToggled = !isUIToggled;
+        menu.SetActive(isUIToggled);
     }
-
-    void OnUITogglePressed(InputAction.CallbackContext context)
+    void OnResetPosition(InputAction.CallbackContext context)
     {
-        // isTogglePressed = context.ReadValueAsButton();
-        // if (!isTogglePressed)
-        // {
-        //     isTogglePressed = !isTogglePressed;
-        //     isUIShowing = true;
-        // }
-        // if (!isUIToggled)
-        // {
-        //     isUIToggled = !isUIToggled;
-        // }
-    }
-
-    void OnUIToggleReleased(InputAction.CallbackContext context)
-    {
-        // isResetUIPositionPressed = context.ReadValueAsButton();
-        // isTogglePressed = false;
-        // isUIToggled = false;
-    }
-
-    void ApplyCrouch()
-    {
-
+        isUIToggled = !isUIToggled;
     }
 }
