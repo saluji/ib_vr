@@ -1,0 +1,65 @@
+{
+    "name": "ControllerInput",
+    "maps": [
+        {
+            "name": "UIInput",
+            "id": "06a16179-79ab-40f8-8015-2c4aff014cd0",
+            "actions": [
+                {
+                    "name": "ToggleUI",
+                    "type": "Button",
+                    "id": "e7c7dfc3-37c5-4139-ba77-6f5c61479b8c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ResetUIPosition",
+                    "type": "Button",
+                    "id": "04813c78-0972-4ce0-b0a9-7264b7bb9141",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b4f8e6e2-3e9b-4c07-9437-1692e6515c09",
+                    "path": "<XRController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3da1160c-38e0-4493-a3a2-1ad97d14c945",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleUI",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b85a8c9e-6d4b-43a9-8321-d3b00e33725e",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ResetUIPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

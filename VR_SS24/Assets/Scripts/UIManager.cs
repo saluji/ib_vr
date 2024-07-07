@@ -1,10 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    PlayerInput playerInput;
+    [SerializeField] Transform menuTransform;
+    [SerializeField] Transform menuAnchor;
+    
     GameManager gameManager;
     GravityManager gravityManager;
     [SerializeField] TextManager textManager;
@@ -29,7 +34,7 @@ public class UIManager : MonoBehaviour
     {
         // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
-        
+
         // able to visit planet after doing minigame task in ship and current gravity is set on jupiter
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
         {
