@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     // int buildIndex;
     int buildIndex = 0;
+    public int BuildIndex { get { return buildIndex; } }
 
     void Awake()
     {

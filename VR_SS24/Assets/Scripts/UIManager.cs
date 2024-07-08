@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    PlayerInput playerInput;
-    [SerializeField] Transform menuTransform;
-    [SerializeField] Transform menuAnchor;
-    
     GameManager gameManager;
     GravityManager gravityManager;
     [SerializeField] TextManager textManager;
@@ -35,15 +31,17 @@ public class UIManager : MonoBehaviour
         // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
         // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
 
-        // able to visit planet after doing minigame task in ship and current gravity is set on jupiter
+        // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
         {
             ShowJupiterButton();
         }
+        // able to visit planet after doing task on jupiter and current gravity is set to moon
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 2 && gameManager.IsMoonVisitable)
         {
             ShowMoonButton();
         }
+        // able to visit planet after doing task on moon and current gravity is set to earth
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 3 && gameManager.IsEarthVisitable)
         {
             ShowEarthButton();

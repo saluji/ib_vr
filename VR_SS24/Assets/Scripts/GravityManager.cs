@@ -10,8 +10,9 @@ public class GravityManager : MonoBehaviour
     public GravitationalForceMode CurrentGravitationalForce;
     void Awake()
     {
-
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        // SetGravityMode(GravitationalForceMode)levelManager.BuildIndex;
+        // SetGravityMode(GravitationalForceMode)levelManager.BuildIndex;
         // SetGravityMode(CurrentGravitationalForce)levelManager.buildIndex;
         // SetGravityMode(GravitationalForceMode.Earth);
         // SetGravityMode(GravitationalForceMode.buildIndex);
