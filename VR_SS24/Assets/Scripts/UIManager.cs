@@ -17,14 +17,29 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
     [SerializeField] GameObject taskThreeButton;
-    [SerializeField] GameObject taskFourButton;
     public Slider gravitySlider;
+
+    public GameObject TaskOneButton { get { return taskOneButton; } set { taskOneButton = value; } }
+    public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
+    public GameObject TaskThreeButton { get { return taskThreeButton; } set { taskThreeButton = value; } }
 
     void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
+        // GameManager.OnGameStateChanged += ShowButton;
     }
+
+    // void OnDestroy()
+    // {
+    //     GameManager.OnGameStateChanged -= ShowButton;
+    // }
+
+    // void ShowButton(GameState state)
+    // {
+    //     taskTwoButton.SetActive(state == GameState.TaskTwo);
+    //     taskThreeButton.SetActive(state == GameState.TaskThree);
+    // }
 
     void Update()
     {
@@ -43,18 +58,6 @@ public class UIManager : MonoBehaviour
         {
             ShowEarthButton();
         }
-        if (gameManager.TaskOneCounter == 3)
-        {
-            ShowTaskTwoButton();
-        }
-        if (gameManager.TaskTwoCounter == 3)
-        {
-            ShowTaskThreeButton();
-        }
-        if (gameManager.TaskThreeCounter == 3)
-        {
-            ShowTaskFourButton();
-        }
     }
 
     public void Slider()
@@ -71,7 +74,7 @@ public class UIManager : MonoBehaviour
         taskPanel.SetActive(false);
         returnPanel.SetActive(true);
     }
-    
+
     void ShowJupiterButton()
     {
         jupiterButton.SetActive(true);
@@ -85,20 +88,5 @@ public class UIManager : MonoBehaviour
     void ShowEarthButton()
     {
         earthButton.SetActive(true);
-    }
-
-    void ShowTaskTwoButton()
-    {
-        taskTwoButton.SetActive(true);
-    }
-
-    void ShowTaskThreeButton()
-    {
-        taskThreeButton.SetActive(true);
-    }
-
-    void ShowTaskFourButton()
-    {
-        taskFourButton.SetActive(true);
     }
 }
