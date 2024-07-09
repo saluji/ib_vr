@@ -28,9 +28,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
-        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
-
         // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
         if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
         {
@@ -74,26 +71,32 @@ public class UIManager : MonoBehaviour
         taskPanel.SetActive(false);
         returnPanel.SetActive(true);
     }
+    
     void ShowJupiterButton()
     {
         jupiterButton.SetActive(true);
     }
+
     void ShowMoonButton()
     {
         moonButton.SetActive(true);
     }
+
     void ShowEarthButton()
     {
         earthButton.SetActive(true);
     }
+
     void ShowTaskTwoButton()
     {
         taskTwoButton.SetActive(true);
     }
+
     void ShowTaskThreeButton()
     {
         taskThreeButton.SetActive(true);
     }
+
     void ShowTaskFourButton()
     {
         taskFourButton.SetActive(true);

@@ -32,10 +32,13 @@ public class Controller : MonoBehaviour
     void OnUIToggle(InputAction.CallbackContext context)
     {
         // toggle menu on / off and reset position to in front of camera
-        menu.transform.position = menuAnchor.transform.position;
-        menu.transform.rotation = menuAnchor.transform.rotation;
         isUIToggled = !isUIToggled;
         menu.SetActive(isUIToggled);
+        if (isUIToggled)
+        {
+            menu.transform.position = menuAnchor.transform.position;
+            menu.transform.rotation = menuAnchor.transform.rotation;
+        }
     }
     void OnResetUIPosition(InputAction.CallbackContext context)
     {
