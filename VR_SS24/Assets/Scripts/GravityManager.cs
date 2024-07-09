@@ -7,6 +7,7 @@ public class GravityManager : MonoBehaviour
 {
     public GravitationalForceMode CurrentGravitationalForce;
     LevelManager levelManager;
+    
     void Awake()
     {
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
