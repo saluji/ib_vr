@@ -15,8 +15,10 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    // public static GameManager instance;
     public GameState state;
     UIManager uIManager;
+    Basketball basketball;
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship
@@ -26,11 +28,6 @@ public class GameManager : MonoBehaviour
     // task for minigames in ship
     bool isPracticingDart;
     bool isPracticingCan;
-
-    // task counter
-    int taskOneCounter;
-    int taskTwoCounter;
-    int taskThreeCounter;
 
     // public bool IsJupiterVisitable { get { return isJupiterVisitable; } }
     public bool IsMoonVisitable { get { return isMoonVisitable; } }
@@ -45,14 +42,13 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // instance = this;
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        basketball = GameObject.Find("Basketball").GetComponent<Basketball>();
 
         isPracticingCan = false;
         isPracticingDart = false;
-        
-        taskOneCounter = 0;
-        taskTwoCounter = 0;
-        taskThreeCounter = 0;
+
     }
 
     void Start()
@@ -68,13 +64,13 @@ public class GameManager : MonoBehaviour
             // case GameState.TaskZero:
             //     break;
             case GameState.TaskOne:
-                HandleTaskOne();
+                // HandleTaskOne();
                 break;
             case GameState.TaskTwo:
-                HandleTaskTwo();
+                // HandleTaskTwo();
                 break;
             case GameState.TaskThree:
-                HandleTaskThree();
+                // HandleTaskThree();
                 break;
             case GameState.TaskFour:
                 break;
@@ -84,35 +80,20 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
-    public void HandleTaskOne()
-    {
-        taskOneCounter++;
-        if (taskOneCounter > 3)
-        {
-            uIManager.TaskOneButton.SetActive(true);
-            UpdateGameState(GameState.TaskTwo);
-        }
-    }
+    // public void HandleTaskOne()
+    // {
+    //     uIManager.TaskOneButton.SetActive(true);
+    // }
 
-    public void HandleTaskTwo()
-    {
-        taskTwoCounter++;
-        if (taskTwoCounter > 3)
-        {
-            uIManager.TaskTwoButton.SetActive(true);
-            UpdateGameState(GameState.TaskThree);
-        }
-    }
+    // public void HandleTaskTwo()
+    // {
+    //     uIManager.TaskTwoButton.SetActive(true);
+    // }
 
-    public void HandleTaskThree()
-    {
-        taskThreeCounter++;
-        if (taskThreeCounter > 3)
-        {
-            uIManager.TaskThreeButton.SetActive(true);
-            UpdateGameState(GameState.TaskFour);
-        }
-    }
+    // public void HandleTaskThree()
+    // {
+    //     uIManager.TaskThreeButton.SetActive(true);
+    // }
 
     public void MoonVisitable()
     {
@@ -122,5 +103,23 @@ public class GameManager : MonoBehaviour
     public void EarthVisitable()
     {
         isEarthVisitable = true;
+    }
+
+    public void TaskOneState()
+    {
+        UpdateGameState(GameState.TaskTwo);
+        basketball.ReleaseCount = 0;
+    }
+
+    public void TaskTwoState()
+    {
+        UpdateGameState(GameState.TaskThree);
+        basketball.ReleaseCount = 0;
+    }
+
+    public void TaskThreeState()
+    {
+        UpdateGameState(GameState.TaskFour);
+        basketball.ReleaseCount = 0;
     }
 }

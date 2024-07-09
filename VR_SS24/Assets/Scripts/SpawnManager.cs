@@ -31,16 +31,20 @@ public class SpawnManager : MonoBehaviour
     public void SpawnBasketball()
     {
         Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
+        basketballPrefab.SetActive(true);
     }
 
     public void SpawnDart()
     {
         Instantiate(dartPrefab, spawnDartPosition.transform.position, spawnDartPosition.transform.rotation);
+        dartPrefab.SetActive(true);
     }
 
     public void SpawnTennisball()
     {
         Instantiate(canPrefab, spawnCanPosition.transform.position, spawnCanPosition.transform.rotation);
         Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
+        tennisballPrefab.SetActive(true);
+        canPrefab.SetActive(true);
     }
 }
