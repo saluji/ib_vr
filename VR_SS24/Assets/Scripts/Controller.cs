@@ -14,6 +14,7 @@ public class Controller : MonoBehaviour
     void Awake()
     {
         controllerInput = new ControllerInput();
+        isUIToggled = true;
     }
 
     void OnEnable()
@@ -40,6 +41,7 @@ public class Controller : MonoBehaviour
             menu.transform.rotation = menuAnchor.transform.rotation;
         }
     }
+
     void OnResetUIPosition(InputAction.CallbackContext context)
     {
         // reset position to in front of camera

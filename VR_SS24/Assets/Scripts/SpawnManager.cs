@@ -17,9 +17,15 @@ public class SpawnManager : MonoBehaviour
 
     void Awake()
     {
-        SpawnDart();
-        SpawnTennisball();
-        SpawnBasketball();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            SpawnBasketball();
+        }
+        else
+        {
+            SpawnDart();
+            SpawnTennisball();
+        }
     }
 
     public void SpawnBasketball()

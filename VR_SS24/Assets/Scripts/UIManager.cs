@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
     GameManager gameManager;
     GravityManager gravityManager;
-    [SerializeField] TextManager textManager;
+    TextManager textManager;
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
     [SerializeField] GameObject jupiterButton;
@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
+        textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         // GameManager.OnGameStateChanged += ShowButton;
     }
 
