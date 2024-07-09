@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             if (transform.parent != null)
             {
+                // set GameManager as own parent while still being child object
                 transform.SetParent(null);
             }
             DontDestroyOnLoad(gameObject);
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.TaskOne);
+        UpdateGameState(GameState.TaskThree);
     }
 
     public void UpdateGameState(GameState newState)
@@ -110,6 +111,5 @@ public class GameManager : MonoBehaviour
     public void TaskTwoState()
     {
         UpdateGameState(GameState.TaskThree);
-        GameObject.Find("Basketball").GetComponent<Basketball>().ResetCount();
     }
 }

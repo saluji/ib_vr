@@ -11,11 +11,16 @@ public class Basketball : MonoBehaviour
     GameManager gameManager;
     UIManager uIManager;
     TextManager textManager;
-    Basket basket;
 
     bool isBallDropped;
     int count;
     int maxCount = 3;
+
+    // lower basket variables
+    Transform basket;
+    [SerializeField] float minHeight = 2.5f;
+    [SerializeField] float lowerAmount = 0.25f;
+    bool hasLowered;
 
     public int Count { get { return count; } set { count = value; } }
 
@@ -24,8 +29,8 @@ public class Basketball : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-        basket = GameObject.Find("Basket").GetComponent<Basket>();
-        
+        basket = GameObject.Find("Basket").GetComponent<Transform>();
+
 
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
@@ -55,15 +60,19 @@ public class Basketball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the ball hits the ground
-        if (collision.collider.CompareTag("Ground") && !isBallDropped)
+        // Check if the ball hits the ground in TaskTwo
+        if (collision.collider.CompareTag("Ground") && !isBallDropped && GameManager.instance.state != GameState.TaskThree)
         {
             // Increment the count and handle the GameState transitions for TaskOne
             isBallDropped = true; // Prevents incrementing the count again for the same drop
             count++;
             gameManager.HandleTaskOne(count, maxCount);
+        }
 
-            FindObjectOfType<Basket>()?.ResetLowerFlag();
+        else if (GameManager.instance.state == GameState.TaskThree && collision.collider.CompareTag("Ground") && !hasLowered && basket.position.y > minHeight)
+        {
+            basket.position -= new Vector3(0, lowerAmount, 0);
+            hasLowered = true;
         }
     }
 
