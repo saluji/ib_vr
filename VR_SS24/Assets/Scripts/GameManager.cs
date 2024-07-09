@@ -13,7 +13,8 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    // Dictionary<string, bool> visitableStatus;
+    public static GameManager instance { get; private set; }
     public GameState state;
     UIManager uIManager;
     public static event Action<GameState> OnGameStateChanged;
@@ -23,8 +24,8 @@ public class GameManager : MonoBehaviour
     bool isEarthVisitable = false;
 
     // task for minigames in ship
-    bool isPracticingDart;
-    bool isPracticingCan;
+    bool isPracticingDart = false;
+    bool isPracticingCan = false;
 
     public bool IsMoonVisitable { get { return isMoonVisitable; } }
     public bool IsEarthVisitable { get { return isEarthVisitable; } }
@@ -33,12 +34,21 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            if (transform.parent != null)
+            {
+                transform.SetParent(null);
+            }
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-
-        isPracticingCan = false;
-        isPracticingDart = false;
-
     }
 
     void Start()
@@ -51,8 +61,6 @@ public class GameManager : MonoBehaviour
         state = newState;
         switch (newState)
         {
-            // case GameState.TaskZero:
-            //     break;
             case GameState.TaskOne:
                 break;
             case GameState.TaskTwo:

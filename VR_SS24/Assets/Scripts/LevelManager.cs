@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        buildIndex = SceneManager.GetActiveScene().buildIndex;
+        // buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void LoadSpace()
@@ -34,6 +34,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
+        GameManager.instance.IsPracticingCan = false;
+        GameManager.instance.IsPracticingDart = false;
         SceneManager.LoadScene(buildIndex);
     }
 }

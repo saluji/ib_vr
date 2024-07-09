@@ -15,7 +15,7 @@ public class Basketball : MonoBehaviour
 
     bool isBallDropped;
     int count;
-    int maxCount = 5;
+    int maxCount = 3;
 
     public int Count { get { return count; } set { count = value; } }
 
