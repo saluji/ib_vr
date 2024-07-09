@@ -16,31 +16,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject earthButton;
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
-    [SerializeField] GameObject taskThreeButton;
     public Slider gravitySlider;
 
     public GameObject TaskOneButton { get { return taskOneButton; } set { taskOneButton = value; } }
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
-    public GameObject TaskThreeButton { get { return taskThreeButton; } set { taskThreeButton = value; } }
-
     void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-        // GameManager.OnGameStateChanged += ShowButton;
+        
+        taskOneButton.SetActive(false);
+        taskTwoButton.SetActive(false);
     }
-
-    // void OnDestroy()
-    // {
-    //     GameManager.OnGameStateChanged -= ShowButton;
-    // }
-
-    // void ShowButton(GameState state)
-    // {
-    //     taskTwoButton.SetActive(state == GameState.TaskTwo);
-    //     taskThreeButton.SetActive(state == GameState.TaskThree);
-    // }
 
     void Update()
     {

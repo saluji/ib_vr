@@ -9,6 +9,7 @@ TagManager:
   - Anchor
   - Basket
   - Can
+  - Ground
   layers:
   - Default
   - TransparentFX

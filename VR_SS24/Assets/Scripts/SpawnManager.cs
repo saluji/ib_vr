@@ -15,19 +15,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform spawnCanPosition;
     [SerializeField] Transform spawnTennisballPosition;
 
-    void Awake()
-    {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            SpawnBasketball();
-        }
-        else
-        {
-            SpawnDart();
-            SpawnTennisball();
-        }
-    }
-
     public void SpawnBasketball()
     {
         Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
