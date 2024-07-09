@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     int buildIndex;
-    public int BuildIndex { get { return buildIndex; } }
 
     void Awake()
     {
         buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
-    
+
     public void LoadSpace()
     {
         buildIndex = 0;

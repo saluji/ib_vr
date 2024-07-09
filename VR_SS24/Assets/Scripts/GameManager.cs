@@ -13,10 +13,9 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    // public static GameManager instance;
+    public static GameManager instance;
     public GameState state;
     UIManager uIManager;
-    Basketball basketball;
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship
@@ -34,8 +33,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-        basketball = GameObject.Find("Basketball").GetComponent<Basketball>();
 
         isPracticingCan = false;
         isPracticingDart = false;
@@ -76,18 +75,18 @@ public class GameManager : MonoBehaviour
         isEarthVisitable = true;
     }
 
-    public void HandleTaskOne(int count)
+    public void HandleTaskOne(int count, int maxCount)
     {
-        if (state == GameState.TaskOne && (count >= 3))
+        if (state == GameState.TaskOne && (count >= maxCount))
         {
             // Show button
             uIManager.TaskOneButton.gameObject.SetActive(true);
         }
     }
 
-    public void HandleTaskTwo(int count)
+    public void HandleTaskTwo(int count, int maxCount)
     {
-        if (state == GameState.TaskTwo && count >= 3)
+        if (state == GameState.TaskTwo && count >= maxCount)
         {
             // Show button
             uIManager.TaskTwoButton.gameObject.SetActive(true);
@@ -97,12 +96,12 @@ public class GameManager : MonoBehaviour
     public void TaskOneState()
     {
         UpdateGameState(GameState.TaskTwo);
-        basketball.Count = 0;
+        FindObjectOfType<Basketball>().ResetCount();
     }
 
     public void TaskTwoState()
     {
         UpdateGameState(GameState.TaskThree);
-        basketball.Count = 0;
+        GameObject.Find("Basketball").GetComponent<Basketball>().ResetCount();
     }
 }

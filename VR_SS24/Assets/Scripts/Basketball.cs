@@ -11,6 +11,7 @@ public class Basketball : MonoBehaviour
     GameManager gameManager;
     UIManager uIManager;
     TextManager textManager;
+    Basket basket;
 
     bool isBallDropped;
     int count;
@@ -23,8 +24,10 @@ public class Basketball : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-        interactable = GetComponent<XRBaseInteractable>();
+        basket = GameObject.Find("Basket").GetComponent<Basket>();
+        
 
+        interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
         interactable.selectExited.AddListener(OnSelectExitedHandler);
 
@@ -58,7 +61,9 @@ public class Basketball : MonoBehaviour
             // Increment the count and handle the GameState transitions for TaskOne
             isBallDropped = true; // Prevents incrementing the count again for the same drop
             count++;
-            gameManager.HandleTaskOne(count);
+            gameManager.HandleTaskOne(count, maxCount);
+
+            FindObjectOfType<Basket>()?.ResetLowerFlag();
         }
     }
 
@@ -72,37 +77,12 @@ public class Basketball : MonoBehaviour
         if (gameManager.state == GameState.TaskTwo)
         {
             count++;
-            gameManager.HandleTaskTwo(count);
+            gameManager.HandleTaskTwo(count, maxCount);
         }
-        // count++;
-        // switch (gameManager.state)
-        // {
-        //     case GameState.TaskOne:
-        //         if (count >= maxCount)
-        //         {
-        //             uIManager.TaskOneButton.SetActive(true);
-        //         }
-        //         break;
-        //     case GameState.TaskTwo:
-        //         if (count >= maxCount)
-        //         {
-        //             uIManager.TaskTwoButton.SetActive(true);
-        //         }
-        //         break;
-        // }
     }
 
-    // void OnCollisionEnter(Collision other)
-    // {
-    //     if (args.interactableObject == this && gameManager.state == GameState.TaskTwo)
-    //     {
-    //         count++;
-    //         gameManager.HandleTaskTwo(count);
-    //     }
-    // }
-
-    // void ResetCount()
-    // {
-    //     count = 0;
-    // }
+    public void ResetCount()
+    {
+        count = 0;
+    }
 }
