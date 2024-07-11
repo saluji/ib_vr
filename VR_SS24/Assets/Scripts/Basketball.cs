@@ -23,6 +23,7 @@ public class Basketball : MonoBehaviour
     bool hasLowered;
 
     public int Count { get { return count; } set { count = value; } }
+    public int MaxCount { get { return maxCount; } }
 
     void Awake()
     {
@@ -67,10 +68,12 @@ public class Basketball : MonoBehaviour
             isBallDropped = true; // Prevents incrementing the count again for the same drop
             count++;
             gameManager.HandleTaskOne(count, maxCount);
+            textManager.TaskTwoScore();
         }
 
         else if (GameManager.instance.state == GameState.TaskThree && collision.collider.CompareTag("Ground") && !hasLowered && basket.position.y > minHeight)
         {
+            // lower basket if player fails to throw basketball into basket
             basket.position -= new Vector3(0, lowerAmount, 0);
             hasLowered = true;
         }

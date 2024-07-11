@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.TaskThree);
+        UpdateGameState(GameState.TaskOne);
     }
 
     public void UpdateGameState(GameState newState)
