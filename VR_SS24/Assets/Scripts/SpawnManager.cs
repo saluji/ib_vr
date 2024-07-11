@@ -10,10 +10,20 @@ public class SpawnManager : MonoBehaviour
     public GameObject dartPrefab;
     public GameObject canPrefab;
     public GameObject tennisballPrefab;
+    public GameObject teleporterPrefab;
+
     [SerializeField] Transform spawnBallPosition;
     [SerializeField] Transform spawnDartPosition;
     [SerializeField] Transform spawnCanPosition;
     [SerializeField] Transform spawnTennisballPosition;
+    [SerializeField] Transform spawnTeleporterPosition;
+
+    bool isTeleporterSpawned = false;
+
+    // void Awake()
+    // {
+    //     Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
+    // }
 
     public void SpawnBasketball()
     {
@@ -33,5 +43,16 @@ public class SpawnManager : MonoBehaviour
         Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
         tennisballPrefab.SetActive(true);
         canPrefab.SetActive(true);
+    }
+
+    public void SpawnTeleporter()
+    {
+        if (!isTeleporterSpawned)
+        {
+            Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
+            isTeleporterSpawned = true;
+            teleporterPrefab.SetActive(true);
+        }
+
     }
 }

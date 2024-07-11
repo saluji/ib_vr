@@ -24,7 +24,11 @@ public class UIManager : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-        
+
+        jupiterButton.SetActive(true);
+        moonButton.SetActive(false);
+        earthButton.SetActive(false);
+
         taskOneButton.SetActive(true);
         taskTwoButton.SetActive(false);
         // taskTwoButton.SetActive(false);
