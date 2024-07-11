@@ -7,8 +7,8 @@ using UnityEngine;
 public enum GameState
 {
     TaskOne,
-    TaskTwo,
-    TaskThree
+    TaskTwo
+    // TaskThree
 }
 
 public class GameManager : MonoBehaviour
@@ -66,12 +66,44 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.TaskTwo:
                 break;
-            case GameState.TaskThree:
-                break;
+            // case GameState.TaskThree:
+            //     break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
         OnGameStateChanged?.Invoke(newState);
+    }
+
+    // public void HandleTaskOne(int count, int maxCount)
+    // {
+    //     if (state == GameState.TaskOne && (count >= maxCount))
+    //     {
+    //         // Show button
+    //         uIManager.TaskOneButton.gameObject.SetActive(true);
+    //     }
+    // }
+
+    public void HandleTaskOne(int count, int maxCount)
+    {
+        // if (state == GameState.TaskOne && count >= maxCount)
+        if (count >= maxCount)
+        {
+            // Show button
+            uIManager.TaskOneButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void ResetVariables()
+    {
+        // reset variables if returning to ship
+        isPracticingCan = false;
+        isPracticingDart = false;
+        UpdateGameState(GameState.TaskOne);
+    }
+
+    public void SwitchToTaskTwo()
+    {
+        UpdateGameState(GameState.TaskTwo);
     }
 
     public void MoonVisitable()
@@ -82,34 +114,5 @@ public class GameManager : MonoBehaviour
     public void EarthVisitable()
     {
         isEarthVisitable = true;
-    }
-
-    public void HandleTaskOne(int count, int maxCount)
-    {
-        if (state == GameState.TaskOne && (count >= maxCount))
-        {
-            // Show button
-            uIManager.TaskOneButton.gameObject.SetActive(true);
-        }
-    }
-
-    public void HandleTaskTwo(int count, int maxCount)
-    {
-        if (state == GameState.TaskTwo && count >= maxCount)
-        {
-            // Show button
-            uIManager.TaskTwoButton.gameObject.SetActive(true);
-        }
-    }
-
-    public void TaskOneState()
-    {
-        UpdateGameState(GameState.TaskTwo);
-        FindObjectOfType<Basketball>().ResetCount();
-    }
-
-    public void TaskTwoState()
-    {
-        UpdateGameState(GameState.TaskThree);
     }
 }

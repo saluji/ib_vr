@@ -18,11 +18,12 @@ public class Basketball : MonoBehaviour
 
     // lower basket variables
     Transform basket;
-    [SerializeField] float minHeight = 2.5f;
     [SerializeField] float lowerAmount = 0.25f;
+    float minHeight = -1.75f;
     bool hasLowered;
 
-    public int Count { get { return count; } set { count = value; } }
+    // public int Count { get { return count; } set { count = value; } }
+    public int Count { get { return count; } }
     public int MaxCount { get { return maxCount; } }
 
     void Awake()
@@ -35,7 +36,7 @@ public class Basketball : MonoBehaviour
 
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
-        interactable.selectExited.AddListener(OnSelectExitedHandler);
+        // interactable.selectExited.AddListener(OnSelectExitedHandler);
 
         count = 0;
     }
@@ -46,55 +47,60 @@ public class Basketball : MonoBehaviour
         if (interactable != null)
         {
             interactable.selectEntered.RemoveListener(OnSelectEnteredHandler);
-            interactable.selectExited.RemoveListener(OnSelectExitedHandler);
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // show return to ship panel if in TaskThree
-        if (other.gameObject.CompareTag("Basket") && gameManager.state == GameState.TaskThree)
-        {
-            uIManager.ShowReturnPanel();
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Check if the ball hits the ground in TaskTwo
-        if (collision.collider.CompareTag("Ground") && !isBallDropped && GameManager.instance.state != GameState.TaskThree)
-        {
-            // Increment the count and handle the GameState transitions for TaskOne
-            isBallDropped = true; // Prevents incrementing the count again for the same drop
-            count++;
-            gameManager.HandleTaskOne(count, maxCount);
-            textManager.TaskTwoScore();
-        }
-
-        else if (GameManager.instance.state == GameState.TaskThree && collision.collider.CompareTag("Ground") && !hasLowered && basket.position.y > minHeight)
-        {
-            // lower basket if player fails to throw basketball into basket
-            basket.position -= new Vector3(0, lowerAmount, 0);
-            hasLowered = true;
+            // interactable.selectExited.RemoveListener(OnSelectExitedHandler);
         }
     }
 
     private void OnSelectEnteredHandler(SelectEnterEventArgs args)
     {
-        isBallDropped = false;  // Reset the drop flag when the ball is regrabbed
+        // Reset the drop flag when the ball is regrabbed
+        isBallDropped = false;
     }
 
-    public void OnSelectExitedHandler(SelectExitEventArgs args)
+    // public void OnSelectExitedHandler(SelectExitEventArgs args)
+    // {
+    // if (gameManager.state == GameState.TaskOne)
+    // {
+    //     count++;
+    //     gameManager.HandleTaskOne(count, maxCount);
+    // }
+    // }
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (gameManager.state == GameState.TaskTwo)
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            count++;
-            gameManager.HandleTaskTwo(count, maxCount);
+            // dribbling logic
+            if (GameManager.instance.state == GameState.TaskOne && !isBallDropped)
+            {
+                // Increment the count and handle the GameState transitions for TaskOne
+                isBallDropped = true; // Prevents incrementing the count again for the same drop
+                count++;
+                gameManager.HandleTaskOne(count, maxCount);
+                textManager.TaskOneScore();
+            }
+
+            // basket logic
+            else if (GameManager.instance.state == GameState.TaskTwo && !hasLowered && basket.position.y > minHeight)
+            {
+                // lower basket if player fails to throw basketball into basket
+                basket.position -= new Vector3(0, lowerAmount, 0);
+                hasLowered = true;
+            }
         }
     }
 
-    public void ResetCount()
+    void OnTriggerEnter(Collider other)
     {
-        count = 0;
+        // show return to ship panel if in TaskTwo
+        if (other.gameObject.CompareTag("Basket") && gameManager.state == GameState.TaskTwo)
+        {
+            uIManager.ShowReturnPanel();
+        }
     }
+
+    // public void ResetCount()
+    // {
+    //     count = 0;
+    // }
 }

@@ -34,8 +34,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        GameManager.instance.IsPracticingCan = false;
-        GameManager.instance.IsPracticingDart = false;
+        GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
     }
 }

@@ -15,11 +15,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject moonButton;
     [SerializeField] GameObject earthButton;
     [SerializeField] GameObject taskOneButton;
-    [SerializeField] GameObject taskTwoButton;
+    // [SerializeField] GameObject taskTwoButton;
     public Slider gravitySlider;
 
     public GameObject TaskOneButton { get { return taskOneButton; } set { taskOneButton = value; } }
-    public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
+    // public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
     void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         
         taskOneButton.SetActive(false);
-        taskTwoButton.SetActive(false);
+        // taskTwoButton.SetActive(false);
     }
 
     void Update()

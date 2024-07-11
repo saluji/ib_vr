@@ -6,15 +6,15 @@ public class TextManager : MonoBehaviour
     UIManager uIManager;
     Basketball basketball;
     [SerializeField] TextMeshProUGUI gravityTextComponent;
-    [SerializeField] TextMeshProUGUI t1Score;
-    [SerializeField] TextMeshProUGUI t2Score;
+    [SerializeField] TextMeshProUGUI score;
+    // [SerializeField] TextMeshProUGUI t2Score;
 
     void Awake()
     {
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         basketball = GameObject.Find("Basketball").GetComponent<Basketball>();
         TaskOneScore();
-        TaskTwoScore();
+        // TaskTwoScore();
 
         // gravityTextComponent.text = string.Empty;
         // gravityTextComponent.text = "Gravity mode: Space";
@@ -28,15 +28,15 @@ public class TextManager : MonoBehaviour
 
     public void TaskOneScore()
     {
-        t1Score.text = string.Empty;
-        t1Score.text = basketball.Count + " / " + basketball.MaxCount;
+        score.text = string.Empty;
+        score.text = basketball.Count + " / " + basketball.MaxCount;
     }
 
-    public void TaskTwoScore()
-    {
-        t2Score.text = string.Empty;
-        t2Score.text = basketball.Count + " / " + basketball.MaxCount;
-    }
+    // public void TaskTwoScore()
+    // {
+    //     t2Score.text = string.Empty;
+    //     t2Score.text = basketball.Count + " / " + basketball.MaxCount;
+    // }
     // public void TaskText(int index)
     // {
     //     taskTextComponent.text = string.Empty;
