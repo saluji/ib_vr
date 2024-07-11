@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4963102480458840968}
   - component: {fileID: 9059837633030002991}
   - component: {fileID: 1354713639277104289}
+  - component: {fileID: 2669395054545995078}
   m_Layer: 0
   m_Name: Teleporter
   m_TagString: Untagged
@@ -245,6 +246,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_TeleportAnchorTransform: {fileID: 3375146701144896705}
+--- !u!114 &2669395054545995078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197309603369858691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d6e987ec10d73479d8f3c2252ce63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3216687407608101688
 GameObject:
   m_ObjectHideFlags: 0
@@ -9950,7 +9963,7 @@ Transform:
   m_GameObject: {fileID: 5991727867127935466}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5000008, y: -0.49999923, z: -0.49999928, w: 0.5000007}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0.000077}
   m_LocalScale: {x: 0.002074689, y: 0.002074689, z: 0.0020746887}
   m_ConstrainProportionsScale: 0
   m_Children:

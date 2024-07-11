@@ -30,7 +30,6 @@ public class Basketball : MonoBehaviour
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         basket = GameObject.Find("Basket").GetComponent<Transform>();
 
-
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
     }
