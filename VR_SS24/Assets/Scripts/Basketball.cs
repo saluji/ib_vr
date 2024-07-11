@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.Rendering.UI;
@@ -13,18 +14,14 @@ public class Basketball : MonoBehaviour
     TextManager textManager;
 
     bool isBallDropped;
-    int count;
-    int maxCount = 3;
+    int currentScore = 0;
+    int maxScore = 5;
 
     // lower basket variables
     Transform basket;
     [SerializeField] float lowerAmount = 0.25f;
-    float minHeight = -1.75f;
+    [SerializeField] float minHeight = -1.75f;
     bool hasLowered;
-
-    // public int Count { get { return count; } set { count = value; } }
-    public int Count { get { return count; } }
-    public int MaxCount { get { return maxCount; } }
 
     void Awake()
     {
@@ -36,9 +33,6 @@ public class Basketball : MonoBehaviour
 
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
-        // interactable.selectExited.AddListener(OnSelectExitedHandler);
-
-        count = 0;
     }
 
     void OnDestroy()
@@ -47,7 +41,6 @@ public class Basketball : MonoBehaviour
         if (interactable != null)
         {
             interactable.selectEntered.RemoveListener(OnSelectEnteredHandler);
-            // interactable.selectExited.RemoveListener(OnSelectExitedHandler);
         }
     }
 
@@ -57,31 +50,32 @@ public class Basketball : MonoBehaviour
         isBallDropped = false;
     }
 
-    // public void OnSelectExitedHandler(SelectExitEventArgs args)
-    // {
-    // if (gameManager.state == GameState.TaskOne)
-    // {
-    //     count++;
-    //     gameManager.HandleTaskOne(count, maxCount);
-    // }
-    // }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             // dribbling logic
-            if (GameManager.instance.state == GameState.TaskOne && !isBallDropped)
+            if (GameManager.instance.state == GameState.TaskOne)
             {
-                // Increment the count and handle the GameState transitions for TaskOne
-                isBallDropped = true; // Prevents incrementing the count again for the same drop
-                count++;
-                gameManager.HandleTaskOne(count, maxCount);
-                textManager.TaskOneScore();
+                if (!isBallDropped)
+                {
+                    // Prevents incrementing the count again for the same drop
+                    isBallDropped = true;
+                    currentScore++;
+                }
+                else
+                {
+                    // if ball hits ground twice without regrab, reset score to zero
+                    currentScore = 0;
+                }
+
+                // Refresh score in UI
+                gameManager.HandleTaskOne(currentScore, maxScore);
+                textManager.TaskOneScore(currentScore, maxScore);
             }
 
             // basket logic
-            else if (GameManager.instance.state == GameState.TaskTwo && !hasLowered && basket.position.y > minHeight)
+            if (GameManager.instance.state == GameState.TaskTwo && !hasLowered && basket.position.y > minHeight)
             {
                 // lower basket if player fails to throw basketball into basket
                 basket.position -= new Vector3(0, lowerAmount, 0);
@@ -98,9 +92,4 @@ public class Basketball : MonoBehaviour
             uIManager.ShowReturnPanel();
         }
     }
-
-    // public void ResetCount()
-    // {
-    //     count = 0;
-    // }
 }

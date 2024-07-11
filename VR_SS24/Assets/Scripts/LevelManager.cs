@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public void LoadSpace()
     {
         buildIndex = 0;
+        GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
     }
 
@@ -34,7 +35,6 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
     }
 }

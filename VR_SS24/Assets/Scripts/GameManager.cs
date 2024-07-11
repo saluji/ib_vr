@@ -6,9 +6,9 @@ using UnityEngine;
 
 public enum GameState
 {
+    TaskZero,
     TaskOne,
     TaskTwo
-    // TaskThree
 }
 
 public class GameManager : MonoBehaviour
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.TaskOne);
+        UpdateGameState(GameState.TaskZero);
     }
 
     public void UpdateGameState(GameState newState)
@@ -62,42 +62,38 @@ public class GameManager : MonoBehaviour
         state = newState;
         switch (newState)
         {
+            case GameState.TaskZero:
+                break;
             case GameState.TaskOne:
                 break;
             case GameState.TaskTwo:
                 break;
-            // case GameState.TaskThree:
-            //     break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
         OnGameStateChanged?.Invoke(newState);
     }
 
-    // public void HandleTaskOne(int count, int maxCount)
-    // {
-    //     if (state == GameState.TaskOne && (count >= maxCount))
-    //     {
-    //         // Show button
-    //         uIManager.TaskOneButton.gameObject.SetActive(true);
-    //     }
-    // }
-
-    public void HandleTaskOne(int count, int maxCount)
+    public void HandleTaskOne(int score, int maxScore)
     {
-        // if (state == GameState.TaskOne && count >= maxCount)
-        if (count >= maxCount)
+        // if (state == GameState.TaskOne && score >= maxScore)
+        if (score >= maxScore)
         {
             // Show button
-            uIManager.TaskOneButton.gameObject.SetActive(true);
+            uIManager.TaskTwoButton.gameObject.SetActive(true);
         }
     }
 
     public void ResetVariables()
     {
-        // reset variables if returning to ship
+        // reset variables
         isPracticingCan = false;
         isPracticingDart = false;
+        UpdateGameState(GameState.TaskZero);
+    }
+
+    public void SwitchToTaskOne()
+    {
         UpdateGameState(GameState.TaskOne);
     }
 
