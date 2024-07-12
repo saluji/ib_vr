@@ -4069,7 +4069,6 @@ RectTransform:
   m_Children:
   - {fileID: 335856837}
   - {fileID: 19877730}
-  - {fileID: 1945626105}
   - {fileID: 769072438}
   - {fileID: 412960490}
   - {fileID: 1142783063}
@@ -4079,6 +4078,7 @@ RectTransform:
   - {fileID: 693614401}
   - {fileID: 387889943}
   - {fileID: 1644915461}
+  - {fileID: 1945626105}
   m_Father: {fileID: 904476927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -14934,7 +14934,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2043247486}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MoonVisitable
+        m_MethodName: GameDone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17389,21 +17389,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666159257}
     m_Modifications:
-    - target: {fileID: 1681341366036041137, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3975918846322602734, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_Name
       value: Basketball
-      objectReference: {fileID: 0}
-    - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
-      propertyPath: sleepThreshold
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
-      propertyPath: bounceThreshold
-      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    GameManager gameManager;
+    public static UIManager instance { get; private set; }
     GravityManager gravityManager;
     TextManager textManager;
     [SerializeField] GameObject taskPanel;
@@ -21,33 +21,31 @@ public class UIManager : MonoBehaviour
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-
-        jupiterButton.SetActive(false);
-        moonButton.SetActive(false);
-        earthButton.SetActive(false);
+        
+        jupiterButton.SetActive(GameManager.instance.IsMoonVisitable ? true : false);
+        moonButton.SetActive(GameManager.instance.IsEarthVisitable? true : false);
+        earthButton.SetActive(GameManager.instance.IsGameDone? true : false);
 
         taskOneButton.SetActive(true);
         taskTwoButton.SetActive(false);
-        // taskTwoButton.SetActive(false);
     }
 
     void Update()
     {
         // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
         {
             ShowJupiterButton();
         }
         // able to visit planet after doing task on jupiter and current gravity is set to moon
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 2 && gameManager.IsMoonVisitable)
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
         {
             ShowMoonButton();
         }
         // able to visit planet after doing task on moon and current gravity is set to earth
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 3 && gameManager.IsEarthVisitable)
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
         {
             ShowEarthButton();
         }

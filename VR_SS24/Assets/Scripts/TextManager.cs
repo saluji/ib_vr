@@ -4,14 +4,12 @@ using TMPro;
 public class TextManager : MonoBehaviour
 {
     UIManager uIManager;
-    Basketball basketball;
     [SerializeField] TextMeshProUGUI gravityTextComponent;
     [SerializeField] TextMeshProUGUI score;
 
     void Awake()
     {
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-        basketball = GameObject.Find("Basketball").GetComponent<Basketball>();
     }
 
     public void TaskOneScore(int currentScore, int maxScore)

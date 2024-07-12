@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Dart : MonoBehaviour
 {
-    GameManager gameManager;
     Rigidbody rb;
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -17,7 +15,7 @@ public class Dart : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Target"))
         {
-            gameManager.IsPracticingDart = true;
+            GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
         }
     }

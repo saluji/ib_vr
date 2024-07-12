@@ -13,7 +13,6 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    // Dictionary<string, bool> visitableStatus;
     public static GameManager instance { get; private set; }
     public GameState state;
     UIManager uIManager;
@@ -22,6 +21,7 @@ public class GameManager : MonoBehaviour
     // visitable planets in ship
     bool isMoonVisitable = false;
     bool isEarthVisitable = false;
+    bool isGameDone = false;
 
     // task for minigames in ship
     bool isPracticingDart = false;
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public bool IsMoonVisitable { get { return isMoonVisitable; } }
     public bool IsEarthVisitable { get { return isEarthVisitable; } }
+    public bool IsGameDone { get { return isGameDone; } }
     public bool IsPracticingCan { get { return isPracticingCan; } set { isPracticingCan = value; } }
     public bool IsPracticingDart { get { return isPracticingDart; } set { isPracticingDart = value; } }
 
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             if (transform.parent != null)
             {
-                // set GameManager as own parent while still being child object
+                // set GameObject as own parent while still being child object
                 transform.SetParent(null);
             }
             DontDestroyOnLoad(gameObject);
@@ -110,5 +111,10 @@ public class GameManager : MonoBehaviour
     public void EarthVisitable()
     {
         isEarthVisitable = true;
+    }
+
+    public void GameDone()
+    {
+        isGameDone = true;
     }
 }

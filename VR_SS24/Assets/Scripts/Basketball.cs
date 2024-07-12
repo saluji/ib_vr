@@ -9,7 +9,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Basketball : MonoBehaviour
 {
     XRBaseInteractable interactable;
-    GameManager gameManager;
     UIManager uIManager;
     TextManager textManager;
     LevelManager levelManager;
@@ -28,7 +27,6 @@ public class Basketball : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
@@ -94,7 +92,7 @@ public class Basketball : MonoBehaviour
                 }
 
                 // Refresh score in UI
-                gameManager.HandleTaskOne(currentScore, maxScore);
+                GameManager.instance.HandleTaskOne(currentScore, maxScore);
                 textManager.TaskOneScore(currentScore, maxScore);
             }
 
@@ -111,7 +109,7 @@ public class Basketball : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // show return to ship panel if succeeding to throw basketball into basket
-        if (other.gameObject.CompareTag("Basket") && gameManager.state == GameState.TaskTwo)
+        if (other.gameObject.CompareTag("Basket") && GameManager.instance.state == GameState.TaskTwo)
         {
             uIManager.ShowReturnPanel();
         }
