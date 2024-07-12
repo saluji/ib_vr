@@ -5433,6 +5433,7 @@ Transform:
   - {fileID: 1650361426}
   - {fileID: 425024565}
   - {fileID: 1666159257}
+  - {fileID: 1295764814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &681639737
@@ -10199,6 +10200,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274727762}
   m_CullTransparentMesh: 1
+--- !u!1 &1295764813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295764814}
+  m_Layer: 0
+  m_Name: TeleporterSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1295764814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295764813}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 619613458}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346946617
 GameObject:
   m_ObjectHideFlags: 0
@@ -10232,12 +10264,12 @@ MonoBehaviour:
   dartPrefab: {fileID: 1128863442249808535, guid: d53964c74e93e3c4bbed29257055b7ee, type: 3}
   canPrefab: {fileID: 8078506364459762311, guid: f8842e7ae6ae5ac4286429c2c413a11f, type: 3}
   tennisballPrefab: {fileID: 7072152552922607487, guid: 559e530afde469a48916d39374f1c0d3, type: 3}
-  teleporterPrefab: {fileID: 0}
+  teleporterPrefab: {fileID: 197309603369858691, guid: b578f4bf3d4bbe349afaaf8336a2a064, type: 3}
   spawnBallPosition: {fileID: 1666159257}
   spawnDartPosition: {fileID: 89551893}
   spawnCanPosition: {fileID: 1650361426}
   spawnTennisballPosition: {fileID: 425024565}
-  spawnTeleporterPosition: {fileID: 0}
+  spawnTeleporterPosition: {fileID: 1295764814}
 --- !u!4 &1346946619
 Transform:
   m_ObjectHideFlags: 0
@@ -13826,7 +13858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1844638412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14074,7 +14106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509aea467b6780d43b503ebdb6055436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGravitationalForce: 2
+  CurrentGravitationalForce: 3
 --- !u!1 &1893897833
 GameObject:
   m_ObjectHideFlags: 0
@@ -17331,15 +17363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.707
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.529
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalRotation.w

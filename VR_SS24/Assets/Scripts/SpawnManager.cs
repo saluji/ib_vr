@@ -20,11 +20,6 @@ public class SpawnManager : MonoBehaviour
 
     bool isTeleporterSpawned = false;
 
-    // void Awake()
-    // {
-    //     Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
-    // }
-
     public void SpawnBasketball()
     {
         Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);

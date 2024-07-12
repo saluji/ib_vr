@@ -6614,7 +6614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &793886603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11855,7 +11855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1563698429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18101,7 +18101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityTextComponent: {fileID: 1468686037}
-  score: {fileID: 0}
+  score: {fileID: 918398786}
 --- !u!4 &6887937404282093871
 Transform:
   m_ObjectHideFlags: 0
