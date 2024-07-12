@@ -4708,7 +4708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to Jupiter
+  m_text: Welcome to the Moon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
   m_sharedMaterial: {fileID: -2903771384293589167, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
@@ -8259,15 +8259,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.4686
+      value: 19.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 12.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.431362
+      value: 17.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10564,13 +10564,15 @@ GameObject:
   - component: {fileID: 1358125366}
   - component: {fileID: 1358125368}
   - component: {fileID: 1358125367}
+  - component: {fileID: 1358125370}
+  - component: {fileID: 1358125369}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1358125366
 Transform:
   m_ObjectHideFlags: 0
@@ -10580,7 +10582,7 @@ Transform:
   m_GameObject: {fileID: 1358125365}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: -0.49999994, z: -0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -6.5598745, y: -2.1972198, z: -4.240511}
+  m_LocalPosition: {x: -6.2, y: -0.94, z: 17}
   m_LocalScale: {x: 2.47049, y: 2.47049, z: 2.47049}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10635,6 +10637,40 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358125365}
+  m_Mesh: {fileID: 5460216494914580811, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
+--- !u!114 &1358125369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358125365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981a667d838754c41b492a8c3783f55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1358125370
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358125365}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5460216494914580811, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
 --- !u!1 &1370367251
 GameObject:
@@ -12118,7 +12154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1921786008853628, guid: a79ec8b373198d74f9ea6d1eaa4ec7f3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4438692629600562, guid: a79ec8b373198d74f9ea6d1eaa4ec7f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14106,7 +14142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509aea467b6780d43b503ebdb6055436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGravitationalForce: 1
+  CurrentGravitationalForce: 2
 --- !u!1 &1893897833
 GameObject:
   m_ObjectHideFlags: 0
@@ -16985,7 +17021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1566992228123213749
 MeshFilter:
   m_ObjectHideFlags: 0

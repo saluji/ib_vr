@@ -15,6 +15,7 @@ public class Basketball : MonoBehaviour
     LevelManager levelManager;
     Rigidbody rb;
 
+    // dribbling variables
     bool isBallDropped;
     int currentScore = 0;
     int maxScore = 3;
@@ -23,7 +24,7 @@ public class Basketball : MonoBehaviour
     Transform basket;
     float lowerAmount = 0.25f;
     float minHeight = -2f;
-    bool hasLowered;
+    bool hasLowered = false;
 
     void Awake()
     {

@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGameState(GameState.TaskTwo);
+        UpdateGameState(GameState.TaskZero);
     }
 
     public void UpdateGameState(GameState newState)

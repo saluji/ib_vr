@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public int buildIndex;
+    int buildIndex;
     public int BuildIndex { get { return buildIndex; } set { } }
-    
+
     void Awake()
     {
         buildIndex = SceneManager.GetActiveScene().buildIndex;
