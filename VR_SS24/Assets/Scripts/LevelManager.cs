@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    int buildIndex;
-
+    public int buildIndex;
+    public int BuildIndex { get { return buildIndex; } set { } }
+    
     void Awake()
     {
-        // buildIndex = SceneManager.GetActiveScene().buildIndex;
+        buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void LoadSpace()

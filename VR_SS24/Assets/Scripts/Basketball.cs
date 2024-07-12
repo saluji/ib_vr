@@ -12,23 +12,47 @@ public class Basketball : MonoBehaviour
     GameManager gameManager;
     UIManager uIManager;
     TextManager textManager;
+    LevelManager levelManager;
+    Rigidbody rb;
 
     bool isBallDropped;
     int currentScore = 0;
-    int maxScore = 5;
+    int maxScore = 3;
 
     // lower basket variables
     Transform basket;
-    [SerializeField] float lowerAmount = 0.25f;
-    [SerializeField] float minHeight = -1.75f;
+    float lowerAmount = 0.25f;
+    float minHeight = -2f;
     bool hasLowered;
 
     void Awake()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         basket = GameObject.Find("Basket").GetComponent<Transform>();
+
+        // logic for the basketball to keep bouncing near the ground and stopping after certain threshold depending on planet
+        rb = GetComponent<Rigidbody>();
+        switch (levelManager.BuildIndex)
+        {
+            case 1:
+                {
+                    rb.sleepThreshold = Physics.bounceThreshold = 1.25f;
+                    break;
+                }
+            case 2:
+                {
+                    rb.sleepThreshold = Physics.bounceThreshold = 0.001f;
+                    break;
+                }
+            case 3:
+                {
+                    rb.sleepThreshold = Physics.bounceThreshold = 0.05f;
+                    break;
+                }
+        }
 
         interactable = GetComponent<XRBaseInteractable>();
         interactable.selectEntered.AddListener(OnSelectEnteredHandler);
@@ -53,7 +77,7 @@ public class Basketball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            // dribbling logic
+            // dribbling score logic
             if (GameManager.instance.state == GameState.TaskOne)
             {
                 if (!isBallDropped)
@@ -85,7 +109,7 @@ public class Basketball : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // show return to ship panel if in TaskTwo
+        // show return to ship panel if succeeding to throw basketball into basket
         if (other.gameObject.CompareTag("Basket") && gameManager.state == GameState.TaskTwo)
         {
             uIManager.ShowReturnPanel();

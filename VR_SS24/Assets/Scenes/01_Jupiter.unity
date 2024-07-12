@@ -3980,7 +3980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &439917268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5559,7 +5559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &690245905
 Transform:
   m_ObjectHideFlags: 0
@@ -10342,7 +10342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0 / 5
+  m_text: 0 / 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
   m_sharedMaterial: {fileID: -2903771384293589167, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
@@ -14151,6 +14151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47490008f9f7d944869d5dab706053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildIndex: 3
 --- !u!1 &1896106563
 GameObject:
   m_ObjectHideFlags: 0
@@ -14739,7 +14740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 439917267}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -17353,13 +17354,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666159257}
     m_Modifications:
+    - target: {fileID: 1681341366036041137, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3975918846322602734, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_Name
       value: Basketball
       objectReference: {fileID: 0}
     - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
-      propertyPath: minHeight
-      value: -2
+      propertyPath: sleepThreshold
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: bounceThreshold
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.x
