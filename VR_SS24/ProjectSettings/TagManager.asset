@@ -10,6 +10,11 @@ TagManager:
   - Basket
   - Can
   - Ground
+  - TaskOne
+  - TaskTwo
+  - MoonVisitable
+  - EarthVisitable
+  - GameDone
   layers:
   - Default
   - TransparentFX

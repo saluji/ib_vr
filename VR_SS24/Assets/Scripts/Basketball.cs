@@ -4,6 +4,7 @@ using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.Rendering.UI;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Basketball : MonoBehaviour
@@ -90,10 +91,15 @@ public class Basketball : MonoBehaviour
                     // if ball hits ground twice without regrab, reset score to zero
                     currentScore = 0;
                 }
-
+                
                 // Refresh score in UI
-                GameManager.instance.HandleTaskOne(currentScore, maxScore);
                 textManager.TaskOneScore(currentScore, maxScore);
+
+                // show button for next task if reached maxScore
+                if (currentScore >= maxScore)
+                {
+                    uIManager.TaskTwoButton.gameObject.SetActive(true);
+                }
             }
 
             // basket logic

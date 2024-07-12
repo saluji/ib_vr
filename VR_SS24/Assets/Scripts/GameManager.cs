@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
     public GameState state;
-    UIManager uIManager;
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship
@@ -49,8 +48,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
     void Start()
@@ -73,16 +70,6 @@ public class GameManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
         OnGameStateChanged?.Invoke(newState);
-    }
-
-    public void HandleTaskOne(int score, int maxScore)
-    {
-        // if (state == GameState.TaskOne && score >= maxScore)
-        if (score >= maxScore)
-        {
-            // Show button
-            uIManager.TaskTwoButton.gameObject.SetActive(true);
-        }
     }
 
     public void ResetVariables()
