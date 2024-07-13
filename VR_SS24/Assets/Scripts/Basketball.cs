@@ -75,6 +75,9 @@ public class Basketball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // play sound
+        AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             // dribbling score logic
