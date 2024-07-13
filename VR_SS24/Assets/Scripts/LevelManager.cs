@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     {
         buildIndex = 0;
         GameManager.instance.ResetVariables();
+        // AudioManager.instance.BeginningVoiceLine();
         SceneManager.LoadScene(buildIndex);
     }
 

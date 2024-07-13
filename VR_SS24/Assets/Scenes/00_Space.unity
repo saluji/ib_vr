@@ -2259,16 +2259,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -3808,16 +3808,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -9432,7 +9432,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -16743,18 +16743,21 @@ MonoBehaviour:
   musicSource: {fileID: 219413566}
   sFXSource: {fileID: 1816689883}
   voiceSource: {fileID: 878238587}
-  music: {fileID: 0}
-  ambience: {fileID: 0}
-  basketball: {fileID: 0}
-  button: {fileID: 0}
-  can: {fileID: 0}
-  dart: {fileID: 0}
-  done: {fileID: 0}
-  spaceshipIdle: {fileID: 0}
-  sliderClick: {fileID: 0}
-  teleporter: {fileID: 0}
-  tennisball: {fileID: 0}
-  space00: {fileID: 0}
+  music: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
+  ambience: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
+  basketball: {fileID: 8300000, guid: a5f59309b06fea94da5a889b210f42a9, type: 3}
+  button: {fileID: 8300000, guid: 19cb08920bf7c2d4c9c9a3b5d84ebf5b, type: 3}
+  can: {fileID: 8300000, guid: c93d70c495c100b4e88ef751c65ce9eb, type: 3}
+  dart: {fileID: 8300000, guid: 2a4f6b92d3398de409218e65b257ebd2, type: 3}
+  done: {fileID: 8300000, guid: 50a728df160aa1944917b81c2de58a8d, type: 3}
+  sliderClick: {fileID: 8300000, guid: e0c2cd6e1ecf0a445b629780f7b77995, type: 3}
+  spaceshipIdle: {fileID: 8300000, guid: d47a1a01efbb5584b88236f719e84b23, type: 3}
+  teleporter: {fileID: 8300000, guid: 387528e7ab6feb146a089894ca2d7314, type: 3}
+  tennisball: {fileID: 8300000, guid: 87ef9aaa83a30cd4ea70b194426b3d6a, type: 3}
+  space00: {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
+  space01: {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
+  space02: {fileID: 8300000, guid: 53aac91d0e3097d44968109b99f91843, type: 3}
+  space03: {fileID: 8300000, guid: c4a0539e0288e02428897a64e97862b7, type: 3}
 --- !u!1 &1655500254
 GameObject:
   m_ObjectHideFlags: 0
@@ -18572,7 +18575,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -18582,7 +18585,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -18617,7 +18620,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -23566,6 +23569,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 1
+  isEarthVisitable: 1
+  isGameDone: 1
 --- !u!4 &4816706717239863021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1582114264267064582, guid: 7429cd7d98ff4d94d945425ad820864c, type: 3}
