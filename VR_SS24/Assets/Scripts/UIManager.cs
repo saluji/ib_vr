@@ -78,19 +78,4 @@ public class UIManager : MonoBehaviour
         taskPanel.SetActive(false);
         returnPanel.SetActive(true);
     }
-
-    void ShowJupiterPanel()
-    {
-        taskOneNext.SetActive(true);
-    }
-
-    void ShowMoonPanel()
-    {
-        taskTwoNext.SetActive(true);
-    }
-
-    void ShowEarthPanel()
-    {
-        taskThreeNext.SetActive(true);
-    }
 }

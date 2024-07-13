@@ -78,7 +78,6 @@ public class GameManager : MonoBehaviour
         isPracticingCan = false;
         isPracticingDart = false;
         UpdateGameState(GameState.TaskZero);
-        // AudioManager.instance.BeginningVoiceLine();
     }
 
     public void SwitchToTaskOne()
@@ -90,19 +89,4 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(GameState.TaskTwo);
     }
-
-    // public void MoonVisitable()
-    // {
-    //     isMoonVisitable = true;
-    // }
-
-    // public void EarthVisitable()
-    // {
-    //     isEarthVisitable = true;
-    // }
-
-    // public void GameDone()
-    // {
-    //     isGameDone = true;
-    // }
 }

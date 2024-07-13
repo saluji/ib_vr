@@ -105,7 +105,6 @@ public class Basketball : MonoBehaviour
                     switch (levelManager.BuildIndex)
                     {
                         case 1:
-                            // GameManager.instance.isMoonVisitable();
                             GameManager.instance.isMoonVisitable = true;
                             break;
                         case 2:

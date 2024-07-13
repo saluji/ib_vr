@@ -83,7 +83,7 @@ public class AudioManager : MonoBehaviour
     {
         switch (levelManager.BuildIndex)
         {
-            // set starting sound for ever scene plus condition
+            // set starting sound for every scene plus condition
             case 0:
                 musicSource.clip = musicSpace;
                 ambienceSource.clip = ambienceSpace;
