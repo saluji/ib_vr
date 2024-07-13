@@ -10,18 +10,18 @@ public class Controller : MonoBehaviour
     [SerializeField] GameObject menu;
     [SerializeField] Transform menuAnchor;
     bool isUIToggled;
-    bool isResetUIPositionPressed;
 
     void Awake()
     {
         controllerInput = new ControllerInput();
+        isUIToggled = true;
     }
 
     void OnEnable()
     {
         controllerInput.UIInput.Enable();
         controllerInput.UIInput.ToggleUI.performed += OnUIToggle;
-        controllerInput.UIInput.ResetUIPosition.started += OnResetPosition;
+        controllerInput.UIInput.ResetUIPosition.started += OnResetUIPosition;
     }
 
     void OnDisable()
@@ -32,11 +32,20 @@ public class Controller : MonoBehaviour
 
     void OnUIToggle(InputAction.CallbackContext context)
     {
+        // toggle menu on / off and reset position to in front of camera
         isUIToggled = !isUIToggled;
         menu.SetActive(isUIToggled);
+        if (isUIToggled)
+        {
+            menu.transform.position = menuAnchor.transform.position;
+            menu.transform.rotation = menuAnchor.transform.rotation;
+        }
     }
-    void OnResetPosition(InputAction.CallbackContext context)
+
+    void OnResetUIPosition(InputAction.CallbackContext context)
     {
-        isUIToggled = !isUIToggled;
+        // reset position to in front of camera
+        menu.transform.position = menuAnchor.transform.position;
+        menu.transform.rotation = menuAnchor.transform.rotation;
     }
 }

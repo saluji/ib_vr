@@ -6,13 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    PlayerInput playerInput;
-    [SerializeField] Transform menuTransform;
-    [SerializeField] Transform menuAnchor;
-    
-    GameManager gameManager;
+    public Slider gravitySlider;
     GravityManager gravityManager;
-    [SerializeField] TextManager textManager;
+    TextManager textManager;
+
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
     [SerializeField] GameObject jupiterButton;
@@ -20,45 +17,39 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject earthButton;
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
-    [SerializeField] GameObject taskThreeButton;
-    [SerializeField] GameObject taskFourButton;
-    public Slider gravitySlider;
 
+    public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
+        textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
+        
+        jupiterButton.SetActive(GameManager.instance.IsMoonVisitable ? true : false);
+        moonButton.SetActive(GameManager.instance.IsEarthVisitable? true : false);
+        earthButton.SetActive(GameManager.instance.IsGameDone? true : false);
+
+        taskOneButton.SetActive(true);
+        taskTwoButton.SetActive(false);
     }
 
     void Update()
     {
-        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart)
-        // if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gameManager.IsJupiterVisitable)
-
-        // able to visit planet after doing minigame task in ship and current gravity is set on jupiter
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 1)
+        // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
         {
             ShowJupiterButton();
         }
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 2 && gameManager.IsMoonVisitable)
+
+        // able to visit planet after doing task on jupiter and current gravity is set to moon
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
         {
             ShowMoonButton();
         }
-        if (gameManager.IsPracticingCan && gameManager.IsPracticingDart && gravitySlider.value == 3 && gameManager.IsEarthVisitable)
+        
+        // able to visit planet after doing task on moon and current gravity is set to earth
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
         {
             ShowEarthButton();
-        }
-        if (gameManager.TaskOneCounter == 3)
-        {
-            ShowTaskTwoButton();
-        }
-        if (gameManager.TaskTwoCounter == 3)
-        {
-            ShowTaskThreeButton();
-        }
-        if (gameManager.TaskThreeCounter == 3)
-        {
-            ShowTaskFourButton();
         }
     }
 
@@ -76,28 +67,19 @@ public class UIManager : MonoBehaviour
         taskPanel.SetActive(false);
         returnPanel.SetActive(true);
     }
+
     void ShowJupiterButton()
     {
         jupiterButton.SetActive(true);
     }
+
     void ShowMoonButton()
     {
         moonButton.SetActive(true);
     }
+
     void ShowEarthButton()
     {
         earthButton.SetActive(true);
-    }
-    void ShowTaskTwoButton()
-    {
-        taskTwoButton.SetActive(true);
-    }
-    void ShowTaskThreeButton()
-    {
-        taskThreeButton.SetActive(true);
-    }
-    void ShowTaskFourButton()
-    {
-        taskFourButton.SetActive(true);
     }
 }

@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Prefabs/00_BasketballOld.prefab.meta
+guid: 67f64951a0c87d34c9ee6325162d626b
+PrefabImporter:
+========
 guid: 290fc7fbb3896a24f99ad6094c208e1e
-timeCreated: 1635472749
-licenseType: Free
 DefaultImporter:
+>>>>>>>> erwin2:VR_SS24/Assets/PolygonSciFiWorlds/URP_Extract_Me.unitypackage.meta
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -9,6 +9,12 @@ TagManager:
   - Anchor
   - Basket
   - Can
+  - Ground
+  - TaskOne
+  - MoonVisitable
+  - EarthVisitable
+  - GameDone
+  - TaskTwo
   layers:
   - Default
   - TransparentFX

@@ -1,109 +1,93 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-// public enum GameState
-// {
-//     TaskZero = 0,
-//     TaskOne,
-//     TaskTwo,
-//     TaskThree,
-//     TaskFour
-// }
+public enum GameState
+{
+    TaskZero,
+    TaskOne,
+    TaskTwo
+}
 
 public class GameManager : MonoBehaviour
 {
+    public GameState state;
+    public static GameManager instance { get; private set; }
+    public static event Action<GameState> OnGameStateChanged;
+
     // visitable planets in ship
-    // bool isJupiterVisitable = false;
     bool isMoonVisitable = false;
     bool isEarthVisitable = false;
+    bool isGameDone = false;
 
     // task for minigames in ship
-    // public static bool isPracticingDart;
-    // public static bool isPracticingCan;
-    bool isPracticingDart;
-    bool isPracticingCan;
+    bool isPracticingDart = false;
+    bool isPracticingCan = false;
 
-    // tasks for basketball level
-    bool inTaskOne;
-    bool inTaskTwo;
-    bool inTaskThree;
-    bool inTaskFour;
-
-    // task counter
-    int taskOneCounter;
-    int taskTwoCounter;
-    int taskThreeCounter;
-
-    // public bool IsJupiterVisitable { get { return isJupiterVisitable; } }
     public bool IsMoonVisitable { get { return isMoonVisitable; } }
     public bool IsEarthVisitable { get { return isEarthVisitable; } }
+    public bool IsGameDone { get { return isGameDone; } }
     public bool IsPracticingCan { get { return isPracticingCan; } set { isPracticingCan = value; } }
     public bool IsPracticingDart { get { return isPracticingDart; } set { isPracticingDart = value; } }
-    public bool InTaskOne { get { return inTaskOne; } }
-    public bool InTaskTwo { get { return inTaskTwo; } }
-    public bool InTaskThree { get { return inTaskThree; } }
-    public bool InTaskFour { get { return inTaskFour; } }
-
-    public int TaskOneCounter { get { return taskOneCounter; } }
-    public int TaskTwoCounter { get { return taskTwoCounter; } }
-    public int TaskThreeCounter { get { return taskThreeCounter; } }
-
-    // public void SetGameState(GameState newState)
-    // {
-    //     switch(newState)
-    // }
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            if (transform.parent != null)
+            {
+                // set GameObject as own parent while still being child object
+                transform.SetParent(null);
+            }
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        UpdateGameState(GameState.TaskZero);
+    }
+
+    public void UpdateGameState(GameState newState)
+    {
+        state = newState;
+        switch (newState)
+        {
+            case GameState.TaskZero:
+                break;
+            case GameState.TaskOne:
+                break;
+            case GameState.TaskTwo:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+        }
+        OnGameStateChanged?.Invoke(newState);
+    }
+
+    public void ResetVariables()
+    {
+        // reset variables
         isPracticingCan = false;
         isPracticingDart = false;
-
-        inTaskOne = false;
-        inTaskTwo = false;
-        inTaskThree = false;
-        inTaskFour = false;
-
-        taskOneCounter = 0;
-        taskTwoCounter = 0;
-        taskThreeCounter = 0;
+        UpdateGameState(GameState.TaskZero);
     }
 
-    public void IncreaseTaskOneCounter()
+    public void SwitchToTaskOne()
     {
-        if (InTaskOne)
-            taskOneCounter++;
-    }
-    public void IncreaseTaskTwoCounter()
-    {
-        if (inTaskTwo)
-            taskTwoCounter++;
-    }
-    public void IncreaseTaskThreeCounter()
-    {
-        if (inTaskThree)
-            taskThreeCounter++;
+        UpdateGameState(GameState.TaskOne);
     }
 
-    public void TaskOne()
+    public void SwitchToTaskTwo()
     {
-        inTaskFour = !inTaskOne;
-    }
-
-    public void TaskTwo()
-    {
-        inTaskFour = !inTaskTwo;
-    }
-
-    public void TaskThree()
-    {
-        inTaskFour = !inTaskThree;
-    }
-
-    public void TaskFour()
-    {
-        inTaskFour = !inTaskFour;
+        UpdateGameState(GameState.TaskTwo);
     }
 
     public void MoonVisitable()
@@ -114,5 +98,10 @@ public class GameManager : MonoBehaviour
     public void EarthVisitable()
     {
         isEarthVisitable = true;
+    }
+
+    public void GameDone()
+    {
+        isGameDone = true;
     }
 }

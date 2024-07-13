@@ -61,7 +61,18 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3da1160c-38e0-4493-a3a2-1ad97d14c945"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleUI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c108360-dd38-4843-bfbe-feb6a4d96ee4"",
+                    ""path"": ""<XRController>{LeftHand}/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -73,6 +84,28 @@ public partial class @ControllerInput: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""b85a8c9e-6d4b-43a9-8321-d3b00e33725e"",
                     ""path"": ""<XRController>{RightHand}/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetUIPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4938ba56-676d-4cde-a251-01bd546ae598"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResetUIPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7f1cdfe4-71ee-42d3-b8cb-bdaf8d8010a0"",
+                    ""path"": ""<XRController>{RightHand}/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
