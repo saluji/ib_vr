@@ -12031,9 +12031,12 @@ MonoBehaviour:
   gravitySlider: {fileID: 1911746993}
   taskPanel: {fileID: 690245904}
   returnPanel: {fileID: 1171472821}
-  jupiterButton: {fileID: 1646190131}
-  moonButton: {fileID: 1986286915}
-  earthButton: {fileID: 1200200709}
+  taskOneNext: {fileID: 0}
+  taskTwoNext: {fileID: 0}
+  taskThreeNext: {fileID: 0}
+  jupiterNextButton: {fileID: 0}
+  moonNextButton: {fileID: 0}
+  earthNextButton: {fileID: 0}
   taskOneButton: {fileID: 1483578964}
   taskTwoButton: {fileID: 23864365}
 --- !u!4 &1571521337
@@ -14851,10 +14854,9 @@ GameObject:
   - component: {fileID: 1966983561}
   - component: {fileID: 1966983560}
   - component: {fileID: 1966983559}
-  - component: {fileID: 1966983562}
   m_Layer: 0
   m_Name: Yes
-  m_TagString: GameDone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14973,18 +14975,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966983557}
   m_CullTransparentMesh: 1
---- !u!114 &1966983562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966983557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1971218905
 GameObject:
   m_ObjectHideFlags: 0
@@ -16087,6 +16077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!1 &2066711554
 GameObject:
   m_ObjectHideFlags: 0

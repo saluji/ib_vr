@@ -11,10 +11,8 @@ TagManager:
   - Can
   - Ground
   - TaskOne
-  - MoonVisitable
-  - EarthVisitable
-  - GameDone
   - TaskTwo
+  - MoonVisitable
   layers:
   - Default
   - TransparentFX

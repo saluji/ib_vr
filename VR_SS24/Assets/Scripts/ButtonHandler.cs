@@ -25,15 +25,6 @@ public class ButtonHandler : MonoBehaviour
             case "TaskTwo":
                 GameManager.instance.SwitchToTaskTwo();
                 break;
-            // case "MoonVisitable":
-            //     GameManager.instance.MoonVisitable();
-            //     break;
-            // case "EarthVisitable":
-            //     GameManager.instance.EarthVisitable();
-            //     break;
-            // case "GameDone":
-            //     GameManager.instance.GameDone();
-            //     break;
             default:
                 Debug.LogWarning("Unknown button tag: " + buttonTag.tag);
                 break;

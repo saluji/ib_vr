@@ -76,51 +76,6 @@ public class AudioManager : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
         SetBeginningAudio();
-        // switch (levelManager.BuildIndex)
-        // {
-        //     // set starting sound for ever scene plus condition
-        //     case 0:
-        //         musicSource.clip = musicSpace;
-        //         ambienceSource.clip = ambienceSpace;
-        //         if (voiceSource != null)
-        //         {
-        //             BeginningVoiceLine();
-        //         }
-        //         else
-        //         {
-        //             Debug.LogError("VoiceSource is not assigned!");
-        //         }
-        //         break;
-        //     case 1:
-        //         musicSource.clip = musicJupiter;
-        //         ambienceSource.clip = ambienceJupiter;
-        //         // voiceSource.clip = jupiter00;
-        //         voiceSource.clip = space01;
-        //         break;
-        //     case 2:
-        //         musicSource.clip = musicMoon;
-        //         ambienceSource.clip = ambienceMoon;
-        //         // voiceSource.clip = moon00;
-        //         voiceSource.clip = space02;
-        //         break;
-        //     case 3:
-        //         musicSource.clip = musicEarth;
-        //         ambienceSource.clip = ambienceEarth;
-        //         // voiceSource.clip = earth00;
-        //         voiceSource.clip = space03;
-        //         break;
-        //     default:
-        //         Debug.Log("No source");
-        //         break;
-        // }
-        // musicSource.Play();
-        // ambienceSource.Play();
-
-        // // Only call voiceSource.Play() once for the voice clip
-        // if (voiceSource.clip != null)  // Ensure there is a clip assigned
-        // {
-        //     voiceSource.Play();
-        // }
     }
 
     public void SetBeginningAudio()
@@ -171,7 +126,7 @@ public class AudioManager : MonoBehaviour
             voiceSource.Play();
         }
     }
-    
+
     public void PlaySFX(AudioClip clip)
     {
         sFXSource.PlayOneShot(clip);
