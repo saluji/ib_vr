@@ -39,11 +39,13 @@ public class UIManager : MonoBehaviour
         {
             ShowJupiterButton();
         }
+
         // able to visit planet after doing task on jupiter and current gravity is set to moon
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
         {
             ShowMoonButton();
         }
+        
         // able to visit planet after doing task on moon and current gravity is set to earth
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
         {
