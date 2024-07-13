@@ -117,20 +117,35 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnTeleporter()
     {
-        if (!isSpawning)
+        // only spawn teleporter once
+        if (!isTeleporterSpawned)
         {
-            StartCoroutine(SpawnCooldownCoroutine(() =>
-            {
-                // Only spawn teleporter once
-                if (!isTeleporterSpawned)
-                {
-                    Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
-                    isTeleporterSpawned = true;
-                    teleporterPrefab.SetActive(true);
-                }
-            }));
+            Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
+            isTeleporterSpawned = true;
+            teleporterPrefab.SetActive(true);
+            AudioManager.instance.PlaySFX(AudioManager.instance.teleporter);
+
         }
+
     }
+
+    // public void SpawnTeleporter()
+    // {
+    //     if (!isSpawning)
+    //     {
+    //         AudioManager.instance.PlaySFX(AudioManager.instance.teleporter);
+    //         StartCoroutine(SpawnCooldownCoroutine(() =>
+    //         {
+    //             // Only spawn teleporter once
+    //             if (!isTeleporterSpawned)
+    //             {
+    //                 Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
+    //                 isTeleporterSpawned = true;
+    //                 teleporterPrefab.SetActive(true);
+    //             }
+    //         }));
+    //     }
+    // }
 
     private IEnumerator SpawnCooldownCoroutine(System.Action spawnAction)
     {
