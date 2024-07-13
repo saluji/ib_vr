@@ -99,6 +99,19 @@ public class Basketball : MonoBehaviour
                 if (currentScore >= maxScore)
                 {
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
+                    switch (levelManager.BuildIndex)
+                    {
+                        case 1:
+                            // GameManager.instance.isMoonVisitable();
+                            GameManager.instance.isMoonVisitable = true;
+                            break;
+                        case 2:
+                            GameManager.instance.IsEarthVisitable = true;
+                            break;
+                        case 3:
+                            GameManager.instance.isGameDone = true;
+                            break;
+                    }
                 }
             }
 

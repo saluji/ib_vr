@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
     bool isPracticingDart = false;
     bool isPracticingCan = false;
 
-    public bool IsMoonVisitable { get { return isMoonVisitable; } }
-    public bool IsEarthVisitable { get { return isEarthVisitable; } }
-    public bool IsGameDone { get { return isGameDone; } }
+    public bool IsMoonVisitable { get { return isMoonVisitable; } set { isMoonVisitable = value; } }
+    public bool IsEarthVisitable { get { return isEarthVisitable; } set { isEarthVisitable = value; } }
+    public bool IsGameDone { get { return isGameDone; } set { isGameDone = value; } }
     public bool IsPracticingCan { get { return isPracticingCan; } set { isPracticingCan = value; } }
     public bool IsPracticingDart { get { return isPracticingDart; } set { isPracticingDart = value; } }
 
@@ -91,18 +91,18 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.TaskTwo);
     }
 
-    public void MoonVisitable()
-    {
-        isMoonVisitable = true;
-    }
+    // public void MoonVisitable()
+    // {
+    //     isMoonVisitable = true;
+    // }
 
-    public void EarthVisitable()
-    {
-        isEarthVisitable = true;
-    }
+    // public void EarthVisitable()
+    // {
+    //     isEarthVisitable = true;
+    // }
 
-    public void GameDone()
-    {
-        isGameDone = true;
-    }
+    // public void GameDone()
+    // {
+    //     isGameDone = true;
+    // }
 }

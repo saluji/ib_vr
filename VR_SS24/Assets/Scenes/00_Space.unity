@@ -2259,7 +2259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16743,8 +16743,14 @@ MonoBehaviour:
   musicSource: {fileID: 219413566}
   sFXSource: {fileID: 1816689883}
   voiceSource: {fileID: 878238587}
-  music: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
-  ambience: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
+  musicSpace: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
+  musicJupiter: {fileID: 8300000, guid: fd0c89adfbb65a348ac7f205e9d18b59, type: 3}
+  musicMoon: {fileID: 8300000, guid: fb7ff0c729394cc4288e4bcb50da51f7, type: 3}
+  musicEarth: {fileID: 8300000, guid: b2f5f903fec4a6f478dbada225d08807, type: 3}
+  ambienceSpace: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
+  ambienceJupiter: {fileID: 8300000, guid: a611779ef86bcdf4ba1c5f302965779f, type: 3}
+  ambienceMoon: {fileID: 8300000, guid: dbcfda08b2bbcf6498c79270362d7ab8, type: 3}
+  ambienceEarth: {fileID: 8300000, guid: 63981840968f5c545bc1eef33e5ab763, type: 3}
   basketball: {fileID: 8300000, guid: a5f59309b06fea94da5a889b210f42a9, type: 3}
   button: {fileID: 8300000, guid: 19cb08920bf7c2d4c9c9a3b5d84ebf5b, type: 3}
   can: {fileID: 8300000, guid: c93d70c495c100b4e88ef751c65ce9eb, type: 3}
@@ -16758,6 +16764,9 @@ MonoBehaviour:
   space01: {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
   space02: {fileID: 8300000, guid: 53aac91d0e3097d44968109b99f91843, type: 3}
   space03: {fileID: 8300000, guid: c4a0539e0288e02428897a64e97862b7, type: 3}
+  jupiter00: {fileID: 0}
+  moon00: {fileID: 0}
+  earth00: {fileID: 0}
 --- !u!1 &1655500254
 GameObject:
   m_ObjectHideFlags: 0
@@ -23569,9 +23578,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  isMoonVisitable: 1
-  isEarthVisitable: 1
-  isGameDone: 1
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!4 &4816706717239863021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1582114264267064582, guid: 7429cd7d98ff4d94d945425ad820864c, type: 3}

@@ -27,5 +27,8 @@ public class Teleporter : MonoBehaviour
     void OnSelectEnter(SelectEnterEventArgs args)
     {
         levelManager.LoadLevel();
+
+        // store buildIndex in order to play the right music in space level
+        levelManager.BuildIndex = 0;
     }
 }
