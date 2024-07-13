@@ -4988,7 +4988,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8078506364459762311, guid: f8842e7ae6ae5ac4286429c2c413a11f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1209000051}
   m_SourcePrefab: {fileID: 100100000, guid: f8842e7ae6ae5ac4286429c2c413a11f, type: 3}
 --- !u!4 &510647249 stripped
 Transform:
@@ -11766,6 +11769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basketball
       objectReference: {fileID: 0}
+    - target: {fileID: 3975918846322602734, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12322,6 +12329,23 @@ Transform:
   - {fileID: 471117894}
   m_Father: {fileID: 1467713640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209000045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8078506364459762311, guid: f8842e7ae6ae5ac4286429c2c413a11f, type: 3}
+  m_PrefabInstance: {fileID: 510647248}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209000051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209000045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11770bfcfc1af948b214969a4c98e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1250988849
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,6 +16841,7 @@ MonoBehaviour:
   spaceshipIdle: {fileID: 8300000, guid: d47a1a01efbb5584b88236f719e84b23, type: 3}
   teleporter: {fileID: 8300000, guid: 387528e7ab6feb146a089894ca2d7314, type: 3}
   tennisball: {fileID: 8300000, guid: 87ef9aaa83a30cd4ea70b194426b3d6a, type: 3}
+  uIClick: {fileID: 0}
   space00: {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
   space01: {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
   space02: {fileID: 8300000, guid: 53aac91d0e3097d44968109b99f91843, type: 3}

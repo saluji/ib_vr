@@ -43,6 +43,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip spaceshipIdle;
     public AudioClip teleporter;
     public AudioClip tennisball;
+    public AudioClip uIClick;
 
     [Header("Voice lines")]
     public AudioClip space00;
