@@ -7026,7 +7026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.5}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &908681863
@@ -8137,7 +8137,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 1113579662}
   m_CameraFloorOffsetObject: {fileID: 130550430}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 0.75
+  m_CameraYOffset: 1.1176
 --- !u!1 &1142783062
 GameObject:
   m_ObjectHideFlags: 0
@@ -12028,6 +12028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109a196cb7d629c40904561310adbc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravitySlider: {fileID: 1911746993}
   taskPanel: {fileID: 690245904}
   returnPanel: {fileID: 1171472821}
   jupiterButton: {fileID: 1646190131}
@@ -12035,7 +12036,6 @@ MonoBehaviour:
   earthButton: {fileID: 1200200709}
   taskOneButton: {fileID: 1483578964}
   taskTwoButton: {fileID: 23864365}
-  gravitySlider: {fileID: 1911746993}
 --- !u!4 &1571521337
 Transform:
   m_ObjectHideFlags: 0

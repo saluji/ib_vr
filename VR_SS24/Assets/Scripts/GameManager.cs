@@ -13,8 +13,8 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
     public GameState state;
+    public static GameManager instance { get; private set; }
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship

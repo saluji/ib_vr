@@ -19,8 +19,8 @@ public class TextManager : MonoBehaviour
     }
 
     public void ChangeGravityText()
-    {
-        // change gravity text on terminal depending on slider
+    { 
+        // change gravity text on terminal depending on slider value
         gravityTextComponent.text = string.Empty;
         gravityTextComponent.text = "Gravity mode: " + ((GravitationalForceMode)uIManager.gravitySlider.value).ToString();
     }

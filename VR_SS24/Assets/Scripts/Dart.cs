@@ -15,6 +15,7 @@ public class Dart : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Target"))
         {
+            // stick dart to dart target
             GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
         }

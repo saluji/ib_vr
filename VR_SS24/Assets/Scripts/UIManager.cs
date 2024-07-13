@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance { get; private set; }
+    public Slider gravitySlider;
     GravityManager gravityManager;
     TextManager textManager;
+
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
     [SerializeField] GameObject jupiterButton;
@@ -16,7 +17,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject earthButton;
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
-    public Slider gravitySlider;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
     void Awake()

@@ -42,6 +42,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnTeleporter()
     {
+        // only spawn teleporter once
         if (!isTeleporterSpawned)
         {
             Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
