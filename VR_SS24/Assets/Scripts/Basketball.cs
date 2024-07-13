@@ -91,7 +91,7 @@ public class Basketball : MonoBehaviour
                     // if ball hits ground twice without regrab, reset score to zero
                     currentScore = 0;
                 }
-                
+
                 // Refresh score in UI
                 textManager.TaskOneScore(currentScore, maxScore);
 

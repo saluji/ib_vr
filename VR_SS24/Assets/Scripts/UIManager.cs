@@ -12,21 +12,29 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
-    [SerializeField] GameObject jupiterButton;
-    [SerializeField] GameObject moonButton;
-    [SerializeField] GameObject earthButton;
+    [SerializeField] GameObject taskOneNext;
+    [SerializeField] GameObject taskTwoNext;
+    [SerializeField] GameObject taskThreeNext;
+    [SerializeField] GameObject jupiterNextButton;
+    [SerializeField] GameObject moonNextButton;
+    [SerializeField] GameObject earthNextButton;
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
+
     void Awake()
     {
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-        
-        jupiterButton.SetActive(GameManager.instance.IsMoonVisitable ? true : false);
-        moonButton.SetActive(GameManager.instance.IsEarthVisitable? true : false);
-        earthButton.SetActive(GameManager.instance.IsGameDone? true : false);
+
+        jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
+        moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
+        earthNextButton.SetActive(GameManager.instance.IsGameDone);
+
+        taskOneNext.SetActive(false);
+        taskTwoNext.SetActive(false);
+        taskThreeNext.SetActive(false);
 
         taskOneButton.SetActive(true);
         taskTwoButton.SetActive(false);
@@ -37,19 +45,22 @@ public class UIManager : MonoBehaviour
         // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
         {
-            ShowJupiterButton();
+            // ShowJupiterPanel();
+            taskOneNext.SetActive(true);
         }
 
         // able to visit planet after doing task on jupiter and current gravity is set to moon
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
         {
-            ShowMoonButton();
+            // ShowMoonPanel();
+            taskTwoNext.SetActive(true);
         }
-        
+
         // able to visit planet after doing task on moon and current gravity is set to earth
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
         {
-            ShowEarthButton();
+            // ShowEarthPanel();
+            taskThreeNext.SetActive(true);
         }
     }
 
@@ -68,18 +79,18 @@ public class UIManager : MonoBehaviour
         returnPanel.SetActive(true);
     }
 
-    void ShowJupiterButton()
+    void ShowJupiterPanel()
     {
-        jupiterButton.SetActive(true);
+        taskOneNext.SetActive(true);
     }
 
-    void ShowMoonButton()
+    void ShowMoonPanel()
     {
-        moonButton.SetActive(true);
+        taskTwoNext.SetActive(true);
     }
 
-    void ShowEarthButton()
+    void ShowEarthPanel()
     {
-        earthButton.SetActive(true);
+        taskThreeNext.SetActive(true);
     }
 }
