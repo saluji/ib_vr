@@ -80,13 +80,13 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.TaskZero);
     }
 
-    public void SwitchToTaskOne()
-    {
-        UpdateGameState(GameState.TaskOne);
-    }
+    // public void SwitchToTaskOne()
+    // {
+    //     UpdateGameState(GameState.TaskOne);
+    // }
 
-    public void SwitchToTaskTwo()
-    {
-        UpdateGameState(GameState.TaskTwo);
-    }
+    // public void SwitchToTaskTwo()
+    // {
+    //     UpdateGameState(GameState.TaskTwo);
+    // }
 }

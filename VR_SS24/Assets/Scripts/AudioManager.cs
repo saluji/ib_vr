@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip basketball;
-    public AudioClip button;
+    public AudioClip buttonPlate;
     public AudioClip can;
     public AudioClip dart;
     public AudioClip done;
@@ -56,6 +56,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip moon00;
 
     public AudioClip earth00;
+
+    public AudioClip[] voiceLines;
 
     void Awake()
     {

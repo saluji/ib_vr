@@ -9,9 +9,15 @@ public class UIManager : MonoBehaviour
     public Slider gravitySlider;
     GravityManager gravityManager;
     TextManager textManager;
+    LevelManager levelManager;
 
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
+    [SerializeField] GameObject controlPanel;
+    [SerializeField] GameObject planetPanel;
+    [SerializeField] GameObject jupiterPanel;
+    [SerializeField] GameObject moonPanel;
+    [SerializeField] GameObject earthPanel;
     [SerializeField] GameObject taskOneNext;
     [SerializeField] GameObject taskTwoNext;
     [SerializeField] GameObject taskThreeNext;
@@ -27,17 +33,8 @@ public class UIManager : MonoBehaviour
     {
         gravityManager = GameObject.Find("GravityManager").GetComponent<GravityManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
-
-        jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
-        moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
-        earthNextButton.SetActive(GameManager.instance.IsGameDone);
-
-        taskOneNext.SetActive(false);
-        taskTwoNext.SetActive(false);
-        taskThreeNext.SetActive(false);
-
-        taskOneButton.SetActive(true);
-        taskTwoButton.SetActive(false);
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        StartingUI();
     }
 
     void Update()
@@ -67,6 +64,7 @@ public class UIManager : MonoBehaviour
     public void Slider()
     {
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
+        AudioManager.instance.PlaySFX(AudioManager.instance.sliderClick);
         gravityManager.SetGravityMode(mode);
 
         // set gravity text
@@ -78,4 +76,101 @@ public class UIManager : MonoBehaviour
         taskPanel.SetActive(false);
         returnPanel.SetActive(true);
     }
+
+    // public void StartingUI()
+    // {
+    //     jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
+    //     moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
+    //     earthNextButton.SetActive(GameManager.instance.IsGameDone);
+
+    //     if (levelManager.BuildIndex == 0)
+    //     {
+    //         if (GameManager.instance.IsGameDone)
+    //         {
+    //             controlPanel.SetActive(false);
+    //             planetPanel.SetActive(true);
+    //             jupiterPanel.SetActive(false);
+    //             moonPanel.SetActive(false);
+    //             earthPanel.SetActive(true);
+    //         }
+
+    //         else if (GameManager.instance.IsEarthVisitable)
+    //         {
+    //             controlPanel.SetActive(false);
+    //             planetPanel.SetActive(true);
+    //             jupiterPanel.SetActive(false);
+    //             moonPanel.SetActive(true);
+    //             earthPanel.SetActive(false);
+    //         }
+
+    //         else if (GameManager.instance.IsMoonVisitable)
+    //         {
+    //             controlPanel.SetActive(false);
+    //             planetPanel.SetActive(true);
+    //             jupiterPanel.SetActive(true);
+    //             moonPanel.SetActive(false);
+    //             earthPanel.SetActive(false);
+    //         }
+
+    //         else
+    //         {
+    //             controlPanel.SetActive(true);
+    //             planetPanel.SetActive(false);
+    //             jupiterPanel.SetActive(false);
+    //             moonPanel.SetActive(false);
+    //             earthPanel.SetActive(false);
+    //         }
+    //     }
+
+    //     taskOneNext.SetActive(false);
+    //     taskTwoNext.SetActive(false);
+    //     taskThreeNext.SetActive(false);
+
+    //     taskOneButton.SetActive(true);
+    //     taskTwoButton.SetActive(false);
+    // }
+
+    public void StartingUI()
+    {
+        jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
+        moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
+        earthNextButton.SetActive(GameManager.instance.IsGameDone);
+
+        if (levelManager.BuildIndex == 0)
+        {
+            if (GameManager.instance.IsGameDone)
+            {
+                SetPanelStates(false, true, false, false, true);
+            }
+            else if (GameManager.instance.IsEarthVisitable)
+            {
+                SetPanelStates(false, true, false, true, false);
+            }
+            else if (GameManager.instance.IsMoonVisitable)
+            {
+                SetPanelStates(false, true, true, false, false);
+            }
+            else
+            {
+                SetPanelStates(true, false, true, false, false);
+            }
+        }
+
+        taskOneNext.SetActive(false);
+        taskTwoNext.SetActive(false);
+        taskThreeNext.SetActive(false);
+
+        taskOneButton.SetActive(true);
+        taskTwoButton.SetActive(false);
+    }
+
+    private void SetPanelStates(bool control, bool planet, bool jupiter, bool moon, bool earth)
+    {
+        controlPanel.SetActive(control);
+        planetPanel.SetActive(planet);
+        jupiterPanel.SetActive(jupiter);
+        moonPanel.SetActive(moon);
+        earthPanel.SetActive(earth);
+    }
+
 }
