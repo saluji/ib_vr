@@ -23957,9 +23957,9 @@ MonoBehaviour:
   jupiterPanel: {fileID: 75884423}
   moonPanel: {fileID: 1975120467}
   earthPanel: {fileID: 2145469269}
-  jupiterVisitButton: {fileID: 0}
-  moonVisitButton: {fileID: 0}
-  earthVisitButton: {fileID: 0}
+  jupiterVisitButton: {fileID: 1724048661}
+  moonVisitButton: {fileID: 226884130}
+  earthVisitButton: {fileID: 356753529}
   nextPlanetJupiter: {fileID: 301495541}
   nextPlanetMoon: {fileID: 1282901867}
   nextPlanetEarth: {fileID: 1009099746}
@@ -23969,7 +23969,6 @@ MonoBehaviour:
   taskOneNext: {fileID: 1328335475}
   taskTwoNext: {fileID: 1968867404}
   taskThreeNext: {fileID: 1880296744}
-  taskOneButton: {fileID: 2126628024}
   taskTwoButton: {fileID: 1747341533}
 --- !u!4 &8020492749109665423
 Transform:

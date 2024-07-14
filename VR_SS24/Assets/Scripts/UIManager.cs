@@ -41,7 +41,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject taskTwoNext;
     [SerializeField] GameObject taskThreeNext;
 
-    [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
@@ -126,7 +125,6 @@ public class UIManager : MonoBehaviour
         taskTwoNext.SetActive(false);
         taskThreeNext.SetActive(false);
 
-        taskOneButton.SetActive(true);
         taskTwoButton.SetActive(false);
     }
 
