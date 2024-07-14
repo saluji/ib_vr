@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Prefabs/00_TennisballOld.prefab.meta
 guid: 32b4a84ef8787f34b9cc5d11f4d419ad
+========
+guid: 42e40d7b2d1edb543a54c00847c267f7
+>>>>>>>> erwin2:VR_SS24/Assets/Prefabs/00_DartOld.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

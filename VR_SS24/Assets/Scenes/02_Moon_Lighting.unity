@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ec46d2188d4b8774e847e75f1e12a8db, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d6ae44ff8913405409b61351c6788c87, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3130029, g: 0.5501603, b: 0.8220557, a: 1}
+  m_IndirectSpecularColor: {r: 0.017383957, g: 0.027789248, b: 0.037670694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 23864368}
   - component: {fileID: 23864367}
   - component: {fileID: 23864370}
+  - component: {fileID: 23864371}
   m_Layer: 0
   m_Name: TaskTwoButton
   m_TagString: TaskTwo
@@ -479,6 +480,18 @@ CanvasRenderer:
   m_GameObject: {fileID: 23864365}
   m_CullTransparentMesh: 1
 --- !u!114 &23864370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23864365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &23864371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1231,6 +1244,7 @@ GameObject:
   - component: {fileID: 121757205}
   - component: {fileID: 121757204}
   - component: {fileID: 121757203}
+  - component: {fileID: 121757206}
   m_Layer: 0
   m_Name: Ctrl
   m_TagString: Untagged
@@ -1364,6 +1378,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121757201}
   m_CullTransparentMesh: 1
+--- !u!114 &121757206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121757201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &130550430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,15 +1644,13 @@ GameObject:
   - component: {fileID: 168064860}
   - component: {fileID: 168064862}
   - component: {fileID: 168064861}
-  - component: {fileID: 168064864}
-  - component: {fileID: 168064863}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &168064860
 Transform:
   m_ObjectHideFlags: 0
@@ -1636,7 +1660,7 @@ Transform:
   m_GameObject: {fileID: 168064859}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0.0000000842937, z: -0.00000008429372, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -5.3, z: 0}
+  m_LocalPosition: {x: -14.511226, y: -1.6275786, z: -50.343117}
   m_LocalScale: {x: 100, y: 99.99998, z: 99.99998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1691,40 +1715,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168064859}
-  m_Mesh: {fileID: -425171608731709130, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
---- !u!114 &168064863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168064859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 981a667d838754c41b492a8c3783f55c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!64 &168064864
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168064859}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: -425171608731709130, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
 --- !u!1 &184001583
 GameObject:
@@ -4343,6 +4333,7 @@ GameObject:
   - component: {fileID: 478431438}
   - component: {fileID: 478431437}
   - component: {fileID: 478431436}
+  - component: {fileID: 478431439}
   m_Layer: 0
   m_Name: No
   m_TagString: Untagged
@@ -4476,6 +4467,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478431434}
   m_CullTransparentMesh: 1
+--- !u!114 &478431439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478431434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &503056387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,7 +4748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome on Earth
+  m_text: Welcome to the Moon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
   m_sharedMaterial: {fileID: -2903771384293589167, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
@@ -8296,15 +8299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.4686
+      value: 19.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 12.69
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.431362
+      value: 17.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cda81f9cac150645944787ad813e871, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8411,6 +8414,7 @@ GameObject:
   - component: {fileID: 1168085337}
   - component: {fileID: 1168085336}
   - component: {fileID: 1168085335}
+  - component: {fileID: 1168085338}
   m_Layer: 0
   m_Name: Ctrl
   m_TagString: Untagged
@@ -8544,6 +8548,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168085333}
   m_CullTransparentMesh: 1
+--- !u!114 &1168085338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168085333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1171472821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,6 +9839,7 @@ GameObject:
   - component: {fileID: 1239940739}
   - component: {fileID: 1239940738}
   - component: {fileID: 1239940737}
+  - component: {fileID: 1239940740}
   m_Layer: 0
   m_Name: Ctrl
   m_TagString: Untagged
@@ -9956,6 +9973,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239940735}
   m_CullTransparentMesh: 1
+--- !u!114 &1239940740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239940735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1272987266
 GameObject:
   m_ObjectHideFlags: 0
@@ -10601,13 +10630,15 @@ GameObject:
   - component: {fileID: 1358125366}
   - component: {fileID: 1358125368}
   - component: {fileID: 1358125367}
+  - component: {fileID: 1358125370}
+  - component: {fileID: 1358125369}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1358125366
 Transform:
   m_ObjectHideFlags: 0
@@ -10617,7 +10648,7 @@ Transform:
   m_GameObject: {fileID: 1358125365}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: -0.49999994, z: -0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -6.5598745, y: -2.1972198, z: -4.240511}
+  m_LocalPosition: {x: -6.2, y: -0.94, z: 17}
   m_LocalScale: {x: 2.47049, y: 2.47049, z: 2.47049}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10672,6 +10703,40 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358125365}
+  m_Mesh: {fileID: 5460216494914580811, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
+--- !u!114 &1358125369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358125365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981a667d838754c41b492a8c3783f55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1358125370
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358125365}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5460216494914580811, guid: 0bf7fab969a5ec54ca704e67c51eb65c, type: 3}
 --- !u!1 &1370367251
 GameObject:
@@ -11366,6 +11431,7 @@ GameObject:
   - component: {fileID: 1483578967}
   - component: {fileID: 1483578966}
   - component: {fileID: 1483578969}
+  - component: {fileID: 1483578970}
   m_Layer: 0
   m_Name: TaskOneButton
   m_TagString: TaskOne
@@ -11500,6 +11566,18 @@ CanvasRenderer:
   m_GameObject: {fileID: 1483578964}
   m_CullTransparentMesh: 1
 --- !u!114 &1483578969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483578964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1483578970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12031,9 +12109,17 @@ MonoBehaviour:
   gravitySlider: {fileID: 1911746993}
   taskPanel: {fileID: 690245904}
   returnPanel: {fileID: 1171472821}
-  jupiterButton: {fileID: 1646190131}
-  moonButton: {fileID: 1986286915}
-  earthButton: {fileID: 1200200709}
+  controlPanel: {fileID: 0}
+  planetPanel: {fileID: 0}
+  jupiterPanel: {fileID: 0}
+  moonPanel: {fileID: 0}
+  earthPanel: {fileID: 0}
+  taskOneNext: {fileID: 0}
+  taskTwoNext: {fileID: 0}
+  taskThreeNext: {fileID: 0}
+  jupiterNextButton: {fileID: 0}
+  moonNextButton: {fileID: 0}
+  earthNextButton: {fileID: 0}
   taskOneButton: {fileID: 1483578964}
   taskTwoButton: {fileID: 23864365}
 --- !u!4 &1571521337
@@ -14144,7 +14230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509aea467b6780d43b503ebdb6055436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGravitationalForce: 3
+  CurrentGravitationalForce: 2
 --- !u!1 &1893897833
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,6 +14275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47490008f9f7d944869d5dab706053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildIndex: 0
 --- !u!1 &1896106563
 GameObject:
   m_ObjectHideFlags: 0
@@ -14706,6 +14793,7 @@ GameObject:
   - component: {fileID: 1945626108}
   - component: {fileID: 1945626107}
   - component: {fileID: 1945626106}
+  - component: {fileID: 1945626109}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -14839,6 +14927,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945626104}
   m_CullTransparentMesh: 1
+--- !u!114 &1945626109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945626104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1966983557
 GameObject:
   m_ObjectHideFlags: 0
@@ -14854,7 +14954,7 @@ GameObject:
   - component: {fileID: 1966983562}
   m_Layer: 0
   m_Name: Yes
-  m_TagString: GameDone
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16087,6 +16187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!1 &2066711554
 GameObject:
   m_ObjectHideFlags: 0
@@ -17392,9 +17495,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666159257}
     m_Modifications:
+    - target: {fileID: 1681341366036041137, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3975918846322602734, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_Name
       value: Basketball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: sleepThreshold
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605001708843501287, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
+      propertyPath: bounceThreshold
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6197868017685164455, guid: 9d4077c6c69d1cd4c8e488dff8f5ee7f, type: 3}
       propertyPath: m_LocalPosition.x

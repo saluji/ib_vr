@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/PolygonSciFiWorlds/License/Synty_Custom_License_2021.pdf.meta
 guid: 00bd83c2f5ae4cc4aa4f9a70f8765cf5
 timeCreated: 1635457950
 licenseType: Free
+========
+guid: 2f6bf83a4b9981d40b400b58f58fc3e2
+>>>>>>>> erwin2:VR_SS24/Assets/Scenes/02_Moon.unity.meta
 DefaultImporter:
   userData: 
   assetBundleName: 

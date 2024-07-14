@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Input/ControllerInput.cs.meta
 guid: 581fd8f06233d8c4fb7ba5b85d6e0f46
+========
+guid: 156e5e06cf2dc5045876faa8a2c51b92
+>>>>>>>> erwin2:VR_SS24/Assets/Scripts/Basketball.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

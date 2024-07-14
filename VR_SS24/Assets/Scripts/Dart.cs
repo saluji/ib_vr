@@ -13,6 +13,7 @@ public class Dart : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.dart);
         if (other.gameObject.CompareTag("Target"))
         {
             // stick dart to dart target

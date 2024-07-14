@@ -20,3 +20,10 @@ Some XR scripts taken from the 'Create with VR' Course
 
 Black Future Font
 * https://www.freepik.com/font/black-future
+
+Sound from freesound.org
+* Dartboard and dart by soundman2733 -- https://freesound.org/s/654919/ -- License: Attribution 4.0
+* New Notification #7 by UNIVERSFIELD -- https://freesound.org/s/736267/ -- License: Attribution 4.0
+* CD_CONTACT_002FX_Space.wav by kevp888 -- https://freesound.org/s/706606/ -- License: Attribution 4.0
+
+Music from https://tallbeard.itch.io/music-loop-bundle

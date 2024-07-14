@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Prefabs/00_DartOld.prefab.meta
 guid: 42e40d7b2d1edb543a54c00847c267f7
+========
+guid: e496db11c153a3a40a67b9c52f90e802
+>>>>>>>> erwin2:VR_SS24/Assets/Prefabs/TeleportAnchor.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

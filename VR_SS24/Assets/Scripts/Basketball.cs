@@ -75,6 +75,9 @@ public class Basketball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // play sound
+        AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             // dribbling score logic
@@ -91,7 +94,7 @@ public class Basketball : MonoBehaviour
                     // if ball hits ground twice without regrab, reset score to zero
                     currentScore = 0;
                 }
-                
+
                 // Refresh score in UI
                 textManager.TaskOneScore(currentScore, maxScore);
 
@@ -99,6 +102,18 @@ public class Basketball : MonoBehaviour
                 if (currentScore >= maxScore)
                 {
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
+                    switch (levelManager.BuildIndex)
+                    {
+                        case 1:
+                            GameManager.instance.isMoonVisitable = true;
+                            break;
+                        case 2:
+                            GameManager.instance.IsEarthVisitable = true;
+                            break;
+                        case 3:
+                            GameManager.instance.isGameDone = true;
+                            break;
+                    }
                 }
             }
 

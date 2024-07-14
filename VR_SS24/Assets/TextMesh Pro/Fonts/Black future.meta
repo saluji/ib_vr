@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:VR_SS24/Assets/TextMesh Pro/Fonts/Black future.meta
-guid: a046c0aeb58b6604b9f48265e0709e86
-folderAsset: yes
+<<<<<<<< HEAD:VR_SS24/Assets/PolygonSciFiWorlds.meta
+guid: ce3a307e06452714dae020221f8c7036
 ========
-guid: f108502a8b51e84439f676d5b1b0ee95
->>>>>>>> erwin2:VR_SS24/Assets/Scenes/03_Earth.unity.meta
+guid: a046c0aeb58b6604b9f48265e0709e86
+>>>>>>>> erwin2:VR_SS24/Assets/TextMesh Pro/Fonts/Black future.meta
+folderAsset: yes
+timeCreated: 1635469022
+licenseType: Free
 DefaultImporter:
-  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

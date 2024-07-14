@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    int buildIndex;
-    public int BuildIndex { get { return buildIndex; } }
+    public int buildIndex;
+    public int BuildIndex { get { return buildIndex; } set { buildIndex = value; } }
 
     void Awake()
     {
@@ -15,8 +15,7 @@ public class LevelManager : MonoBehaviour
     public void LoadSpace()
     {
         buildIndex = 0;
-        GameManager.instance.ResetVariables();
-        SceneManager.LoadScene(buildIndex);
+        LoadLevel();
     }
 
     public void SetJupiter()
@@ -36,6 +35,8 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
+        GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
+        AudioManager.instance.SetBeginningAudio();
     }
 }

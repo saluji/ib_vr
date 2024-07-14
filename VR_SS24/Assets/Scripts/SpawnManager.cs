@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -19,25 +16,45 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform spawnTeleporterPosition;
 
     bool isTeleporterSpawned = false;
+    bool isSpawning = false; 
+    float cooldownDuration = 1.0f;
 
     public void SpawnBasketball()
     {
-        Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
-        basketballPrefab.SetActive(true);
+        if (!isSpawning)
+        {
+            StartCoroutine(SpawnCooldownCoroutine(() =>
+            {
+                Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
+                basketballPrefab.SetActive(true);
+            }));
+        }
     }
 
     public void SpawnDart()
     {
-        Instantiate(dartPrefab, spawnDartPosition.transform.position, spawnDartPosition.transform.rotation);
-        dartPrefab.SetActive(true);
+        if (!isSpawning)
+        {
+            StartCoroutine(SpawnCooldownCoroutine(() =>
+            {
+                Instantiate(dartPrefab, spawnDartPosition.transform.position, spawnDartPosition.transform.rotation);
+                dartPrefab.SetActive(true);
+            }));
+        }
     }
 
     public void SpawnTennisball()
     {
-        Instantiate(canPrefab, spawnCanPosition.transform.position, spawnCanPosition.transform.rotation);
-        Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
-        tennisballPrefab.SetActive(true);
-        canPrefab.SetActive(true);
+        if (!isSpawning)
+        {
+            StartCoroutine(SpawnCooldownCoroutine(() =>
+            {
+                Instantiate(canPrefab, spawnCanPosition.transform.position, spawnCanPosition.transform.rotation);
+                Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
+                tennisballPrefab.SetActive(true);
+                canPrefab.SetActive(true);
+            }));
+        }
     }
 
     public void SpawnTeleporter()
@@ -48,7 +65,17 @@ public class SpawnManager : MonoBehaviour
             Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
             isTeleporterSpawned = true;
             teleporterPrefab.SetActive(true);
+            AudioManager.instance.PlaySFX(AudioManager.instance.teleporter);
+
         }
 
+    }
+
+    private IEnumerator SpawnCooldownCoroutine(System.Action spawnAction)
+    {
+        isSpawning = true;
+        spawnAction?.Invoke();
+        yield return new WaitForSeconds(cooldownDuration);
+        isSpawning = false;
     }
 }

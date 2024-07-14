@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Scripts/Basketball.cs.meta
 guid: 156e5e06cf2dc5045876faa8a2c51b92
+========
+guid: 3338e3f8c262fcc4ea8bad1dc88a1619
+>>>>>>>> erwin2:VR_SS24/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Input Actions.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

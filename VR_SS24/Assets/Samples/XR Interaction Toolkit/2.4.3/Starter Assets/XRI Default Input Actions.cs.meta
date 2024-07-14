@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Input Actions.cs.meta
 guid: 3338e3f8c262fcc4ea8bad1dc88a1619
+========
+guid: 581fd8f06233d8c4fb7ba5b85d6e0f46
+>>>>>>>> erwin2:VR_SS24/Assets/Input/ControllerInput.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

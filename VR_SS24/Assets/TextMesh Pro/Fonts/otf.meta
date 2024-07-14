@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:VR_SS24/Assets/TextMesh Pro/Fonts/otf.meta
 guid: 65533ee2ea4f8724ebfa6d895e52eaa0
+========
+guid: a48ef05d71b6dc2408c53f2b11f05b5e
+>>>>>>>> erwin2:VR_SS24/Assets/Input.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

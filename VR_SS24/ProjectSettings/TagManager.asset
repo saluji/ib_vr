@@ -11,9 +11,6 @@ TagManager:
   - Can
   - Ground
   - TaskOne
-  - MoonVisitable
-  - EarthVisitable
-  - GameDone
   - TaskTwo
   layers:
   - Default

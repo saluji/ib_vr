@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 5736505304496654542}
   - component: {fileID: 7936477391735496675}
   - component: {fileID: 6353344729891983917}
+  - component: {fileID: 1830803747018612353}
   m_Layer: 0
   m_Name: ButtonPlate
   m_TagString: Untagged
@@ -406,3 +407,15 @@ MonoBehaviour:
       m_EnablePokeAngleThreshold: 1
       m_PokeAngleThreshold: 45
     m_Variable: {fileID: 0}
+--- !u!114 &1830803747018612353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700971404770499690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54dfacb058e09984e87f60160229a22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
