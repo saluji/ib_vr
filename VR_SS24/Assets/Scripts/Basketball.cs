@@ -40,7 +40,7 @@ public class Basketball : MonoBehaviour
 
         // logic for the basketball to keep bouncing near the ground and stopping after certain threshold depending on planet
         rb = GetComponent<Rigidbody>();
-        switch (levelManager.BuildIndex)
+        switch (levelManager.buildIndex)
         {
             case 1:
                 {
@@ -116,7 +116,7 @@ public class Basketball : MonoBehaviour
                 {
                     AudioManager.instance.PlayUI(AudioManager.instance.done02);
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
-                    switch (levelManager.BuildIndex)
+                    switch (levelManager.buildIndex)
                     {
                         case 1:
                             GameManager.instance.IsMoonVisitable = true;

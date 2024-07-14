@@ -123,7 +123,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetBeginningAudio()
     {
-        switch (levelManager.BuildIndex)
+        switch (levelManager.buildIndex)
         {
             // set starting sound for every scene plus condition
             case 0:

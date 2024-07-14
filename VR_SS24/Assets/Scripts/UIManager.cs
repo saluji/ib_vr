@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
     {
         // turn UI in spaceship level on / off depending on conditions
 
-        if (levelManager.BuildIndex == 0)
+        if (levelManager.buildIndex == 0)
         {
             jupiterVisitButton.SetActive(GameManager.instance.IsMoonVisitable);
             moonVisitButton.SetActive(GameManager.instance.IsEarthVisitable);

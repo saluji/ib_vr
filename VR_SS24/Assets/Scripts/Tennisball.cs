@@ -11,7 +11,7 @@ public class Tennisball : MonoBehaviour
     {
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.tennisball);
