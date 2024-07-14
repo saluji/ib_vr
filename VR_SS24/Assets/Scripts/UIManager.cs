@@ -1,7 +1,5 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering.UI;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -53,35 +51,12 @@ public class UIManager : MonoBehaviour
         StartingUI();
     }
 
-    void Update()
-    {
-        // able to visit planet after doing minigame task in ship and current gravity is set to jupiter
-        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
-        {
-            // ShowJupiterPanel();
-            taskOneNext.SetActive(true);
-        }
-
-        // able to visit planet after doing task on jupiter and current gravity is set to moon
-        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
-        {
-            // ShowMoonPanel();
-            taskTwoNext.SetActive(true);
-        }
-
-        // able to visit planet after doing task on moon and current gravity is set to earth
-        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
-        {
-            // ShowEarthPanel();
-            taskThreeNext.SetActive(true);
-        }
-    }
-
     public void Slider()
     {
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
         AudioManager.instance.PlaySFX(AudioManager.instance.sliderClick);
         gravityManager.SetGravityMode(mode);
+        UpdateTaskUI();
 
         // set gravity text
         textManager.ChangeGravityText();
@@ -102,7 +77,7 @@ public class UIManager : MonoBehaviour
             jupiterVisitButton.SetActive(GameManager.instance.IsMoonVisitable);
             moonVisitButton.SetActive(GameManager.instance.IsEarthVisitable);
             earthVisitButton.SetActive(GameManager.instance.IsGameDone);
-            
+
             if (GameManager.instance.IsGameDone)
             {
                 SetUIStates(false, true, false, false, true, false, false, false, true, true, true);
@@ -145,4 +120,23 @@ public class UIManager : MonoBehaviour
         nextPlanetEarth.SetActive(earthNextPlanet);
     }
 
+    public void UpdateTaskUI()
+    {
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
+        {
+            taskOneNext.SetActive(true);
+        }
+        else if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
+        {
+            taskTwoNext.SetActive(true);
+        }
+        else if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
+        {
+            taskThreeNext.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Task not done");
+        }
+    }
 }

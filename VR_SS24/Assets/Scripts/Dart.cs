@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Dart : MonoBehaviour
 {
+    UIManager uIManager;
     Rigidbody rb;
+    // bool taskDone = false;
 
     void Awake()
     {
+        uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -19,6 +22,7 @@ public class Dart : MonoBehaviour
             // stick dart to dart target
             GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
+            uIManager.UpdateTaskUI();
         }
     }
 }

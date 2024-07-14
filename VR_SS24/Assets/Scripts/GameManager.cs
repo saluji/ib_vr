@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship
-    public bool isMoonVisitable = false;
-    public bool isEarthVisitable = false;
-    public bool isGameDone = false;
+    bool isMoonVisitable = false;
+    bool isEarthVisitable = false;
+    bool isGameDone = false;
 
     // task for minigames in ship
     bool isPracticingDart = false;
