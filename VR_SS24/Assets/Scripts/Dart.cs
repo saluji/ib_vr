@@ -22,9 +22,8 @@ public class Dart : MonoBehaviour
             GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
             taskDone = true;
-            AudioManager.instance.PlayUI(AudioManager.instance.done01);
-            uIManager.UpdateTaskUI();
             uIManager.SetDartAlpha();
+            uIManager.UpdateTaskUI();
         }
     }
 }

@@ -19,9 +19,8 @@ public class Tennisball : MonoBehaviour
         {
             GameManager.instance.IsPracticingCan = true;
             taskDone = true;
-            AudioManager.instance.PlayUI(AudioManager.instance.done01);
-            uIManager.UpdateTaskUI();
             uIManager.SetCanAlpha();
+            uIManager.UpdateTaskUI();
         }
     }
 }

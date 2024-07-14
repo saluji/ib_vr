@@ -1,67 +1,18 @@
-// using Unity.VRTemplate;
-// using UnityEngine;
-// using UnityEngine.SceneManagement;
-
-// public class LevelManager : MonoBehaviour
-// {
-//     UIManager uIManager;
-//     public int buildIndex;
-//     public int BuildIndex { get { return buildIndex; } set { buildIndex = value; } }
-
-//     void Awake()
-//     {
-//         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-//         buildIndex = SceneManager.GetActiveScene().buildIndex;
-//     }
-
-//     public void LoadSpace()
-//     {
-//         buildIndex = 0;
-//         LoadLevel();
-//     }
-
-//     public void SetJupiter()
-//     {
-//         buildIndex = 1;
-//     }
-
-//     public void SetMoon()
-//     {
-//         buildIndex = 2;
-//     }
-
-//     public void SetEarth()
-//     {
-//         buildIndex = 3;
-//     }
-
-//     public void SetHome()
-//     {
-//         buildIndex = 4;
-//     }
-
-//     public void LoadLevel()
-//     {
-//         uIManager.ResetAlpha();
-//         GameManager.instance.ResetVariables();
-//         SceneManager.LoadScene(buildIndex);
-//         AudioManager.instance.SetBeginningAudio();
-//     }
-// }
-
 using Unity.VRTemplate;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private UIManager uIManager;
-    public int buildIndex;
+    UIManager uIManager;
+    int buildIndex;
+    int initialBuildIndex;
+    public int BuildIndex { get { return buildIndex; } set { buildIndex = value; } }
 
     void Awake()
     {
         uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-        buildIndex = SceneManager.GetActiveScene().buildIndex;
+        initialBuildIndex = buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void LoadSpace()
@@ -77,7 +28,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        uIManager.ResetAlpha();
+        if (initialBuildIndex == 0)
+        {
+            uIManager.ResetAlpha();
+        }
+
         GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
         AudioManager.instance.SetBeginningAudio();

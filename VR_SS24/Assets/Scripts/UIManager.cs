@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
 
     float initialAlpha = 0.02f;
     float maxAlpha = 1f;
+    bool isTaskZeroDone = false;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
 
@@ -65,10 +67,9 @@ public class UIManager : MonoBehaviour
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
         AudioManager.instance.PlayUI(AudioManager.instance.sliderClick);
         gravityManager.SetGravityMode(mode);
-        UpdateTaskUI();
-
-        // set gravity text
         textManager.ChangeGravityText();
+        CheckmarkCondition();
+        UpdateTaskUI();
     }
 
     public void ShowReturnPanel()
@@ -81,27 +82,28 @@ public class UIManager : MonoBehaviour
     {
         // turn UI in spaceship level on / off depending on conditions
 
-        if (levelManager.buildIndex == 0)
+        if (levelManager.BuildIndex == 0)
         {
             jupiterVisitButton.SetActive(GameManager.instance.IsMoonVisitable);
             moonVisitButton.SetActive(GameManager.instance.IsEarthVisitable);
             earthVisitButton.SetActive(GameManager.instance.IsGameDone);
+            homePanel.SetActive(false);
 
             if (GameManager.instance.IsGameDone)
             {
-                SetUIStates(false, true, false, false, true, false, false, false, true, true, true, true);
+                SetUIStates(false, true, false, false, true, false, false, false, true, true, true);
             }
             else if (GameManager.instance.IsEarthVisitable)
             {
-                SetUIStates(false, true, false, true, false, false, false, true, true, true, false, false);
+                SetUIStates(false, true, false, true, false, false, false, true, true, true, false);
             }
             else if (GameManager.instance.IsMoonVisitable)
             {
-                SetUIStates(false, true, true, false, false, false, true, true, true, false, false, false);
+                SetUIStates(false, true, true, false, false, false, true, true, true, false, false);
             }
             else
             {
-                SetUIStates(true, false, true, false, false, true, true, true, false, false, false, false);
+                SetUIStates(true, false, true, false, false, true, true, true, false, false, false);
             }
         }
 
@@ -112,14 +114,13 @@ public class UIManager : MonoBehaviour
         taskTwoButton.SetActive(false);
     }
 
-    private void SetUIStates(bool controlMenu, bool planetMenu, bool jupiterMenu, bool moonMenu, bool earthMenu, bool jupiterTask, bool moonTask, bool earthTask, bool jupiterNextPlanet, bool moonNextPlanet, bool earthNextPlanet, bool homeMenu)
+    private void SetUIStates(bool controlMenu, bool planetMenu, bool jupiterMenu, bool moonMenu, bool earthMenu, bool jupiterTask, bool moonTask, bool earthTask, bool jupiterNextPlanet, bool moonNextPlanet, bool earthNextPlanet)
     {
         controlPanel.SetActive(controlMenu);
         planetPanel.SetActive(planetMenu);
         jupiterPanel.SetActive(jupiterMenu);
         moonPanel.SetActive(moonMenu);
         earthPanel.SetActive(earthMenu);
-        homePanel.SetActive(homeMenu);
 
         jupiterTaskButton.SetActive(jupiterTask);
         moonTaskButton.SetActive(moonTask);
@@ -132,21 +133,30 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTaskUI()
     {
-        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 1)
+        if (isTaskZeroDone) return;
+
+        if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart)
         {
-            taskOneNext.SetActive(true);
-        }
-        else if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable)
-        {
-            taskTwoNext.SetActive(true);
-        }
-        else if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart && gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
-        {
-            taskThreeNext.SetActive(true);
-        }
-        else
-        {
-            Debug.Log("Task not done");
+            if (gravitySlider.value == 1 && !GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
+            {
+                taskOneNext.SetActive(true);
+                isTaskZeroDone = true;
+            }
+            else if (gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
+            {
+                taskTwoNext.SetActive(true);
+                isTaskZeroDone = true;
+            }
+            else if (gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
+            {
+                taskThreeNext.SetActive(true);
+                isTaskZeroDone = true;
+            }
+
+            if (isTaskZeroDone)
+            {
+                AudioManager.instance.PlayUI(AudioManager.instance.done02);
+            }
         }
     }
 
@@ -158,9 +168,10 @@ public class UIManager : MonoBehaviour
             color.a = alpha;
             image.color = color;
         }
+        AudioManager.instance.PlayUI(AudioManager.instance.done01);
     }
 
-    public void SetGravityAlpha()
+    void SetGravityAlpha()
     {
         SetAlpha(gravityCheck, maxAlpha);
     }
@@ -180,5 +191,28 @@ public class UIManager : MonoBehaviour
         SetAlpha(gravityCheck, initialAlpha);
         SetAlpha(dartCheck, initialAlpha);
         SetAlpha(canCheck, initialAlpha);
+    }
+
+    void CheckmarkCondition()
+    {
+        bool shouldSetGravityAlpha = false;
+
+        if (gravitySlider.value == 1 && !GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
+        {
+            shouldSetGravityAlpha = true;
+        }
+        else if (gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
+        {
+            shouldSetGravityAlpha = true;
+        }
+        else if (gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
+        {
+            shouldSetGravityAlpha = true;
+        }
+
+        if (shouldSetGravityAlpha)
+        {
+            SetGravityAlpha();
+        }
     }
 }

@@ -14,7 +14,6 @@ public class Basketball : MonoBehaviour
     TextManager textManager;
     LevelManager levelManager;
     Rigidbody rb;
-    AudioSource audioSource;
 
     // dribbling variables
     bool isTaskOneDone = false;
@@ -35,12 +34,10 @@ public class Basketball : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         basket = GameObject.Find("Basket").GetComponent<Transform>();
-        // audioSource = GetComponentInChildren<AudioSource>();
-        audioSource = GetComponent<AudioSource>();
 
         // logic for the basketball to keep bouncing near the ground and stopping after certain threshold depending on planet
         rb = GetComponent<Rigidbody>();
-        switch (levelManager.buildIndex)
+        switch (levelManager.BuildIndex)
         {
             case 1:
                 {
@@ -81,8 +78,7 @@ public class Basketball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
-        audioSource.Play();
+        AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
 
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -116,7 +112,7 @@ public class Basketball : MonoBehaviour
                 {
                     AudioManager.instance.PlayUI(AudioManager.instance.done02);
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
-                    switch (levelManager.buildIndex)
+                    switch (levelManager.BuildIndex)
                     {
                         case 1:
                             GameManager.instance.IsMoonVisitable = true;

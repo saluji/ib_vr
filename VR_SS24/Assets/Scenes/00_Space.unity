@@ -25720,7 +25720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47490008f9f7d944869d5dab706053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildIndex: 0
 --- !u!1 &3320400765994312269
 GameObject:
   m_ObjectHideFlags: 0
@@ -25901,6 +25900,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!4 &4816706717239863021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1582114264267064582, guid: 7429cd7d98ff4d94d945425ad820864c, type: 3}
@@ -26022,7 +26024,10 @@ MonoBehaviour:
   moonPanel: {fileID: 1975120467}
   earthPanel: {fileID: 2145469269}
   homePanel: {fileID: 1325107284}
-  gravityCheck: []
+  gravityCheck:
+  - {fileID: 2127876282}
+  - {fileID: 1957606024}
+  - {fileID: 19238981}
   dartCheck:
   - {fileID: 190970361}
   - {fileID: 1821978759}
