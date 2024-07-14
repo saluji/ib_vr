@@ -16,9 +16,16 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform spawnTeleporterPosition;
 
     bool isTeleporterSpawned = false;
-    bool isSpawning = false; 
+    bool isSpawning = false;
     float cooldownDuration = 1.0f;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SpawnTennisball();
+        }
+    }
     public void SpawnBasketball()
     {
         if (!isSpawning)
@@ -26,7 +33,6 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(SpawnCooldownCoroutine(() =>
             {
                 Instantiate(basketballPrefab, spawnBallPosition.transform.position, spawnBallPosition.transform.rotation);
-                basketballPrefab.SetActive(true);
             }));
         }
     }
@@ -38,7 +44,6 @@ public class SpawnManager : MonoBehaviour
             StartCoroutine(SpawnCooldownCoroutine(() =>
             {
                 Instantiate(dartPrefab, spawnDartPosition.transform.position, spawnDartPosition.transform.rotation);
-                dartPrefab.SetActive(true);
             }));
         }
     }
@@ -49,10 +54,8 @@ public class SpawnManager : MonoBehaviour
         {
             StartCoroutine(SpawnCooldownCoroutine(() =>
             {
-                Instantiate(canPrefab, spawnCanPosition.transform.position, spawnCanPosition.transform.rotation);
-                Instantiate(tennisballPrefab, spawnTennisballPosition.transform.position, spawnTennisballPosition.transform.rotation);
-                tennisballPrefab.SetActive(true);
-                canPrefab.SetActive(true);
+                Instantiate(canPrefab, spawnCanPosition.position, spawnCanPosition.rotation);
+                Instantiate(tennisballPrefab, spawnTennisballPosition.position, spawnTennisballPosition.rotation);
             }));
         }
     }
@@ -63,12 +66,8 @@ public class SpawnManager : MonoBehaviour
         if (!isTeleporterSpawned)
         {
             Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
-            isTeleporterSpawned = true;
-            teleporterPrefab.SetActive(true);
             AudioManager.instance.PlaySFX(AudioManager.instance.teleporter);
-
         }
-
     }
 
     private IEnumerator SpawnCooldownCoroutine(System.Action spawnAction)
