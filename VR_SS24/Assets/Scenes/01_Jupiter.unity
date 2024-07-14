@@ -489,7 +489,6 @@ GameObject:
   - component: {fileID: 23864369}
   - component: {fileID: 23864368}
   - component: {fileID: 23864367}
-  - component: {fileID: 23864370}
   - component: {fileID: 23864371}
   m_Layer: 0
   m_Name: TaskTwoButton
@@ -624,18 +623,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23864365}
   m_CullTransparentMesh: 1
---- !u!114 &23864370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23864365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &23864371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20153,7 +20140,6 @@ GameObject:
   - component: {fileID: 1483578968}
   - component: {fileID: 1483578967}
   - component: {fileID: 1483578966}
-  - component: {fileID: 1483578969}
   - component: {fileID: 1483578970}
   m_Layer: 0
   m_Name: TaskOneButton
@@ -20288,18 +20274,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483578964}
   m_CullTransparentMesh: 1
---- !u!114 &1483578969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483578964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1483578970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21256,12 +21230,15 @@ MonoBehaviour:
   jupiterPanel: {fileID: 0}
   moonPanel: {fileID: 0}
   earthPanel: {fileID: 0}
+  jupiterVisitButton: {fileID: 0}
+  moonVisitButton: {fileID: 0}
+  earthVisitButton: {fileID: 0}
+  jupiterTaskButton: {fileID: 0}
+  moonTaskButton: {fileID: 0}
+  earthTaskButton: {fileID: 0}
   taskOneNext: {fileID: 1197609755}
   taskTwoNext: {fileID: 110545189}
   taskThreeNext: {fileID: 149858205}
-  jupiterNextButton: {fileID: 1164408962}
-  moonNextButton: {fileID: 781055747}
-  earthNextButton: {fileID: 1723985423}
   taskOneButton: {fileID: 1483578964}
   taskTwoButton: {fileID: 23864365}
 --- !u!4 &1571521337

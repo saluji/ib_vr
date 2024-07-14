@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     TextManager textManager;
     LevelManager levelManager;
 
+    // panel variables
+    [Header("Panels")]
     [SerializeField] GameObject taskPanel;
     [SerializeField] GameObject returnPanel;
     [SerializeField] GameObject controlPanel;
@@ -18,12 +20,27 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject jupiterPanel;
     [SerializeField] GameObject moonPanel;
     [SerializeField] GameObject earthPanel;
+
+    // button variables
+    [Header("Visit button")]
+    [SerializeField] GameObject jupiterVisitButton;
+    [SerializeField] GameObject moonVisitButton;
+    [SerializeField] GameObject earthVisitButton;
+
+    [Header("Next planet button")]
+    [SerializeField] GameObject nextPlanetJupiter;
+    [SerializeField] GameObject nextPlanetMoon;
+    [SerializeField] GameObject nextPlanetEarth;
+
+    [Header("Task buttons")]
+    [SerializeField] GameObject jupiterTaskButton;
+    [SerializeField] GameObject moonTaskButton;
+    [SerializeField] GameObject earthTaskButton;
+
     [SerializeField] GameObject taskOneNext;
     [SerializeField] GameObject taskTwoNext;
     [SerializeField] GameObject taskThreeNext;
-    [SerializeField] GameObject jupiterNextButton;
-    [SerializeField] GameObject moonNextButton;
-    [SerializeField] GameObject earthNextButton;
+
     [SerializeField] GameObject taskOneButton;
     [SerializeField] GameObject taskTwoButton;
 
@@ -77,82 +94,31 @@ public class UIManager : MonoBehaviour
         returnPanel.SetActive(true);
     }
 
-    // public void StartingUI()
-    // {
-    //     jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
-    //     moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
-    //     earthNextButton.SetActive(GameManager.instance.IsGameDone);
-
-    //     if (levelManager.BuildIndex == 0)
-    //     {
-    //         if (GameManager.instance.IsGameDone)
-    //         {
-    //             controlPanel.SetActive(false);
-    //             planetPanel.SetActive(true);
-    //             jupiterPanel.SetActive(false);
-    //             moonPanel.SetActive(false);
-    //             earthPanel.SetActive(true);
-    //         }
-
-    //         else if (GameManager.instance.IsEarthVisitable)
-    //         {
-    //             controlPanel.SetActive(false);
-    //             planetPanel.SetActive(true);
-    //             jupiterPanel.SetActive(false);
-    //             moonPanel.SetActive(true);
-    //             earthPanel.SetActive(false);
-    //         }
-
-    //         else if (GameManager.instance.IsMoonVisitable)
-    //         {
-    //             controlPanel.SetActive(false);
-    //             planetPanel.SetActive(true);
-    //             jupiterPanel.SetActive(true);
-    //             moonPanel.SetActive(false);
-    //             earthPanel.SetActive(false);
-    //         }
-
-    //         else
-    //         {
-    //             controlPanel.SetActive(true);
-    //             planetPanel.SetActive(false);
-    //             jupiterPanel.SetActive(false);
-    //             moonPanel.SetActive(false);
-    //             earthPanel.SetActive(false);
-    //         }
-    //     }
-
-    //     taskOneNext.SetActive(false);
-    //     taskTwoNext.SetActive(false);
-    //     taskThreeNext.SetActive(false);
-
-    //     taskOneButton.SetActive(true);
-    //     taskTwoButton.SetActive(false);
-    // }
-
     public void StartingUI()
     {
-        jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
-        moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
-        earthNextButton.SetActive(GameManager.instance.IsGameDone);
+        // turn UI in spaceship level on / off depending on conditions
 
         if (levelManager.BuildIndex == 0)
         {
+            jupiterVisitButton.SetActive(GameManager.instance.IsMoonVisitable);
+            moonVisitButton.SetActive(GameManager.instance.IsEarthVisitable);
+            earthVisitButton.SetActive(GameManager.instance.IsGameDone);
+            
             if (GameManager.instance.IsGameDone)
             {
-                SetPanelStates(false, true, false, false, true);
+                SetUIStates(false, true, false, false, true, false, false, false, true, true, true);
             }
             else if (GameManager.instance.IsEarthVisitable)
             {
-                SetPanelStates(false, true, false, true, false);
+                SetUIStates(false, true, false, true, false, false, false, true, true, true, false);
             }
             else if (GameManager.instance.IsMoonVisitable)
             {
-                SetPanelStates(false, true, true, false, false);
+                SetUIStates(false, true, true, false, false, false, true, true, true, false, false);
             }
             else
             {
-                SetPanelStates(true, false, true, false, false);
+                SetUIStates(true, false, true, false, false, true, true, true, false, false, false);
             }
         }
 
@@ -164,13 +130,21 @@ public class UIManager : MonoBehaviour
         taskTwoButton.SetActive(false);
     }
 
-    private void SetPanelStates(bool control, bool planet, bool jupiter, bool moon, bool earth)
+    private void SetUIStates(bool controlMenu, bool planetMenu, bool jupiterMenu, bool moonMenu, bool earthMenu, bool jupiterTask, bool moonTask, bool earthTask, bool jupiterNextPlanet, bool moonNextPlanet, bool earthNextPlanet)
     {
-        controlPanel.SetActive(control);
-        planetPanel.SetActive(planet);
-        jupiterPanel.SetActive(jupiter);
-        moonPanel.SetActive(moon);
-        earthPanel.SetActive(earth);
+        controlPanel.SetActive(controlMenu);
+        planetPanel.SetActive(planetMenu);
+        jupiterPanel.SetActive(jupiterMenu);
+        moonPanel.SetActive(moonMenu);
+        earthPanel.SetActive(earthMenu);
+
+        jupiterTaskButton.SetActive(jupiterTask);
+        moonTaskButton.SetActive(moonTask);
+        earthTaskButton.SetActive(earthTask);
+
+        nextPlanetJupiter.SetActive(jupiterNextPlanet);
+        nextPlanetMoon.SetActive(moonNextPlanet);
+        nextPlanetEarth.SetActive(earthNextPlanet);
     }
 
 }

@@ -19,13 +19,6 @@ public class SpawnManager : MonoBehaviour
     bool isSpawning = false;
     float cooldownDuration = 1.0f;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SpawnTennisball();
-        }
-    }
     public void SpawnBasketball()
     {
         if (!isSpawning)

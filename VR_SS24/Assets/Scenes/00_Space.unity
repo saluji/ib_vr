@@ -2038,7 +2038,7 @@ Transform:
   m_GameObject: {fileID: 208431635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7930002, y: 0.577, z: 6}
+  m_LocalPosition: {x: 3.8256, y: 0.7319, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3228,7 +3228,7 @@ GameObject:
   - component: {fileID: 301495543}
   - component: {fileID: 301495546}
   m_Layer: 0
-  m_Name: JupiterNextButton
+  m_Name: NextPlanetJupiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10554,7 +10554,7 @@ GameObject:
   - component: {fileID: 1009099748}
   - component: {fileID: 1009099751}
   m_Layer: 0
-  m_Name: EarthNextButton
+  m_Name: NextPlanetEarth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12897,7 +12897,7 @@ GameObject:
   - component: {fileID: 1282901869}
   - component: {fileID: 1282901872}
   m_Layer: 0
-  m_Name: MoonNextButton
+  m_Name: NextPlanetMoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19820,7 +19820,7 @@ Transform:
   m_GameObject: {fileID: 1896575469}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.98, y: 0.591, z: 6.1}
+  m_LocalPosition: {x: -3.0047, y: 0.7003, z: 6.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20832,8 +20832,8 @@ RectTransform:
   - {fileID: 1282901868}
   - {fileID: 516674268}
   - {fileID: 1905121994}
-  - {fileID: 226884131}
   - {fileID: 474691182}
+  - {fileID: 226884131}
   m_Father: {fileID: 793886603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -22117,7 +22117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8724389969804757865, guid: 38242e5f27370db41b87c906bc794b8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4812655
+      value: -3.518
       objectReference: {fileID: 0}
     - target: {fileID: 8724389969804757865, guid: 38242e5f27370db41b87c906bc794b8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22764,7 +22764,7 @@ Transform:
   m_GameObject: {fileID: 2109040115}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 5.25, y: 0.5733, z: 6}
+  m_LocalPosition: {x: 5.25, y: 0.813, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23190,8 +23190,8 @@ RectTransform:
   - {fileID: 1009099747}
   - {fileID: 2125054400}
   - {fileID: 824661919}
-  - {fileID: 356753530}
   - {fileID: 1907101549}
+  - {fileID: 356753530}
   m_Father: {fileID: 793886603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -23354,7 +23354,7 @@ PrefabInstance:
       objectReference: {fileID: 4152519244930345792}
     - target: {fileID: 8724389969804757865, guid: 38242e5f27370db41b87c906bc794b8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.293
+      value: 4.348
       objectReference: {fileID: 0}
     - target: {fileID: 8724389969804757865, guid: 38242e5f27370db41b87c906bc794b8e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23957,12 +23957,18 @@ MonoBehaviour:
   jupiterPanel: {fileID: 75884423}
   moonPanel: {fileID: 1975120467}
   earthPanel: {fileID: 2145469269}
+  jupiterVisitButton: {fileID: 0}
+  moonVisitButton: {fileID: 0}
+  earthVisitButton: {fileID: 0}
+  nextPlanetJupiter: {fileID: 301495541}
+  nextPlanetMoon: {fileID: 1282901867}
+  nextPlanetEarth: {fileID: 1009099746}
+  jupiterTaskButton: {fileID: 1158968566}
+  moonTaskButton: {fileID: 474691181}
+  earthTaskButton: {fileID: 1907101548}
   taskOneNext: {fileID: 1328335475}
   taskTwoNext: {fileID: 1968867404}
   taskThreeNext: {fileID: 1880296744}
-  jupiterNextButton: {fileID: 301495541}
-  moonNextButton: {fileID: 1282901867}
-  earthNextButton: {fileID: 1009099746}
   taskOneButton: {fileID: 2126628024}
   taskTwoButton: {fileID: 1747341533}
 --- !u!4 &8020492749109665423

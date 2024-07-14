@@ -79,14 +79,4 @@ public class GameManager : MonoBehaviour
         isPracticingDart = false;
         UpdateGameState(GameState.TaskZero);
     }
-
-    // public void SwitchToTaskOne()
-    // {
-    //     UpdateGameState(GameState.TaskOne);
-    // }
-
-    // public void SwitchToTaskTwo()
-    // {
-    //     UpdateGameState(GameState.TaskTwo);
-    // }
 }
