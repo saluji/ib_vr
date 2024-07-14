@@ -16,17 +16,21 @@ public class ButtonHandler : MonoBehaviour
 
     void OnButtonClick(Button buttonTag)
     {
-        // call method depending on button tag name
+        AudioManager.instance.PlaySFX(AudioManager.instance.uIClick);
+
+        // change GameState depending on button tag name
         switch (buttonTag.tag)
         {
             case "TaskOne":
-                GameManager.instance.SwitchToTaskOne();
+                // GameManager.instance.SwitchToTaskOne();
+                GameManager.instance.UpdateGameState(GameState.TaskOne);
                 break;
             case "TaskTwo":
-                GameManager.instance.SwitchToTaskTwo();
+                // GameManager.instance.SwitchToTaskTwo();
+                GameManager.instance.UpdateGameState(GameState.TaskTwo);
                 break;
             default:
-                Debug.LogWarning("Unknown button tag: " + buttonTag.tag);
+                Debug.Log("Not a task button");
                 break;
         }
     }

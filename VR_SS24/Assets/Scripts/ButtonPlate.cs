@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ButtonPlate : MonoBehaviour
 {
@@ -21,36 +22,57 @@ public class ButtonPlate : MonoBehaviour
 
         // Store the initial color of the button
         initialColor = buttonRenderer.material.color;
+
+        // Register for the hover events
+        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
+        if (interactable != null)
+        {
+            interactable.hoverEntered.AddListener(OnHoverEntered);
+            interactable.hoverExited.AddListener(OnHoverExited);
+        }
     }
 
-    void Update()
+    void OnDestroy()
     {
-        // Check if the Space key is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Unregister the hover events
+        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
+        if (interactable != null)
         {
-            if (!isCoolingDown)
-            {
-                StartCoroutine(HoverCooldownCoroutine());
-            }
+            interactable.hoverEntered.RemoveListener(OnHoverEntered);
+            interactable.hoverExited.RemoveListener(OnHoverExited);
         }
+    }
+
+    private void OnHoverEntered(HoverEnterEventArgs args)
+    {
+        if (!isCoolingDown)
+        {
+            StartCoroutine(HoverCooldownCoroutine());
+        }
+    }
+
+    private void OnHoverExited(HoverExitEventArgs args)
+    {
+        // Handle hover exit when the hand leaves the button
+        HandleHoverExit();
     }
 
     private void HandleHoverEnter()
     {
-        Debug.Log("Space key pressed over the button.");
+        Debug.Log("Hovering over the button.");
 
         // Change the button's color
         buttonRenderer.material.color = Color.black;
 
         // Play the hover sound
-        AudioManager.instance.PlaySFX(AudioManager.instance.button);
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPlate);
 
         // Perform additional actions if needed
     }
 
     private void HandleHoverExit()
     {
-        Debug.Log("Space key released or no longer hovering over the button.");
+        Debug.Log("Stopped hovering over the button.");
 
         // Reset the button's color to the initial color
         buttonRenderer.material.color = initialColor;

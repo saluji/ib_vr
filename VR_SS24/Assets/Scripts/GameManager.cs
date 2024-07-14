@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
 
     // visitable planets in ship
-    public bool isMoonVisitable = false;
-    public bool isEarthVisitable = false;
-    public bool isGameDone = false;
+    bool isMoonVisitable = false;
+    bool isEarthVisitable = false;
+    bool isGameDone = false;
 
     // task for minigames in ship
     bool isPracticingDart = false;
@@ -78,31 +78,15 @@ public class GameManager : MonoBehaviour
         isPracticingCan = false;
         isPracticingDart = false;
         UpdateGameState(GameState.TaskZero);
-        // AudioManager.instance.BeginningVoiceLine();
     }
 
-    public void SwitchToTaskOne()
-    {
-        UpdateGameState(GameState.TaskOne);
-    }
-
-    public void SwitchToTaskTwo()
-    {
-        UpdateGameState(GameState.TaskTwo);
-    }
-
-    // public void MoonVisitable()
+    // public void SwitchToTaskOne()
     // {
-    //     isMoonVisitable = true;
+    //     UpdateGameState(GameState.TaskOne);
     // }
 
-    // public void EarthVisitable()
+    // public void SwitchToTaskTwo()
     // {
-    //     isEarthVisitable = true;
-    // }
-
-    // public void GameDone()
-    // {
-    //     isGameDone = true;
+    //     UpdateGameState(GameState.TaskTwo);
     // }
 }

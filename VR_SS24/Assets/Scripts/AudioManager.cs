@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip basketball;
-    public AudioClip button;
+    public AudioClip buttonPlate;
     public AudioClip can;
     public AudioClip dart;
     public AudioClip done;
@@ -56,6 +56,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip moon00;
 
     public AudioClip earth00;
+
+    public AudioClip[] voiceLines;
 
     void Awake()
     {
@@ -83,7 +85,7 @@ public class AudioManager : MonoBehaviour
     {
         switch (levelManager.BuildIndex)
         {
-            // set starting sound for ever scene plus condition
+            // set starting sound for every scene plus condition
             case 0:
                 musicSource.clip = musicSpace;
                 ambienceSource.clip = ambienceSpace;
