@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject jupiterPanel;
     [SerializeField] GameObject moonPanel;
     [SerializeField] GameObject earthPanel;
+    [SerializeField] GameObject homePanel;
 
     // button variables
     [Header("Visit button")]
@@ -54,7 +55,7 @@ public class UIManager : MonoBehaviour
     public void Slider()
     {
         GravitationalForceMode mode = (GravitationalForceMode)gravitySlider.value;
-        AudioManager.instance.PlaySFX(AudioManager.instance.sliderClick);
+        AudioManager.instance.PlayUI(AudioManager.instance.sliderClick);
         gravityManager.SetGravityMode(mode);
         UpdateTaskUI();
 
@@ -80,19 +81,19 @@ public class UIManager : MonoBehaviour
 
             if (GameManager.instance.IsGameDone)
             {
-                SetUIStates(false, true, false, false, true, false, false, false, true, true, true);
+                SetUIStates(false, true, false, false, true, false, false, false, true, true, true, true);
             }
             else if (GameManager.instance.IsEarthVisitable)
             {
-                SetUIStates(false, true, false, true, false, false, false, true, true, true, false);
+                SetUIStates(false, true, false, true, false, false, false, true, true, true, false, false);
             }
             else if (GameManager.instance.IsMoonVisitable)
             {
-                SetUIStates(false, true, true, false, false, false, true, true, true, false, false);
+                SetUIStates(false, true, true, false, false, false, true, true, true, false, false, false);
             }
             else
             {
-                SetUIStates(true, false, true, false, false, true, true, true, false, false, false);
+                SetUIStates(true, false, true, false, false, true, true, true, false, false, false, false);
             }
         }
 
@@ -103,13 +104,14 @@ public class UIManager : MonoBehaviour
         taskTwoButton.SetActive(false);
     }
 
-    private void SetUIStates(bool controlMenu, bool planetMenu, bool jupiterMenu, bool moonMenu, bool earthMenu, bool jupiterTask, bool moonTask, bool earthTask, bool jupiterNextPlanet, bool moonNextPlanet, bool earthNextPlanet)
+    private void SetUIStates(bool controlMenu, bool planetMenu, bool jupiterMenu, bool moonMenu, bool earthMenu, bool jupiterTask, bool moonTask, bool earthTask, bool jupiterNextPlanet, bool moonNextPlanet, bool earthNextPlanet, bool homeMenu)
     {
         controlPanel.SetActive(controlMenu);
         planetPanel.SetActive(planetMenu);
         jupiterPanel.SetActive(jupiterMenu);
         moonPanel.SetActive(moonMenu);
         earthPanel.SetActive(earthMenu);
+        homePanel.SetActive(homeMenu);
 
         jupiterTaskButton.SetActive(jupiterTask);
         moonTaskButton.SetActive(moonTask);

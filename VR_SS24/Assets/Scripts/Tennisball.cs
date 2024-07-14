@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tennisball : MonoBehaviour
 {
     UIManager uIManager;
+    bool taskDone = false;
 
     void Awake()
     {
@@ -13,9 +14,11 @@ public class Tennisball : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.tennisball);
-        if (other.gameObject.CompareTag("Can"))
+        if (!taskDone && other.gameObject.CompareTag("Can"))
         {
             GameManager.instance.IsPracticingCan = true;
+            taskDone = true;
+            AudioManager.instance.PlayUI(AudioManager.instance.done01);
             uIManager.UpdateTaskUI();
         }
     }

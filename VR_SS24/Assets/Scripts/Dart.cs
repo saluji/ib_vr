@@ -6,7 +6,7 @@ public class Dart : MonoBehaviour
 {
     UIManager uIManager;
     Rigidbody rb;
-    // bool taskDone = false;
+    bool taskDone = false;
 
     void Awake()
     {
@@ -17,11 +17,12 @@ public class Dart : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.dart);
-        if (other.gameObject.CompareTag("Target"))
+        if (!taskDone && other.gameObject.CompareTag("Target"))
         {
-            // stick dart to dart target
             GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
+            taskDone = true;
+            AudioManager.instance.PlayUI(AudioManager.instance.done01);
             uIManager.UpdateTaskUI();
         }
     }

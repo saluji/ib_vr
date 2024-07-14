@@ -16,7 +16,7 @@ public class ButtonHandler : MonoBehaviour
 
     void OnButtonClick(Button buttonTag)
     {
-        AudioManager.instance.PlaySFX(AudioManager.instance.uIClick);
+        AudioManager.instance.PlayUI(AudioManager.instance.uIClick);
 
         // change GameState depending on button tag name
         switch (buttonTag.tag)

@@ -19,7 +19,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource ambienceSource;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource sFXSource;
+    [SerializeField] AudioSource uISource;
     [SerializeField] AudioSource voiceSource;
+    [SerializeField] AudioSource spaceshipSource;
 
     [Header("Music")]
     public AudioClip musicSpace;
@@ -32,18 +34,22 @@ public class AudioManager : MonoBehaviour
     public AudioClip ambienceJupiter;
     public AudioClip ambienceMoon;
     public AudioClip ambienceEarth;
+    public AudioClip spaceshipIdle;
+
+    [Header("UI Sound")]
+    public AudioClip done01;
+    public AudioClip done02;
+    public AudioClip fail;
+    public AudioClip sliderClick;
+    public AudioClip uIClick;
 
     [Header("Sound effects")]
     public AudioClip basketball;
     public AudioClip buttonPlate;
     public AudioClip can;
     public AudioClip dart;
-    public AudioClip done;
-    public AudioClip sliderClick;
-    public AudioClip spaceshipIdle;
     public AudioClip teleporter;
     public AudioClip tennisball;
-    public AudioClip uIClick;
 
     [Header("Voice lines")]
     public AudioClip space00;
@@ -79,6 +85,21 @@ public class AudioManager : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
         SetBeginningAudio();
+    }
+
+    public void PlayUI(AudioClip clip)
+    {
+        uISource.PlayOneShot(clip);
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sFXSource.PlayOneShot(clip);
+    }
+
+    public void PlayVoice(AudioClip clip)
+    {
+        voiceSource.PlayOneShot(clip);
     }
 
     public void SetBeginningAudio()
@@ -128,16 +149,6 @@ public class AudioManager : MonoBehaviour
         {
             voiceSource.Play();
         }
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        sFXSource.PlayOneShot(clip);
-    }
-
-    public void PlayVoice(AudioClip clip)
-    {
-        voiceSource.PlayOneShot(clip);
     }
 
     void BeginningVoiceLine()

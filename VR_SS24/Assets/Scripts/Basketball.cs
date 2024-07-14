@@ -16,6 +16,8 @@ public class Basketball : MonoBehaviour
     Rigidbody rb;
 
     // dribbling variables
+    bool isTaskOneDone = false;
+    bool isFailingOnce = false;
     bool isBallDropped;
     int currentScore = 0;
     int maxScore = 3;
@@ -71,11 +73,11 @@ public class Basketball : MonoBehaviour
     {
         // Reset the drop flag when the ball is regrabbed
         isBallDropped = false;
+        isFailingOnce = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // play sound
         AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
 
         if (collision.gameObject.CompareTag("Ground"))
@@ -88,19 +90,27 @@ public class Basketball : MonoBehaviour
                     // Prevents incrementing the count again for the same drop
                     isBallDropped = true;
                     currentScore++;
+                    AudioManager.instance.PlayUI(AudioManager.instance.done01);
                 }
                 else
                 {
                     // if ball hits ground twice without regrab, reset score to zero
                     currentScore = 0;
+                    if (!isFailingOnce)
+                    {
+                        // play fail sound for dribbling only once
+                        AudioManager.instance.PlayUI(AudioManager.instance.fail);
+                        isFailingOnce = true;
+                    }
                 }
 
                 // Refresh score in UI
                 textManager.TaskOneScore(currentScore, maxScore);
 
                 // show button for next task if reached maxScore
-                if (currentScore >= maxScore)
+                if (!isTaskOneDone && currentScore == maxScore)
                 {
+                    AudioManager.instance.PlayUI(AudioManager.instance.done02);
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
                     switch (levelManager.BuildIndex)
                     {
@@ -114,6 +124,7 @@ public class Basketball : MonoBehaviour
                             GameManager.instance.IsGameDone = true;
                             break;
                     }
+                    isTaskOneDone = true;
                 }
             }
 
@@ -123,6 +134,7 @@ public class Basketball : MonoBehaviour
                 // lower basket if player fails to throw basketball into basket
                 basket.position -= new Vector3(0, lowerAmount, 0);
                 hasLowered = true;
+                AudioManager.instance.PlayUI(AudioManager.instance.fail);
             }
         }
     }
@@ -133,6 +145,7 @@ public class Basketball : MonoBehaviour
         if (other.gameObject.CompareTag("Basket") && GameManager.instance.state == GameState.TaskTwo)
         {
             uIManager.ShowReturnPanel();
+            AudioManager.instance.PlayUI(AudioManager.instance.done02);
         }
     }
 }

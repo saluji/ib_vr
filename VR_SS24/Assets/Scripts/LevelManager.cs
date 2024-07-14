@@ -33,6 +33,11 @@ public class LevelManager : MonoBehaviour
         buildIndex = 3;
     }
 
+    public void SetHome()
+    {
+        buildIndex = 4;
+    }
+
     public void LoadLevel()
     {
         GameManager.instance.ResetVariables();
