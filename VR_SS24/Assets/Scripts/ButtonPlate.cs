@@ -43,7 +43,7 @@ public class ButtonPlate : MonoBehaviour
         buttonRenderer.material.color = Color.black;
 
         // Play the hover sound
-        AudioManager.instance.PlayUI(AudioManager.instance.buttonPlate);
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPlate);
 
         // Perform additional actions if needed
     }

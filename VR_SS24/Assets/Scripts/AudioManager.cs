@@ -21,7 +21,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource sFXSource;
     [SerializeField] AudioSource uISource;
     [SerializeField] AudioSource voiceSource;
-    [SerializeField] AudioSource spaceshipSource;
 
     [Header("Music")]
     public AudioClip musicSpace;
@@ -35,10 +34,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip ambienceJupiter;
     public AudioClip ambienceMoon;
     public AudioClip ambienceEarth;
-    public AudioClip spaceshipIdle;
 
     [Header("UI Sound")]
-    public AudioClip buttonPlate;
     public AudioClip done01;
     public AudioClip done02;
     public AudioClip fail;
@@ -47,23 +44,44 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip basketball;
+    public AudioClip buttonPlate;
     public AudioClip can;
     public AudioClip dart;
     public AudioClip teleporter;
     public AudioClip tennisball;
 
-    [Header("Voice lines")]
+    [Header("Space voice lines")]
     public AudioClip space00;
     public AudioClip space01;
     public AudioClip space02;
     public AudioClip space03;
+    public AudioClip space04;
+    public AudioClip space05;
+    public AudioClip space06;
+    public AudioClip space07;
+    public AudioClip space08;
+    public AudioClip space09;
+    public AudioClip space10;
 
+    [Header("Jupiter voice lines")]
     public AudioClip jupiter00;
+    public AudioClip jupiter01;
+    public AudioClip jupiter02;
+    public AudioClip jupiter03;
 
+    [Header("Moon voice lines")]
     public AudioClip moon00;
+    public AudioClip moon01;
+    public AudioClip moon02;
+    public AudioClip moon03;
 
+    [Header("Earth voice lines")]
     public AudioClip earth00;
+    public AudioClip earth01;
+    public AudioClip earth02;
+    public AudioClip earth03;
 
+    [Header("Voice lines")]
     public AudioClip[] voiceLines;
 
     void Awake()
@@ -123,20 +141,17 @@ public class AudioManager : MonoBehaviour
             case 1:
                 musicSource.clip = musicJupiter;
                 ambienceSource.clip = ambienceJupiter;
-                // voiceSource.clip = jupiter00;
-                voiceSource.clip = space01;
+                voiceSource.clip = jupiter00;
                 break;
             case 2:
                 musicSource.clip = musicMoon;
                 ambienceSource.clip = ambienceMoon;
-                // voiceSource.clip = moon00;
-                voiceSource.clip = space02;
+                voiceSource.clip = moon00;
                 break;
             case 3:
                 musicSource.clip = musicEarth;
                 ambienceSource.clip = ambienceEarth;
-                // voiceSource.clip = earth00;
-                voiceSource.clip = space03;
+                voiceSource.clip = earth00;
                 break;
             default:
                 Debug.Log("No source");
@@ -163,13 +178,13 @@ public class AudioManager : MonoBehaviour
                 clipToPlay = space00;
                 break;
             case VoiceLine.VoiceLine2:
-                clipToPlay = space01;
+                clipToPlay = space04;
                 break;
             case VoiceLine.VoiceLine3:
-                clipToPlay = space02;
+                clipToPlay = space07;
                 break;
             case VoiceLine.VoiceLine4:
-                clipToPlay = space03;
+                clipToPlay = space10;
                 break;
             default:
                 Debug.LogError("Unhandled voice line case!");
