@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip musicJupiter;
     public AudioClip musicMoon;
     public AudioClip musicEarth;
+    public AudioClip musicHome;
 
     [Header("Ambience")]
     public AudioClip ambienceSpace;
@@ -37,6 +38,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip spaceshipIdle;
 
     [Header("UI Sound")]
+    public AudioClip buttonPlate;
     public AudioClip done01;
     public AudioClip done02;
     public AudioClip fail;
@@ -45,7 +47,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip basketball;
-    public AudioClip buttonPlate;
     public AudioClip can;
     public AudioClip dart;
     public AudioClip teleporter;
