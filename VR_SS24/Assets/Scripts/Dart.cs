@@ -24,6 +24,7 @@ public class Dart : MonoBehaviour
             taskDone = true;
             AudioManager.instance.PlayUI(AudioManager.instance.done01);
             uIManager.UpdateTaskUI();
+            uIManager.SetDartAlpha();
         }
     }
 }

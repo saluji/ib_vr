@@ -20,6 +20,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject earthPanel;
     [SerializeField] GameObject homePanel;
 
+    [Header("Checkmarks")]
+    [SerializeField] Image[] gravityCheck;
+    [SerializeField] Image[] dartCheck;
+    [SerializeField] Image[] canCheck;
+
     // button variables
     [Header("Visit button")]
     [SerializeField] GameObject jupiterVisitButton;
@@ -41,6 +46,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject taskThreeNext;
 
     [SerializeField] GameObject taskTwoButton;
+
+    float initialAlpha = 0.02f;
+    float maxAlpha = 1f;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
 
@@ -140,5 +148,37 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Task not done");
         }
+    }
+
+    private void SetAlpha(Image[] images, float alpha)
+    {
+        foreach (Image image in images)
+        {
+            Color color = image.color;
+            color.a = alpha;
+            image.color = color;
+        }
+    }
+
+    public void SetGravityAlpha()
+    {
+        SetAlpha(gravityCheck, maxAlpha);
+    }
+
+    public void SetDartAlpha()
+    {
+        SetAlpha(dartCheck, maxAlpha);
+    }
+
+    public void SetCanAlpha()
+    {
+        SetAlpha(canCheck, maxAlpha);
+    }
+
+    public void ResetAlpha()
+    {
+        SetAlpha(gravityCheck, initialAlpha);
+        SetAlpha(dartCheck, initialAlpha);
+        SetAlpha(canCheck, initialAlpha);
     }
 }

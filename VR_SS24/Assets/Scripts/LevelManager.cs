@@ -4,11 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    UIManager uIManager;
     public int buildIndex;
     public int BuildIndex { get { return buildIndex; } set { buildIndex = value; } }
 
     void Awake()
     {
+        uIManager = GameObject.Find("UIManager").GetComponent<UIManager>();
         buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -40,6 +42,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel()
     {
+        uIManager.ResetAlpha();
         GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
         AudioManager.instance.SetBeginningAudio();

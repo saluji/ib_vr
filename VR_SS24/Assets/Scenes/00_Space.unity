@@ -26022,6 +26022,18 @@ MonoBehaviour:
   moonPanel: {fileID: 1975120467}
   earthPanel: {fileID: 2145469269}
   homePanel: {fileID: 1325107284}
+  jupiterCheck: {fileID: 2127876282}
+  moonCheck: {fileID: 1957606024}
+  earthCheck: {fileID: 19238981}
+  dartCheck:
+  - {fileID: 190970361}
+  - {fileID: 1821978759}
+  - {fileID: 244534342}
+  canCheck:
+  - {fileID: 1863061745}
+  - {fileID: 1703748764}
+  - {fileID: 240747020}
+  singleDartCheck: {fileID: 190970361}
   jupiterVisitButton: {fileID: 1724048661}
   moonVisitButton: {fileID: 226884130}
   earthVisitButton: {fileID: 356753529}
