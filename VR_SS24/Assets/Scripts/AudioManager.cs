@@ -102,8 +102,8 @@ public class AudioManager : MonoBehaviour
         }
 
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-
-        SetBeginningAudio();
+        SetMusic();
+        // SetBeginningAudio();
     }
 
     public void PlayUI(AudioClip clip)
@@ -121,37 +121,29 @@ public class AudioManager : MonoBehaviour
         voiceSource.PlayOneShot(clip);
     }
 
-    public void SetBeginningAudio()
+    public void SetMusic()
     {
         switch (levelManager.BuildIndex)
         {
-            // set starting sound for every scene plus condition
             case 0:
                 musicSource.clip = musicSpace;
                 ambienceSource.clip = ambienceSpace;
-                if (voiceSource != null)
-                {
-                    BeginningVoiceLine();
-                }
-                else
-                {
-                    Debug.LogError("VoiceSource is not assigned!");
-                }
                 break;
             case 1:
                 musicSource.clip = musicJupiter;
                 ambienceSource.clip = ambienceJupiter;
-                voiceSource.clip = jupiter00;
                 break;
             case 2:
                 musicSource.clip = musicMoon;
                 ambienceSource.clip = ambienceMoon;
-                voiceSource.clip = moon00;
                 break;
             case 3:
                 musicSource.clip = musicEarth;
                 ambienceSource.clip = ambienceEarth;
-                voiceSource.clip = earth00;
+                break;
+            case 4:
+                musicSource.clip = musicHome;
+                // ambienceSource.clip = ambienceHome;
                 break;
             default:
                 Debug.Log("No source");
@@ -159,13 +151,53 @@ public class AudioManager : MonoBehaviour
         }
         musicSource.Play();
         ambienceSource.Play();
-
-        // Only call voiceSource.Play() once for the voice clip
-        if (voiceSource.clip != null)  // Ensure there is a clip assigned
-        {
-            voiceSource.Play();
-        }
     }
+
+    // public void SetBeginningAudio()
+    // {
+    //     switch (levelManager.BuildIndex)
+    //     {
+    //         // set starting sound for every scene plus condition
+    //         case 0:
+    //             musicSource.clip = musicSpace;
+    //             ambienceSource.clip = ambienceSpace;
+    //             if (voiceSource != null)
+    //             {
+    //                 BeginningVoiceLine();
+    //             }
+    //             else
+    //             {
+    //                 Debug.LogError("VoiceSource is not assigned!");
+    //             }
+    //             break;
+    //         case 1:
+    //             musicSource.clip = musicJupiter;
+    //             ambienceSource.clip = ambienceJupiter;
+    //             voiceSource.clip = jupiter00;
+    //             break;
+    //         case 2:
+    //             musicSource.clip = musicMoon;
+    //             ambienceSource.clip = ambienceMoon;
+    //             voiceSource.clip = moon00;
+    //             break;
+    //         case 3:
+    //             musicSource.clip = musicEarth;
+    //             ambienceSource.clip = ambienceEarth;
+    //             voiceSource.clip = earth00;
+    //             break;
+    //         default:
+    //             Debug.Log("No source");
+    //             break;
+    //     }
+    //     musicSource.Play();
+    //     ambienceSource.Play();
+
+    //     // Only call voiceSource.Play() once for the voice clip
+    //     if (voiceSource.clip != null)  // Ensure there is a clip assigned
+    //     {
+    //         voiceSource.Play();
+    //     }
+    // }
 
     void BeginningVoiceLine()
     {

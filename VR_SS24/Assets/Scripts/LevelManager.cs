@@ -1,4 +1,5 @@
 using Unity.VRTemplate;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,15 @@ public class LevelManager : MonoBehaviour
 
         GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
-        AudioManager.instance.SetBeginningAudio();
+        // AudioManager.instance.SetMusic();
+        // AudioManager.instance.SetBeginningAudio();
+        StartCoroutine(WaitAndSetMusic());
+    }
+
+    private IEnumerator WaitAndSetMusic()
+    {
+        // ensure the scene is fully loaded before setting the music
+        yield return new WaitForEndOfFrame();
+        AudioManager.instance.SetMusic();
     }
 }

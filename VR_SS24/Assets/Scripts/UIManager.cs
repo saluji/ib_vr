@@ -50,7 +50,6 @@ public class UIManager : MonoBehaviour
 
     float initialAlpha = 0.02f;
     float maxAlpha = 1f;
-    bool isTaskZeroDone = false;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
 
@@ -133,27 +132,27 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTaskUI()
     {
-        if (isTaskZeroDone) return;
+        if (GameManager.instance.IsTaskZeroDone) return;
 
         if (GameManager.instance.IsPracticingCan && GameManager.instance.IsPracticingDart)
         {
             if (gravitySlider.value == 1 && !GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
             {
                 taskOneNext.SetActive(true);
-                isTaskZeroDone = true;
+                GameManager.instance.IsTaskZeroDone = true;
             }
             else if (gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
             {
                 taskTwoNext.SetActive(true);
-                isTaskZeroDone = true;
+                GameManager.instance.IsTaskZeroDone = true;
             }
             else if (gravitySlider.value == 3 && GameManager.instance.IsEarthVisitable)
             {
                 taskThreeNext.SetActive(true);
-                isTaskZeroDone = true;
+                GameManager.instance.IsTaskZeroDone = true;
             }
 
-            if (isTaskZeroDone)
+            if (GameManager.instance.IsTaskZeroDone)
             {
                 AudioManager.instance.PlayUI(AudioManager.instance.done02);
             }
