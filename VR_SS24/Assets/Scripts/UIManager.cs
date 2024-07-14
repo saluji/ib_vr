@@ -21,10 +21,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject taskOneNext;
     [SerializeField] GameObject taskTwoNext;
     [SerializeField] GameObject taskThreeNext;
+<<<<<<< Updated upstream
     [SerializeField] GameObject jupiterNextButton;
     [SerializeField] GameObject moonNextButton;
     [SerializeField] GameObject earthNextButton;
     [SerializeField] GameObject taskOneButton;
+=======
+    
+>>>>>>> Stashed changes
     [SerializeField] GameObject taskTwoButton;
 
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
@@ -132,12 +136,23 @@ public class UIManager : MonoBehaviour
 
     public void StartingUI()
     {
+<<<<<<< Updated upstream
         jupiterNextButton.SetActive(GameManager.instance.IsMoonVisitable);
         moonNextButton.SetActive(GameManager.instance.IsEarthVisitable);
         earthNextButton.SetActive(GameManager.instance.IsGameDone);
 
         if (levelManager.BuildIndex == 0)
         {
+=======
+        // turn UI in spaceship level on / off depending on conditions
+        
+        if (levelManager.BuildIndex == 0)
+        {
+            jupiterVisitButton.SetActive(GameManager.instance.IsMoonVisitable);
+            moonVisitButton.SetActive(GameManager.instance.IsEarthVisitable);
+            earthVisitButton.SetActive(GameManager.instance.IsGameDone);
+
+>>>>>>> Stashed changes
             if (GameManager.instance.IsGameDone)
             {
                 SetPanelStates(false, true, false, false, true);
@@ -155,12 +170,10 @@ public class UIManager : MonoBehaviour
                 SetPanelStates(true, false, true, false, false);
             }
         }
-
         taskOneNext.SetActive(false);
         taskTwoNext.SetActive(false);
         taskThreeNext.SetActive(false);
 
-        taskOneButton.SetActive(true);
         taskTwoButton.SetActive(false);
     }
 
