@@ -25567,6 +25567,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!1001 &4654938809525831410
 PrefabInstance:
   m_ObjectHideFlags: 0
