@@ -24,6 +24,7 @@ public class Basketball : MonoBehaviour
 
     // lower basket variables
     Transform basket;
+    bool isTaskTwoDone = false;
     float lowerAmount = 0.25f;
     float minHeight = -2f;
     bool hasLowered = false;
@@ -144,8 +145,13 @@ public class Basketball : MonoBehaviour
         // show return to ship panel if succeeding to throw basketball into basket
         if (other.gameObject.CompareTag("Basket") && GameManager.instance.state == GameState.TaskTwo)
         {
+            if (!isTaskTwoDone)
+            {
+                AudioManager.instance.PlayUI(AudioManager.instance.done02);
+                AudioManager.instance.PlayVoice();
+                isTaskTwoDone = true;
+            }
             uIManager.ShowReturnPanel();
-            AudioManager.instance.PlayUI(AudioManager.instance.done02);
         }
     }
 }
