@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     public static event Action<GameState> OnGameStateChanged;
 
-    // visitable planets in ship
-    public bool isMoonVisitable = false;
-    public bool isEarthVisitable = false;
-    public bool isGameDone = false;
+    // visitable planets
+    bool isMoonVisitable = false;
+    bool isEarthVisitable = false;
+    bool isGameDone = false;
 
-    // task conditions
+    // ship task conditions
     bool isTaskZeroDone = false;
     bool isPracticingDart = false;
     bool isPracticingCan = false;

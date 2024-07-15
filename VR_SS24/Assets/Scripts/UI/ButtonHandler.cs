@@ -43,10 +43,9 @@ public class ButtonHandler : MonoBehaviour
         // only play voice lines once
         if (!voiceClipPlayed.ContainsKey(tag))
         {
-            // Call PlayVoice from AudioManager
             AudioManager.instance.PlayVoice();
 
-            // Mark this button's tag as played
+            // mark this button's tag as played
             if (!voiceClipPlayed.ContainsKey(tag))
             {
                 voiceClipPlayed.Add(tag, true);

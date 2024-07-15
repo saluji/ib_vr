@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator DelaySound()
     {
-        // ensure the scene is fully loaded before setting music, ambience and voice
+        // ensure the scene is fully loaded before setting voice
         yield return new WaitForEndOfFrame();
         AudioManager.instance.PlayVoice();
     }
