@@ -4545,7 +4545,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -48.27}
-  m_SizeDelta: {x: 45, y: 30}
+  m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412508992
 MonoBehaviour:
@@ -10327,7 +10327,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11626,7 +11626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Visit
+  m_text: Home
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
   m_sharedMaterial: {fileID: -2903771384293589167, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
@@ -18582,16 +18582,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094d6b8530dd64aaa37925a98cab4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceIndex: 0
   ambienceSource: {fileID: 358563986}
   musicSource: {fileID: 219413566}
   sFXSource: {fileID: 1816689883}
   uISource: {fileID: 1895733948}
   voiceSource: {fileID: 878238587}
-  musicSpace: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
-  musicJupiter: {fileID: 8300000, guid: fd0c89adfbb65a348ac7f205e9d18b59, type: 3}
-  musicMoon: {fileID: 8300000, guid: fb7ff0c729394cc4288e4bcb50da51f7, type: 3}
-  musicEarth: {fileID: 8300000, guid: b2f5f903fec4a6f478dbada225d08807, type: 3}
-  musicHome: {fileID: 8300000, guid: 40f7892773e800f48b5e1ac369f0d66a, type: 3}
   music:
   - {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
   - {fileID: 8300000, guid: fd0c89adfbb65a348ac7f205e9d18b59, type: 3}
@@ -18604,44 +18600,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dbcfda08b2bbcf6498c79270362d7ab8, type: 3}
   - {fileID: 8300000, guid: 63981840968f5c545bc1eef33e5ab763, type: 3}
   - {fileID: 8300000, guid: 2f305404ce8b83a43b3fef7973481e84, type: 3}
-  ambienceSpace: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
-  ambienceJupiter: {fileID: 8300000, guid: a611779ef86bcdf4ba1c5f302965779f, type: 3}
-  ambienceMoon: {fileID: 8300000, guid: dbcfda08b2bbcf6498c79270362d7ab8, type: 3}
-  ambienceEarth: {fileID: 8300000, guid: 63981840968f5c545bc1eef33e5ab763, type: 3}
-  done01: {fileID: 8300000, guid: 50a728df160aa1944917b81c2de58a8d, type: 3}
-  done02: {fileID: 8300000, guid: 20ba22996f680af47a915513b86d47c9, type: 3}
-  fail: {fileID: 8300000, guid: b1e76c3ed171d8b44af9a5af60c0f90a, type: 3}
-  sliderClick: {fileID: 8300000, guid: e0c2cd6e1ecf0a445b629780f7b77995, type: 3}
-  uIClick: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  basketball: {fileID: 8300000, guid: a5f59309b06fea94da5a889b210f42a9, type: 3}
-  buttonPlate: {fileID: 8300000, guid: 19cb08920bf7c2d4c9c9a3b5d84ebf5b, type: 3}
-  can: {fileID: 8300000, guid: c93d70c495c100b4e88ef751c65ce9eb, type: 3}
-  dart: {fileID: 8300000, guid: 2a4f6b92d3398de409218e65b257ebd2, type: 3}
-  teleporter: {fileID: 8300000, guid: 387528e7ab6feb146a089894ca2d7314, type: 3}
-  tennisball: {fileID: 8300000, guid: 87ef9aaa83a30cd4ea70b194426b3d6a, type: 3}
-  space00: {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
-  space01: {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
-  space02: {fileID: 8300000, guid: 53aac91d0e3097d44968109b99f91843, type: 3}
-  space03: {fileID: 8300000, guid: c4a0539e0288e02428897a64e97862b7, type: 3}
-  space04: {fileID: 8300000, guid: 53eaf789dc5645f4da670e4b7feedb20, type: 3}
-  space05: {fileID: 8300000, guid: 31856ddc95b55784cb904bf1e718e64e, type: 3}
-  space06: {fileID: 8300000, guid: be319c5808b204548b2c6b52f42eeda5, type: 3}
-  space07: {fileID: 8300000, guid: 6d382e0e2a596654a86b7c5d2322f24d, type: 3}
-  space08: {fileID: 8300000, guid: fa1a9c40f3c5042489bd5cfd9b4c3578, type: 3}
-  space09: {fileID: 8300000, guid: 81afab1694792554da655fe850f13483, type: 3}
-  space10: {fileID: 8300000, guid: c77f855ee136f104cbd01a08dda9b782, type: 3}
-  jupiter00: {fileID: 8300000, guid: 0f149969107563f4983863a1c8b47c27, type: 3}
-  jupiter01: {fileID: 8300000, guid: 8ed4711441ddce74786c5b43fe3b0ab3, type: 3}
-  jupiter02: {fileID: 8300000, guid: cd73d59c98308784ab9470dee6b2841f, type: 3}
-  jupiter03: {fileID: 8300000, guid: a3939410b4dbda447aad3c6bbee4575c, type: 3}
-  moon00: {fileID: 8300000, guid: 042183e2fca1f5b4395d2e08a049fac9, type: 3}
-  moon01: {fileID: 8300000, guid: 41435cac7e5f0094cacf9b8a879edf8e, type: 3}
-  moon02: {fileID: 8300000, guid: 35a9dcf876544704f8d241c032f996a1, type: 3}
-  moon03: {fileID: 8300000, guid: f43eb2a9375b6284eb60ae72d29d95eb, type: 3}
-  earth00: {fileID: 8300000, guid: 048869c7ebc3d9543bb417df650756e6, type: 3}
-  earth01: {fileID: 8300000, guid: 33e32fe81b8102e459dc1b79c5199754, type: 3}
-  earth02: {fileID: 8300000, guid: eef130dfaec52ab4d88247fba642ccf5, type: 3}
-  earth03: {fileID: 8300000, guid: 8d9d3615c41385746978899f16dfa63f, type: 3}
   voiceLines:
   - {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
   - {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
@@ -18655,7 +18613,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 31856ddc95b55784cb904bf1e718e64e, type: 3}
   - {fileID: 8300000, guid: be319c5808b204548b2c6b52f42eeda5, type: 3}
   - {fileID: 8300000, guid: 042183e2fca1f5b4395d2e08a049fac9, type: 3}
-  - {fileID: 8300000, guid: 41435cac7e5f0094cacf9b8a879edf8e, type: 3}
+  - {fileID: 8300000, guid: 41f9f47173802ac498e0b44f45f28502, type: 3}
   - {fileID: 8300000, guid: 35a9dcf876544704f8d241c032f996a1, type: 3}
   - {fileID: 8300000, guid: f43eb2a9375b6284eb60ae72d29d95eb, type: 3}
   - {fileID: 8300000, guid: 6d382e0e2a596654a86b7c5d2322f24d, type: 3}
@@ -18666,6 +18624,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eef130dfaec52ab4d88247fba642ccf5, type: 3}
   - {fileID: 8300000, guid: 8d9d3615c41385746978899f16dfa63f, type: 3}
   - {fileID: 8300000, guid: c77f855ee136f104cbd01a08dda9b782, type: 3}
+  done01: {fileID: 8300000, guid: 50a728df160aa1944917b81c2de58a8d, type: 3}
+  done02: {fileID: 8300000, guid: 20ba22996f680af47a915513b86d47c9, type: 3}
+  fail: {fileID: 8300000, guid: b1e76c3ed171d8b44af9a5af60c0f90a, type: 3}
+  sliderClick: {fileID: 8300000, guid: e0c2cd6e1ecf0a445b629780f7b77995, type: 3}
+  uIClick: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  basketball: {fileID: 8300000, guid: a5f59309b06fea94da5a889b210f42a9, type: 3}
+  buttonPlate: {fileID: 8300000, guid: 19cb08920bf7c2d4c9c9a3b5d84ebf5b, type: 3}
+  can: {fileID: 8300000, guid: c93d70c495c100b4e88ef751c65ce9eb, type: 3}
+  dart: {fileID: 8300000, guid: 2a4f6b92d3398de409218e65b257ebd2, type: 3}
+  teleporter: {fileID: 8300000, guid: 387528e7ab6feb146a089894ca2d7314, type: 3}
+  tennisball: {fileID: 8300000, guid: 87ef9aaa83a30cd4ea70b194426b3d6a, type: 3}
 --- !u!1 &1655500254
 GameObject:
   m_ObjectHideFlags: 0
@@ -21447,7 +21416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HOME
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}
   m_sharedMaterial: {fileID: -2903771384293589167, guid: 4255f24e37e46e649ad44c2fcfaa486f, type: 2}

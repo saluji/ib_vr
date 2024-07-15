@@ -38,7 +38,6 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(buildIndex);
         StartCoroutine(DelaySound());
         // AudioManager.instance.SetMusic();
-        // AudioManager.instance.SetBeginningAudio();
         // AudioManager.instance.SetMusic();
     }
 

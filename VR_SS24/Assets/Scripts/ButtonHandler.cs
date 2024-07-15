@@ -1,6 +1,46 @@
+// using System.Collections;
+// using System.Collections.Generic;
+// using Unity.VisualScripting;
+// using UnityEngine;
+// using UnityEngine.UI;
+
+// public class ButtonHandler : MonoBehaviour
+// {
+//     Button taskButton;
+
+//     void Awake()
+//     {
+//         taskButton = GetComponent<Button>();
+//         taskButton.onClick.AddListener(() => OnButtonClick(taskButton));
+//     }
+
+//     void OnButtonClick(Button buttonTag)
+//     {
+//         AudioManager.instance.PlayUI(AudioManager.instance.uIClick);
+
+//         // change GameState depending on tag
+//         switch (buttonTag.tag)
+//         {
+//             case "TaskOne":
+//                 GameManager.instance.UpdateGameState(GameState.TaskOne);
+//                 AudioManager.instance.PlayVoice();
+//                 break;
+//             case "TaskTwo":
+//                 GameManager.instance.UpdateGameState(GameState.TaskTwo);
+//                 AudioManager.instance.PlayVoice();
+//                 break;
+//             case "VoiceClip":
+//                 AudioManager.instance.PlayVoice();
+//                 break;
+//             default:
+//                 Debug.Log("Unassigned tag");
+//                 break;
+//         }
+//     }
+// }
+
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,33 +48,55 @@ public class ButtonHandler : MonoBehaviour
 {
     Button taskButton;
 
+    // Dictionary to keep track of buttons that have played a voice clip
+    private Dictionary<string, bool> voiceClipPlayed;
+
     void Awake()
     {
         taskButton = GetComponent<Button>();
         taskButton.onClick.AddListener(() => OnButtonClick(taskButton));
+
+        // Initialize the dictionary
+        voiceClipPlayed = new Dictionary<string, bool>();
     }
 
     void OnButtonClick(Button buttonTag)
     {
         AudioManager.instance.PlayUI(AudioManager.instance.uIClick);
 
-        // change GameState depending on button tag name
+        // Check the button's tag to determine the action
         switch (buttonTag.tag)
         {
             case "TaskOne":
                 GameManager.instance.UpdateGameState(GameState.TaskOne);
-                AudioManager.instance.PlayVoice();
+                PlayVoiceIfNotPlayed("TaskOne");
                 break;
             case "TaskTwo":
                 GameManager.instance.UpdateGameState(GameState.TaskTwo);
-                AudioManager.instance.PlayVoice();
+                PlayVoiceIfNotPlayed("TaskTwo");
                 break;
             case "VoiceClip":
-                AudioManager.instance.PlayVoice();
+                PlayVoiceIfNotPlayed("VoiceClip");
                 break;
             default:
                 Debug.Log("Unassigned tag");
                 break;
+        }
+    }
+
+    void PlayVoiceIfNotPlayed(string tag)
+    {
+        // if (tag == "VoiceClip" || !voiceClipPlayed.ContainsKey(tag))
+        if (!voiceClipPlayed.ContainsKey(tag))
+        {
+            // Call PlayVoice from AudioManager
+            AudioManager.instance.PlayVoice();
+
+            // Mark this button's tag as played
+            if (!voiceClipPlayed.ContainsKey(tag))
+            {
+                voiceClipPlayed.Add(tag, true);
+            }
         }
     }
 }
