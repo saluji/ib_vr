@@ -37,15 +37,13 @@ public class LevelManager : MonoBehaviour
         GameManager.instance.ResetVariables();
         SceneManager.LoadScene(buildIndex);
         StartCoroutine(DelaySound());
-        // AudioManager.instance.SetMusic();
-        // AudioManager.instance.SetMusic();
     }
 
     private IEnumerator DelaySound()
     {
-        // ensure the scene is fully loaded before setting the music
+        // ensure the scene is fully loaded before setting music, ambience and voice
         yield return new WaitForEndOfFrame();
+        AudioManager.instance.SetMusic();
         AudioManager.instance.PlayVoice();
-        // AudioManager.instance.SetMusic();
     }
 }

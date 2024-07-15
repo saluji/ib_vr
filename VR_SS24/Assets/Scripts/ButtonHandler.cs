@@ -1,44 +1,3 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using Unity.VisualScripting;
-// using UnityEngine;
-// using UnityEngine.UI;
-
-// public class ButtonHandler : MonoBehaviour
-// {
-//     Button taskButton;
-
-//     void Awake()
-//     {
-//         taskButton = GetComponent<Button>();
-//         taskButton.onClick.AddListener(() => OnButtonClick(taskButton));
-//     }
-
-//     void OnButtonClick(Button buttonTag)
-//     {
-//         AudioManager.instance.PlayUI(AudioManager.instance.uIClick);
-
-//         // change GameState depending on tag
-//         switch (buttonTag.tag)
-//         {
-//             case "TaskOne":
-//                 GameManager.instance.UpdateGameState(GameState.TaskOne);
-//                 AudioManager.instance.PlayVoice();
-//                 break;
-//             case "TaskTwo":
-//                 GameManager.instance.UpdateGameState(GameState.TaskTwo);
-//                 AudioManager.instance.PlayVoice();
-//                 break;
-//             case "VoiceClip":
-//                 AudioManager.instance.PlayVoice();
-//                 break;
-//             default:
-//                 Debug.Log("Unassigned tag");
-//                 break;
-//         }
-//     }
-// }
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,16 +6,12 @@ using UnityEngine.UI;
 public class ButtonHandler : MonoBehaviour
 {
     Button taskButton;
-
-    // Dictionary to keep track of buttons that have played a voice clip
-    private Dictionary<string, bool> voiceClipPlayed;
+    Dictionary<string, bool> voiceClipPlayed;
 
     void Awake()
     {
         taskButton = GetComponent<Button>();
         taskButton.onClick.AddListener(() => OnButtonClick(taskButton));
-
-        // Initialize the dictionary
         voiceClipPlayed = new Dictionary<string, bool>();
     }
 
@@ -86,7 +41,7 @@ public class ButtonHandler : MonoBehaviour
 
     void PlayVoiceIfNotPlayed(string tag)
     {
-        // if (tag == "VoiceClip" || !voiceClipPlayed.ContainsKey(tag))
+        // only play voice lines once
         if (!voiceClipPlayed.ContainsKey(tag))
         {
             // Call PlayVoice from AudioManager

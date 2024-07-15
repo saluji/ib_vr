@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public enum VoiceLine
 {
@@ -23,23 +24,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource uISource;
     [SerializeField] AudioSource voiceSource;
 
-    [Header("Music")]
-    // public AudioClip musicSpace;
-    // public AudioClip musicJupiter;
-    // public AudioClip musicMoon;
-    // public AudioClip musicEarth;
-    // public AudioClip musicHome;
+    [Header("Background")]
     public AudioClip[] music;
     public AudioClip[] ambience;
 
     [Header("Voice lines")]
     public AudioClip[] voiceLines;
-    
-    // [Header("Ambience")]
-    // public AudioClip ambienceSpace;
-    // public AudioClip ambienceJupiter;
-    // public AudioClip ambienceMoon;
-    // public AudioClip ambienceEarth;
 
     [Header("UI Sound")]
     public AudioClip done01;
@@ -68,13 +58,25 @@ public class AudioManager : MonoBehaviour
                 transform.SetParent(null);
             }
             DontDestroyOnLoad(gameObject);
+
+            levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+            ambienceSource.enabled = true;
+            musicSource.enabled = true;
+            sFXSource.enabled = true;
+            uISource.enabled = true;
+            voiceSource.enabled = true;
         }
+
         else
         {
             Destroy(gameObject);
         }
+        // SetMusic();
+        // PlayVoice();
+    }
 
-        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    void Start()
+    {
         SetMusic();
         PlayVoice();
     }
@@ -91,25 +93,51 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoice()
     {
-        Debug.Log("Play voice");
+        // play voice clips in correct order
         if (voiceIndex < voiceLines.Length)
         {
-            Debug.Log("Still below length");
             voiceSource.Stop();
             voiceSource.PlayOneShot(voiceLines[voiceIndex]);
             voiceIndex++;
         }
     }
 
+    // public void SetMusic()
+    // {
+    //     // set fitting music for the scene
+    //     int sceneIndex = levelManager.BuildIndex;
+    //     if (sceneIndex < music.Length && music[sceneIndex] != null)
+    //     {
+    //         musicSource.clip = music[sceneIndex];
+    //         ambienceSource.clip = ambience[sceneIndex];
+    //         musicSource.Play();
+    //         ambienceSource.Play();
+    //     }
+    // }
+
     public void SetMusic()
     {
         int sceneIndex = levelManager.BuildIndex;
         if (sceneIndex < music.Length && music[sceneIndex] != null)
         {
+            Debug.Log($"Setting music for scene {sceneIndex}: {music[sceneIndex].name}");
             musicSource.clip = music[sceneIndex];
-            ambienceSource.clip = ambience[sceneIndex];
             musicSource.Play();
-            ambienceSource.Play();
+
+            if (sceneIndex < ambience.Length && ambience[sceneIndex] != null)
+            {
+                Debug.Log($"Setting ambience for scene {sceneIndex}: {ambience[sceneIndex].name}");
+                ambienceSource.clip = ambience[sceneIndex];
+                ambienceSource.Play();
+            }
+            else
+            {
+                Debug.LogWarning($"Ambience clip for scene {sceneIndex} is null or out of range.");
+            }
+        }
+        else
+        {
+            Debug.LogError($"Scene index {sceneIndex} is out of bounds for the music array.");
         }
     }
 

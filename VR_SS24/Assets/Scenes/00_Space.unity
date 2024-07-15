@@ -18628,7 +18628,7 @@ MonoBehaviour:
   done02: {fileID: 8300000, guid: 20ba22996f680af47a915513b86d47c9, type: 3}
   fail: {fileID: 8300000, guid: b1e76c3ed171d8b44af9a5af60c0f90a, type: 3}
   sliderClick: {fileID: 8300000, guid: e0c2cd6e1ecf0a445b629780f7b77995, type: 3}
-  uIClick: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  uIClick: {fileID: 8300000, guid: ed89bf2970fa77b4cae0cc4a47ccaa71, type: 3}
   basketball: {fileID: 8300000, guid: a5f59309b06fea94da5a889b210f42a9, type: 3}
   buttonPlate: {fileID: 8300000, guid: 19cb08920bf7c2d4c9c9a3b5d84ebf5b, type: 3}
   can: {fileID: 8300000, guid: c93d70c495c100b4e88ef751c65ce9eb, type: 3}
@@ -25492,7 +25492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509aea467b6780d43b503ebdb6055436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentGravitationalForce: 3
+  CurrentGravitationalForce: 0
 --- !u!4 &543450653387372771
 Transform:
   m_ObjectHideFlags: 0

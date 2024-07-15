@@ -1,78 +1,51 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ButtonPlate : MonoBehaviour
 {
+    XRBaseInteractable interactable;
     float hoverCooldown = 1.0f; // Cooldown time in seconds
-    private Color initialColor; // To store the initial color
-    private Renderer buttonRenderer;
-
-    private bool isCoolingDown = false; // Track if the cooldown is active
+    bool isCoolingDown = false; // Track if the cooldown is active
 
     void Awake()
     {
-        buttonRenderer = GetComponent<Renderer>();
+        // Initialize the interactable component
+        interactable = GetComponent<XRBaseInteractable>();
 
-        if (buttonRenderer == null)
+        if (interactable != null)
         {
-            Debug.LogError("Renderer component is missing from this GameObject.");
-            return;
+            // Subscribe to the hover enter event
+            interactable.hoverEntered.AddListener(OnHoverEnter);
         }
-
-        // Store the initial color of the button
-        initialColor = buttonRenderer.material.color;
-    }
-
-    void Update()
-    {
-        // Check if the Space key is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        else
         {
-            if (!isCoolingDown)
-            {
-                StartCoroutine(HoverCooldownCoroutine());
-            }
+            Debug.LogError("XRBaseInteractable component missing on ButtonPlate.");
         }
     }
 
-    private void HandleHoverEnter()
+    void OnDestroy()
     {
-        Debug.Log("Space key pressed over the button.");
-
-        // Change the button's color
-        buttonRenderer.material.color = Color.black;
-
-        // Play the hover sound
-        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPlate);
-
-        // Perform additional actions if needed
+        // Unsubscribe from the hover enter event
+        if (interactable != null)
+        {
+            interactable.hoverEntered.RemoveListener(OnHoverEnter);
+        }
     }
 
-    private void HandleHoverExit()
+    void OnHoverEnter(HoverEnterEventArgs args)
     {
-        Debug.Log("Space key released or no longer hovering over the button.");
-
-        // Reset the button's color to the initial color
-        buttonRenderer.material.color = initialColor;
-
-        // Perform additional actions if needed
+        if (!isCoolingDown)
+        {
+            StartCoroutine(Cooldown());
+            AudioManager.instance.PlayUI(AudioManager.instance.buttonPlate);
+        }
     }
 
-    private IEnumerator HoverCooldownCoroutine()
+    IEnumerator Cooldown()
     {
-        // Handle hover enter
-        HandleHoverEnter();
-
-        // Set cooldown flag
         isCoolingDown = true;
-
-        // Wait for the specified cooldown time
         yield return new WaitForSeconds(hoverCooldown);
-
-        // Reset cooldown flag
         isCoolingDown = false;
-
-        // Handle hover exit
-        HandleHoverExit();
     }
 }
