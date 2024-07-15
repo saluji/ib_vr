@@ -18,7 +18,6 @@ public class Basketball : MonoBehaviour
     [SerializeField] AudioClip clip;
 
     // dribbling variables
-    bool isTaskOneDone = false;
     bool isFailingOnce = false;
     bool isBallDropped;
     int currentScore = 0;
@@ -26,7 +25,6 @@ public class Basketball : MonoBehaviour
 
     // lower basket variables
     Transform basket;
-    bool isTaskTwoDone = false;
     float lowerAmount = 0.25f;
     float minHeight = -2f;
     bool hasLowered = false;
@@ -112,7 +110,7 @@ public class Basketball : MonoBehaviour
                 textManager.TaskOneScore(currentScore, maxScore);
 
                 // show button for next task if reached maxScore
-                if (!isTaskOneDone && currentScore == maxScore)
+                if (!GameManager.instance.IsTaskOneDone && currentScore == maxScore)
                 {
                     AudioManager.instance.PlayUI(AudioManager.instance.done02);
                     uIManager.TaskTwoButton.gameObject.SetActive(true);
@@ -128,7 +126,7 @@ public class Basketball : MonoBehaviour
                             GameManager.instance.IsGameDone = true;
                             break;
                     }
-                    isTaskOneDone = true;
+                    GameManager.instance.IsTaskOneDone = true;
                 }
             }
 
@@ -148,11 +146,15 @@ public class Basketball : MonoBehaviour
         // show return to ship panel if succeeding to throw basketball into basket
         if (other.gameObject.CompareTag("Basket") && GameManager.instance.state == GameState.TaskTwo)
         {
-            if (!isTaskTwoDone)
+            if (!GameManager.instance.IsTaskTwoDone)
             {
-                AudioManager.instance.PlayUI(AudioManager.instance.done02);
                 AudioManager.instance.PlayVoice();
-                isTaskTwoDone = true;
+                GameManager.instance.IsTaskTwoDone = true;
+                AudioManager.instance.PlayUI(AudioManager.instance.done02);
+            }
+            else
+            {
+                AudioManager.instance.PlayUI(AudioManager.instance.done01);
             }
             uIManager.ShowReturnPanel();
         }

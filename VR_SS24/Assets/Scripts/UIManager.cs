@@ -67,8 +67,11 @@ public class UIManager : MonoBehaviour
         AudioManager.instance.PlayUI(AudioManager.instance.sliderClick);
         gravityManager.SetGravityMode(mode);
         textManager.ChangeGravityText();
-        CheckmarkCondition();
-        UpdateTaskUI();
+        if (!GameManager.instance.IsTaskZeroDone)
+        {
+            CheckmarkCondition();
+            UpdateTaskUI();
+        }
     }
 
     public void ShowReturnPanel()

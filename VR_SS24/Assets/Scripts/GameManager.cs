@@ -22,20 +22,23 @@ public class GameManager : MonoBehaviour
     bool isEarthVisitable = false;
     bool isGameDone = false;
 
-    // task for minigames in ship
+    // task conditions
     bool isTaskZeroDone = false;
     bool isPracticingDart = false;
     bool isPracticingCan = false;
+
+    // basketball conditions
+    bool isTaskOneDone = false;
+    bool isTaskTwoDone = false;
 
     public bool IsMoonVisitable { get { return isMoonVisitable; } set { isMoonVisitable = value; } }
     public bool IsEarthVisitable { get { return isEarthVisitable; } set { isEarthVisitable = value; } }
     public bool IsGameDone { get { return isGameDone; } set { isGameDone = value; } }
     public bool IsTaskZeroDone { get { return isTaskZeroDone; } set { isTaskZeroDone = value; } }
+    public bool IsTaskOneDone { get { return isTaskOneDone; } set { isTaskOneDone = value; } }
+    public bool IsTaskTwoDone { get { return isTaskTwoDone; } set { isTaskTwoDone = value; } }
     public bool IsPracticingCan { get { return isPracticingCan; } set { isPracticingCan = value; } }
     public bool IsPracticingDart { get { return isPracticingDart; } set { isPracticingDart = value; } }
-
-
-
 
     void Awake()
     {
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
     {
         // reset variables
         isTaskZeroDone = false;
+        isTaskOneDone = false;
+        isTaskTwoDone = false;
         isPracticingCan = false;
         isPracticingDart = false;
         UpdateGameState(GameState.TaskZero);
