@@ -2324,6 +2324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1740595081}
   - {fileID: 1160234427}
   - {fileID: 704257309}
   - {fileID: 1699838519}
@@ -4829,7 +4830,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -5450,7 +5451,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -6096,7 +6097,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -6853,7 +6854,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -7263,7 +7264,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -8689,7 +8690,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -9647,7 +9648,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -10694,7 +10695,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -14730,7 +14731,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -15853,7 +15854,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -16105,7 +16106,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -17697,7 +17698,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -17949,7 +17950,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -19228,22 +19229,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094d6b8530dd64aaa37925a98cab4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voiceIndex: 0
   ambienceSource: {fileID: 358563986}
   musicSource: {fileID: 219413566}
   sFXSource: {fileID: 1816689883}
   uISource: {fileID: 0}
   voiceSource: {fileID: 878238587}
-  musicSpace: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
-  musicJupiter: {fileID: 8300000, guid: fd0c89adfbb65a348ac7f205e9d18b59, type: 3}
-  musicMoon: {fileID: 8300000, guid: fb7ff0c729394cc4288e4bcb50da51f7, type: 3}
-  musicEarth: {fileID: 8300000, guid: b2f5f903fec4a6f478dbada225d08807, type: 3}
-  musicHome: {fileID: 0}
   music: []
   ambience: []
-  ambienceSpace: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
-  ambienceJupiter: {fileID: 8300000, guid: a611779ef86bcdf4ba1c5f302965779f, type: 3}
-  ambienceMoon: {fileID: 8300000, guid: dbcfda08b2bbcf6498c79270362d7ab8, type: 3}
-  ambienceEarth: {fileID: 8300000, guid: 63981840968f5c545bc1eef33e5ab763, type: 3}
+  voiceLines: []
   done01: {fileID: 0}
   done02: {fileID: 0}
   fail: {fileID: 0}
@@ -19255,30 +19249,6 @@ MonoBehaviour:
   dart: {fileID: 8300000, guid: 2a4f6b92d3398de409218e65b257ebd2, type: 3}
   teleporter: {fileID: 8300000, guid: 387528e7ab6feb146a089894ca2d7314, type: 3}
   tennisball: {fileID: 8300000, guid: 87ef9aaa83a30cd4ea70b194426b3d6a, type: 3}
-  space00: {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
-  space01: {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
-  space02: {fileID: 8300000, guid: 53aac91d0e3097d44968109b99f91843, type: 3}
-  space03: {fileID: 8300000, guid: c4a0539e0288e02428897a64e97862b7, type: 3}
-  space04: {fileID: 0}
-  space05: {fileID: 0}
-  space06: {fileID: 0}
-  space07: {fileID: 0}
-  space08: {fileID: 0}
-  space09: {fileID: 0}
-  space10: {fileID: 0}
-  jupiter00: {fileID: 0}
-  jupiter01: {fileID: 0}
-  jupiter02: {fileID: 0}
-  jupiter03: {fileID: 0}
-  moon00: {fileID: 0}
-  moon01: {fileID: 0}
-  moon02: {fileID: 0}
-  moon03: {fileID: 0}
-  earth00: {fileID: 0}
-  earth01: {fileID: 0}
-  earth02: {fileID: 0}
-  earth03: {fileID: 0}
-  voiceLines: []
 --- !u!1 &1655500254
 GameObject:
   m_ObjectHideFlags: 0
@@ -20336,7 +20306,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -20545,6 +20515,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6641541aa0c8a2d458a82a849a87d32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1740595079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1740595081}
+  - component: {fileID: 1740595080}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &1740595080
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740595079}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 23.94, y: 13.2, z: 27.77}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &1740595081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740595079}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3856909, y: 3.73, z: 6.669999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 215636689}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1743269501
 GameObject:
   m_ObjectHideFlags: 0
@@ -21497,7 +21532,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -24528,7 +24563,7 @@ Light:
   serializedVersion: 10
   m_Type: 3
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 0.627451, a: 1}
+  m_Color: {r: 0.4901961, g: 1, b: 1, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -26551,9 +26586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  isMoonVisitable: 0
-  isEarthVisitable: 0
-  isGameDone: 0
 --- !u!4 &4816706717239863021 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1582114264267064582, guid: 7429cd7d98ff4d94d945425ad820864c, type: 3}
