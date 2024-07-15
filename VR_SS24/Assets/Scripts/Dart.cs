@@ -6,7 +6,6 @@ public class Dart : MonoBehaviour
 {
     UIManager uIManager;
     Rigidbody rb;
-    bool taskDone = false;
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip clip;
 
@@ -20,13 +19,22 @@ public class Dart : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         source.PlayOneShot(clip);
-        if (!taskDone && other.gameObject.CompareTag("Target"))
+        if (other.gameObject.CompareTag("Target"))
         {
-            GameManager.instance.IsPracticingDart = true;
             rb.isKinematic = true;
-            taskDone = true;
-            uIManager.SetDartAlpha();
-            uIManager.UpdateTaskUI();
+            {
+                if (GameManager.instance.IsPracticingDart) return;
+
+                if ((uIManager.gravitySlider.value == 3 && GameManager.instance.IsMoonVisitable && GameManager.instance.IsEarthVisitable) ||
+                    (uIManager.gravitySlider.value == 2 && GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable) ||
+                    (uIManager.gravitySlider.value == 1 && !GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable))
+                {
+                    GameManager.instance.IsPracticingDart = true;
+                    uIManager.UpdateTaskUI();
+                    uIManager.SetDartAlpha();
+                }
+            }
+
         }
     }
 }

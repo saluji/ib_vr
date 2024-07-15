@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Slider gravitySlider;
-    GravityManager gravityManager;
-    TextManager textManager;
-    LevelManager levelManager;
+    private GravityManager gravityManager;
+    private TextManager textManager;
+    private LevelManager levelManager;
+
+    private bool isGravitySliderTaskChanged = false;
+    private float initialAlpha = 0.02f;
+    private float maxAlpha = 1f;
 
     // panel variables
     [Header("Panels")]
@@ -48,9 +52,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject taskTwoButton;
 
-    float initialAlpha = 0.02f;
-    float maxAlpha = 1f;
-
     public GameObject TaskTwoButton { get { return taskTwoButton; } set { taskTwoButton = value; } }
 
     void Awake()
@@ -69,8 +70,8 @@ public class UIManager : MonoBehaviour
         textManager.ChangeGravityText();
         if (!GameManager.instance.IsTaskZeroDone)
         {
-            CheckmarkCondition();
             UpdateTaskUI();
+            CheckmarkCondition();
         }
     }
 
@@ -170,7 +171,10 @@ public class UIManager : MonoBehaviour
             color.a = alpha;
             image.color = color;
         }
-        AudioManager.instance.PlayUI(AudioManager.instance.done01);
+        if (!GameManager.instance.IsTaskZeroDone)
+        {
+            AudioManager.instance.PlayUI(AudioManager.instance.done01);
+        }
     }
 
     void SetGravityAlpha()
@@ -197,6 +201,8 @@ public class UIManager : MonoBehaviour
 
     void CheckmarkCondition()
     {
+        if (isGravitySliderTaskChanged) return;
+
         bool shouldSetGravityAlpha = false;
 
         if (gravitySlider.value == 1 && !GameManager.instance.IsMoonVisitable && !GameManager.instance.IsEarthVisitable)
@@ -214,6 +220,7 @@ public class UIManager : MonoBehaviour
 
         if (shouldSetGravityAlpha)
         {
+            isGravitySliderTaskChanged = true;
             SetGravityAlpha();
         }
     }
