@@ -7,11 +7,14 @@ public class ButtonPlate : MonoBehaviour
     XRBaseInteractable interactable;
     float hoverCooldown = 1.0f; // Cooldown time in seconds
     bool isCoolingDown = false; // Track if the cooldown is active
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip clip;
 
     void Awake()
     {
         // Initialize the interactable component
         interactable = GetComponent<XRBaseInteractable>();
+        source = GetComponent<AudioSource>();
 
         if (interactable != null)
         {
@@ -38,7 +41,7 @@ public class ButtonPlate : MonoBehaviour
         if (!isCoolingDown)
         {
             StartCoroutine(Cooldown());
-            AudioManager.instance.PlayUI(AudioManager.instance.buttonPlate);
+            source.PlayOneShot(clip);
         }
     }
 

@@ -14,6 +14,8 @@ public class Basketball : MonoBehaviour
     TextManager textManager;
     LevelManager levelManager;
     Rigidbody rb;
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip clip;
 
     // dribbling variables
     bool isTaskOneDone = false;
@@ -35,6 +37,7 @@ public class Basketball : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         textManager = GameObject.Find("TextManager").GetComponent<TextManager>();
         basket = GameObject.Find("Basket").GetComponent<Transform>();
+        source = GetComponent<AudioSource>();
 
         // logic for the basketball to keep bouncing near the ground and stopping after certain threshold depending on planet
         rb = GetComponent<Rigidbody>();
@@ -79,7 +82,7 @@ public class Basketball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        AudioManager.instance.PlaySFX(AudioManager.instance.basketball);
+        source.PlayOneShot(clip);
 
         if (collision.gameObject.CompareTag("Ground"))
         {
