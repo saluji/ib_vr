@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10be2c5ced175dc4b994bcad01183e81
+guid: e7c03b356614c344b8f312e0f170ff86
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Spaceship Hull
-    second: {fileID: 2100000, guid: bbfc1178122bcfa4e98d3d01a036088e, type: 2}
+      name: Table_Light
+    second: {fileID: 2100000, guid: 1a731d93710cfdf49962418e48ac8be6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Spaceship Hull Floor
-    second: {fileID: 2100000, guid: bbfc1178122bcfa4e98d3d01a036088e, type: 2}
+      name: Table_Plate
+    second: {fileID: 2100000, guid: dde164d450700f04eaac66007bf4f1a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

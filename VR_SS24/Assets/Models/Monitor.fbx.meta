@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2434daf6e6ff9424386adf8a03afa634
+guid: 8fe99d41e07480749a137b2da6d9b794
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,28 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emission
+      name: Table_Holder
+    second: {fileID: 2100000, guid: e6c3e46b83b97ce49a09b2e6f761c91b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table_Light
     second: {fileID: 2100000, guid: 1a731d93710cfdf49962418e48ac8be6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Spaceship Hull
-    second: {fileID: 2100000, guid: bbfc1178122bcfa4e98d3d01a036088e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Window
-    second: {fileID: 2100000, guid: 5c6e7491e8d6a1b4d9f973c0b5002a52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: exhaust_burn.002
-    second: {fileID: 2100000, guid: 7c72051b214a9a5408893201854a1552, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: glow_disc.002
-    second: {fileID: 2100000, guid: 7c72051b214a9a5408893201854a1552, type: 2}
+      name: Table_Plate_Black
+    second: {fileID: 2100000, guid: 6970b248531561146a908aa96b2d9b7f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
