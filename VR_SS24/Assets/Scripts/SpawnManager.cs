@@ -59,7 +59,6 @@ public class SpawnManager : MonoBehaviour
         if (!isTeleporterSpawned)
         {
             Instantiate(teleporterPrefab, spawnTeleporterPosition.transform.position, spawnTeleporterPosition.transform.rotation);
-            AudioManager.instance.PlaySFX(AudioManager.instance.teleporter);
         }
     }
 

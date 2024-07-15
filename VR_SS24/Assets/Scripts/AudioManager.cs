@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public enum VoiceLine
-{
-    VoiceLine1,
-    VoiceLine2,
-    VoiceLine3,
-    VoiceLine4,
-}
-
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
@@ -20,7 +12,6 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Source")]
     [SerializeField] AudioSource ambienceSource;
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sFXSource;
     [SerializeField] AudioSource uISource;
     [SerializeField] AudioSource voiceSource;
 
@@ -38,15 +29,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip sliderClick;
     public AudioClip uIClick;
 
-    [Header("Sound effects")]
-    public AudioClip basketball;
-    public AudioClip buttonPlate;
-    public AudioClip can;
-    public AudioClip dart;
-    public AudioClip teleporter;
-    public AudioClip tennisball;
-
-
     void Awake()
     {
         if (instance == null)
@@ -62,7 +44,6 @@ public class AudioManager : MonoBehaviour
             levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
             ambienceSource.enabled = true;
             musicSource.enabled = true;
-            sFXSource.enabled = true;
             uISource.enabled = true;
             voiceSource.enabled = true;
         }
@@ -71,8 +52,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        // SetMusic();
-        // PlayVoice();
     }
 
     void Start()
@@ -84,11 +63,6 @@ public class AudioManager : MonoBehaviour
     public void PlayUI(AudioClip clip)
     {
         uISource.PlayOneShot(clip);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        sFXSource.PlayOneShot(clip);
     }
 
     public void PlayVoice()
@@ -140,75 +114,4 @@ public class AudioManager : MonoBehaviour
             Debug.LogError($"Scene index {sceneIndex} is out of bounds for the music array.");
         }
     }
-
-    // public void SetMusic()
-    // {
-    //     switch (levelManager.BuildIndex)
-    //     {
-    //         case 0:
-    //             musicSource.clip = musicSpace;
-    //             ambienceSource.clip = ambienceSpace;
-    //             break;
-    //         case 1:
-    //             musicSource.clip = musicJupiter;
-    //             ambienceSource.clip = ambienceJupiter;
-    //             break;
-    //         case 2:
-    //             musicSource.clip = musicMoon;
-    //             ambienceSource.clip = ambienceMoon;
-    //             break;
-    //         case 3:
-    //             musicSource.clip = musicEarth;
-    //             ambienceSource.clip = ambienceEarth;
-    //             break;
-    //         case 4:
-    //             musicSource.clip = musicHome;
-    //             // ambienceSource.clip = ambienceHome;
-    //             break;
-    //         default:
-    //             Debug.Log("No source");
-    //             break;
-    //     }
-    //     musicSource.Play();
-    //     ambienceSource.Play();
-    // }
-
-    // public void SetBeginningAudio()
-    // {
-    //     switch (levelManager.BuildIndex)
-    //     {
-    //         // set starting sound for every scene plus condition
-    //         case 0:
-    //             musicSource.clip = musicSpace;
-    //             ambienceSource.clip = ambienceSpace;
-    //             if (voiceSource != null)
-    //             {
-    //                 BeginningVoiceLine();
-    //             }
-    //             else
-    //             {
-    //                 Debug.LogError("VoiceSource is not assigned!");
-    //             }
-    //             break;
-    //         case 1:
-    //             musicSource.clip = musicJupiter;
-    //             ambienceSource.clip = ambienceJupiter;
-    //             voiceSource.clip = jupiter00;
-    //             break;
-    //         case 2:
-    //             musicSource.clip = musicMoon;
-    //             ambienceSource.clip = ambienceMoon;
-    //             voiceSource.clip = moon00;
-    //             break;
-    //         case 3:
-    //             musicSource.clip = musicEarth;
-    //             ambienceSource.clip = ambienceEarth;
-    //             voiceSource.clip = earth00;
-    //             break;
-    //         default:
-    //             Debug.Log("No source");
-    //             break;
-    //     }
-    //     musicSource.Play();
-    //     ambienceSource.Play();
 }
