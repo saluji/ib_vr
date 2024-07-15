@@ -5,8 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonPlate : MonoBehaviour
 {
     XRBaseInteractable interactable;
-    float hoverCooldown = 1.0f; // Cooldown time in seconds
-    bool isCoolingDown = false; // Track if the cooldown is active
+    float hoverCooldown = 1.0f;
+    bool isCoolingDown = false;
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip clip;
 

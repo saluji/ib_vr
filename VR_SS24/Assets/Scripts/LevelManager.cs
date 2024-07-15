@@ -1,4 +1,3 @@
-using Unity.VRTemplate;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,7 +42,6 @@ public class LevelManager : MonoBehaviour
     {
         // ensure the scene is fully loaded before setting music, ambience and voice
         yield return new WaitForEndOfFrame();
-        // AudioManager.instance.SetMusic();
         AudioManager.instance.PlayVoice();
     }
 }

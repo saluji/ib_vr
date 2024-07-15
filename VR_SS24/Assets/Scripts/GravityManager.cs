@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public enum GravitationalForceMode { Space = 0, Jupiter, Moon, Earth }

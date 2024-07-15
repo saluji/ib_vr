@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VRTemplate;
 using UnityEngine;
-using UnityEngine.ProBuilder.MeshOperations;
-using UnityEngine.Rendering.UI;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Basketball : MonoBehaviour
