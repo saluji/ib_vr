@@ -7,17 +7,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     LevelManager levelManager;
-    public int voiceIndex = 0;
+    private int voiceIndex = 0;
 
     [Header("Audio Source")]
-    [SerializeField] AudioSource ambienceSource;
-    [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource uISource;
     [SerializeField] AudioSource voiceSource;
-
-    [Header("Background")]
-    public AudioClip[] music;
-    public AudioClip[] ambience;
 
     [Header("Voice lines")]
     public AudioClip[] voiceLines;
@@ -42,8 +36,6 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-            ambienceSource.enabled = true;
-            musicSource.enabled = true;
             uISource.enabled = true;
             voiceSource.enabled = true;
         }
@@ -56,7 +48,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        SetMusic();
+        // SetMusic();
         PlayVoice();
     }
 
@@ -89,29 +81,29 @@ public class AudioManager : MonoBehaviour
     //     }
     // }
 
-    public void SetMusic()
-    {
-        int sceneIndex = levelManager.BuildIndex;
-        if (sceneIndex < music.Length && music[sceneIndex] != null)
-        {
-            Debug.Log($"Setting music for scene {sceneIndex}: {music[sceneIndex].name}");
-            musicSource.clip = music[sceneIndex];
-            musicSource.Play();
+    // public void SetMusic()
+    // {
+    //     int sceneIndex = levelManager.BuildIndex;
+    //     if (sceneIndex < music.Length && music[sceneIndex] != null)
+    //     {
+    //         Debug.Log($"Setting music for scene {sceneIndex}: {music[sceneIndex].name}");
+    //         musicSource.clip = music[sceneIndex];
+    //         musicSource.Play();
 
-            if (sceneIndex < ambience.Length && ambience[sceneIndex] != null)
-            {
-                Debug.Log($"Setting ambience for scene {sceneIndex}: {ambience[sceneIndex].name}");
-                ambienceSource.clip = ambience[sceneIndex];
-                ambienceSource.Play();
-            }
-            else
-            {
-                Debug.LogWarning($"Ambience clip for scene {sceneIndex} is null or out of range.");
-            }
-        }
-        else
-        {
-            Debug.LogError($"Scene index {sceneIndex} is out of bounds for the music array.");
-        }
-    }
+    //         if (sceneIndex < ambience.Length && ambience[sceneIndex] != null)
+    //         {
+    //             Debug.Log($"Setting ambience for scene {sceneIndex}: {ambience[sceneIndex].name}");
+    //             ambienceSource.clip = ambience[sceneIndex];
+    //             ambienceSource.Play();
+    //         }
+    //         else
+    //         {
+    //             Debug.LogWarning($"Ambience clip for scene {sceneIndex} is null or out of range.");
+    //         }
+    //     }
+    //     else
+    //     {
+    //         Debug.LogError($"Scene index {sceneIndex} is out of bounds for the music array.");
+    //     }
+    // }
 }

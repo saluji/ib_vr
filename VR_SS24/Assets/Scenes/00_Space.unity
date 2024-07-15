@@ -2491,7 +2491,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1655142095}
+  m_Father: {fileID: 1935476110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &219413566
 AudioSource:
@@ -2503,7 +2503,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -4079,7 +4079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1655142095}
+  m_Father: {fileID: 1935476110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &358563986
 AudioSource:
@@ -4091,7 +4091,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -18632,8 +18632,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 358563985}
-  - {fileID: 219413565}
   - {fileID: 1895733947}
   - {fileID: 878238586}
   m_Father: {fileID: 8201367681723542699}
@@ -18650,23 +18648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe094d6b8530dd64aaa37925a98cab4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voiceIndex: 0
-  ambienceSource: {fileID: 358563986}
-  musicSource: {fileID: 219413566}
   uISource: {fileID: 1895733948}
   voiceSource: {fileID: 878238587}
-  music:
-  - {fileID: 8300000, guid: fd26cad21ab63624dbbb941fbb94ac95, type: 3}
-  - {fileID: 8300000, guid: fd0c89adfbb65a348ac7f205e9d18b59, type: 3}
-  - {fileID: 8300000, guid: fb7ff0c729394cc4288e4bcb50da51f7, type: 3}
-  - {fileID: 8300000, guid: b2f5f903fec4a6f478dbada225d08807, type: 3}
-  - {fileID: 8300000, guid: 40f7892773e800f48b5e1ac369f0d66a, type: 3}
-  ambience:
-  - {fileID: 8300000, guid: 476fae3b150cd574ba774d244296fb08, type: 3}
-  - {fileID: 8300000, guid: a611779ef86bcdf4ba1c5f302965779f, type: 3}
-  - {fileID: 8300000, guid: dbcfda08b2bbcf6498c79270362d7ab8, type: 3}
-  - {fileID: 8300000, guid: 63981840968f5c545bc1eef33e5ab763, type: 3}
-  - {fileID: 8300000, guid: 2f305404ce8b83a43b3fef7973481e84, type: 3}
   voiceLines:
   - {fileID: 8300000, guid: 5294dcceb356e234a845787bf925e3d4, type: 3}
   - {fileID: 8300000, guid: 8f85051ee658bf74da8d44c847103732, type: 3}
@@ -22267,6 +22250,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926280045}
   m_Mesh: {fileID: -588992814967065261, guid: dda9de97e795ed541a8efbc38960a8a4, type: 3}
+--- !u!1 &1935476109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935476110}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1935476110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935476109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 358563985}
+  - {fileID: 219413565}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938834579
 GameObject:
   m_ObjectHideFlags: 0
@@ -25912,3 +25928,4 @@ SceneRoots:
   - {fileID: 670507548}
   - {fileID: 726915650}
   - {fileID: 442933746}
+  - {fileID: 1935476110}

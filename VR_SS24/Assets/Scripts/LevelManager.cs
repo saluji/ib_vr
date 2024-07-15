@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     {
         // ensure the scene is fully loaded before setting music, ambience and voice
         yield return new WaitForEndOfFrame();
-        AudioManager.instance.SetMusic();
+        // AudioManager.instance.SetMusic();
         AudioManager.instance.PlayVoice();
     }
 }
