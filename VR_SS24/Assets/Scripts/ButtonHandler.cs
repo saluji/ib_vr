@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ButtonHandler : MonoBehaviour
 {
     Button taskButton;
-    int voiceIndex = 0;
 
     void Awake()
     {
@@ -32,8 +31,6 @@ public class ButtonHandler : MonoBehaviour
                 break;
             case "VoiceClip":
                 AudioManager.instance.PlayVoice();
-                // AudioManager.instance.PlayVoice(AudioManager.instance.voiceLines[voiceIndex]);
-                // voiceIndex++;
                 break;
             default:
                 Debug.Log("Unassigned tag");
