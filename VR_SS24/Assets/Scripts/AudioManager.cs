@@ -14,29 +14,32 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     LevelManager levelManager;
-    int voiceIndex;
+    public int voiceIndex = 0;
 
     [Header("Audio Source")]
     [SerializeField] AudioSource ambienceSource;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource sFXSource;
     [SerializeField] AudioSource uISource;
-    [SerializeField] public AudioSource voiceSource;
+    [SerializeField] AudioSource voiceSource;
 
     [Header("Music")]
-    public AudioClip musicSpace;
-    public AudioClip musicJupiter;
-    public AudioClip musicMoon;
-    public AudioClip musicEarth;
-    public AudioClip musicHome;
+    // public AudioClip musicSpace;
+    // public AudioClip musicJupiter;
+    // public AudioClip musicMoon;
+    // public AudioClip musicEarth;
+    // public AudioClip musicHome;
     public AudioClip[] music;
     public AudioClip[] ambience;
 
-    [Header("Ambience")]
-    public AudioClip ambienceSpace;
-    public AudioClip ambienceJupiter;
-    public AudioClip ambienceMoon;
-    public AudioClip ambienceEarth;
+    [Header("Voice lines")]
+    public AudioClip[] voiceLines;
+    
+    // [Header("Ambience")]
+    // public AudioClip ambienceSpace;
+    // public AudioClip ambienceJupiter;
+    // public AudioClip ambienceMoon;
+    // public AudioClip ambienceEarth;
 
     [Header("UI Sound")]
     public AudioClip done01;
@@ -53,39 +56,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip teleporter;
     public AudioClip tennisball;
 
-    [Header("Space voice lines")]
-    public AudioClip space00;
-    public AudioClip space01;
-    public AudioClip space02;
-    public AudioClip space03;
-    public AudioClip space04;
-    public AudioClip space05;
-    public AudioClip space06;
-    public AudioClip space07;
-    public AudioClip space08;
-    public AudioClip space09;
-    public AudioClip space10;
-
-    [Header("Jupiter voice lines")]
-    public AudioClip jupiter00;
-    public AudioClip jupiter01;
-    public AudioClip jupiter02;
-    public AudioClip jupiter03;
-
-    [Header("Moon voice lines")]
-    public AudioClip moon00;
-    public AudioClip moon01;
-    public AudioClip moon02;
-    public AudioClip moon03;
-
-    [Header("Earth voice lines")]
-    public AudioClip earth00;
-    public AudioClip earth01;
-    public AudioClip earth02;
-    public AudioClip earth03;
-
-    [Header("Voice lines")]
-    public AudioClip[] voiceLines;
 
     void Awake()
     {
@@ -107,7 +77,6 @@ public class AudioManager : MonoBehaviour
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         SetMusic();
         PlayVoice();
-        // SetBeginningAudio();
     }
 
     public void PlayUI(AudioClip clip)
@@ -122,8 +91,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayVoice()
     {
-        if (voiceIndex < voiceLines.Length - 1)
+        Debug.Log("Play voice");
+        if (voiceIndex < voiceLines.Length)
         {
+            Debug.Log("Still below length");
             voiceSource.Stop();
             voiceSource.PlayOneShot(voiceLines[voiceIndex]);
             voiceIndex++;
@@ -212,58 +183,4 @@ public class AudioManager : MonoBehaviour
     //     }
     //     musicSource.Play();
     //     ambienceSource.Play();
-
-    //     // Only call voiceSource.Play() once for the voice clip
-    //     if (voiceSource.clip != null)  // Ensure there is a clip assigned
-    //     {
-    //         voiceSource.Play();
-    //     }
-    // }
-
-    void BeginningVoiceLine()
-    {
-        VoiceLine voiceLineToPlay = GetActiveVoiceLine();
-        AudioClip clipToPlay = null;
-
-        switch (voiceLineToPlay)
-        {
-            case VoiceLine.VoiceLine1:
-                clipToPlay = space00;
-                break;
-            case VoiceLine.VoiceLine2:
-                clipToPlay = space04;
-                break;
-            case VoiceLine.VoiceLine3:
-                clipToPlay = space07;
-                break;
-            case VoiceLine.VoiceLine4:
-                clipToPlay = space10;
-                break;
-            default:
-                Debug.LogError("Unhandled voice line case!");
-                break;
-        }
-
-        if (clipToPlay != null)
-        {
-            voiceSource.clip = clipToPlay;
-            voiceSource.Play();
-        }
-        else
-        {
-            Debug.LogError("No clip assigned for the selected voice line!");
-        }
-    }
-
-    VoiceLine GetActiveVoiceLine()
-    {
-        if (GameManager.instance.IsGameDone)
-            return VoiceLine.VoiceLine4;
-        else if (GameManager.instance.IsEarthVisitable)
-            return VoiceLine.VoiceLine3;
-        else if (GameManager.instance.IsMoonVisitable)
-            return VoiceLine.VoiceLine2;
-        else
-            return VoiceLine.VoiceLine1;
-    }
 }
