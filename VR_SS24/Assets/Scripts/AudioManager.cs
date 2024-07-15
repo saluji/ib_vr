@@ -14,13 +14,14 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance { get; private set; }
     LevelManager levelManager;
+    int voiceIndex;
 
     [Header("Audio Source")]
     [SerializeField] AudioSource ambienceSource;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource sFXSource;
     [SerializeField] AudioSource uISource;
-    [SerializeField] AudioSource voiceSource;
+    [SerializeField] public AudioSource voiceSource;
 
     [Header("Music")]
     public AudioClip musicSpace;
@@ -28,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip musicMoon;
     public AudioClip musicEarth;
     public AudioClip musicHome;
+    public AudioClip[] music;
+    public AudioClip[] ambience;
 
     [Header("Ambience")]
     public AudioClip ambienceSpace;
@@ -103,6 +106,7 @@ public class AudioManager : MonoBehaviour
 
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         SetMusic();
+        PlayVoice();
         // SetBeginningAudio();
     }
 
@@ -116,42 +120,59 @@ public class AudioManager : MonoBehaviour
         sFXSource.PlayOneShot(clip);
     }
 
-    public void PlayVoice(AudioClip clip)
+    public void PlayVoice()
     {
-        voiceSource.PlayOneShot(clip);
+        if (voiceIndex < voiceLines.Length - 1)
+        {
+            voiceSource.Stop();
+            voiceSource.PlayOneShot(voiceLines[voiceIndex]);
+            voiceIndex++;
+        }
     }
 
     public void SetMusic()
     {
-        switch (levelManager.BuildIndex)
+        int sceneIndex = levelManager.BuildIndex;
+        if (sceneIndex < music.Length && music[sceneIndex] != null)
         {
-            case 0:
-                musicSource.clip = musicSpace;
-                ambienceSource.clip = ambienceSpace;
-                break;
-            case 1:
-                musicSource.clip = musicJupiter;
-                ambienceSource.clip = ambienceJupiter;
-                break;
-            case 2:
-                musicSource.clip = musicMoon;
-                ambienceSource.clip = ambienceMoon;
-                break;
-            case 3:
-                musicSource.clip = musicEarth;
-                ambienceSource.clip = ambienceEarth;
-                break;
-            case 4:
-                musicSource.clip = musicHome;
-                // ambienceSource.clip = ambienceHome;
-                break;
-            default:
-                Debug.Log("No source");
-                break;
+            musicSource.clip = music[sceneIndex];
+            ambienceSource.clip = ambience[sceneIndex];
+            musicSource.Play();
+            ambienceSource.Play();
         }
-        musicSource.Play();
-        ambienceSource.Play();
     }
+
+    // public void SetMusic()
+    // {
+    //     switch (levelManager.BuildIndex)
+    //     {
+    //         case 0:
+    //             musicSource.clip = musicSpace;
+    //             ambienceSource.clip = ambienceSpace;
+    //             break;
+    //         case 1:
+    //             musicSource.clip = musicJupiter;
+    //             ambienceSource.clip = ambienceJupiter;
+    //             break;
+    //         case 2:
+    //             musicSource.clip = musicMoon;
+    //             ambienceSource.clip = ambienceMoon;
+    //             break;
+    //         case 3:
+    //             musicSource.clip = musicEarth;
+    //             ambienceSource.clip = ambienceEarth;
+    //             break;
+    //         case 4:
+    //             musicSource.clip = musicHome;
+    //             // ambienceSource.clip = ambienceHome;
+    //             break;
+    //         default:
+    //             Debug.Log("No source");
+    //             break;
+    //     }
+    //     musicSource.Play();
+    //     ambienceSource.Play();
+    // }
 
     // public void SetBeginningAudio()
     // {

@@ -21686,6 +21686,9 @@ MonoBehaviour:
   moonPanel: {fileID: 0}
   earthPanel: {fileID: 0}
   homePanel: {fileID: 0}
+  gravityCheck: []
+  dartCheck: []
+  canCheck: []
   jupiterVisitButton: {fileID: 0}
   moonVisitButton: {fileID: 0}
   earthVisitButton: {fileID: 0}
@@ -25467,7 +25470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47490008f9f7d944869d5dab706053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildIndex: 0
 --- !u!1 &1896106563
 GameObject:
   m_ObjectHideFlags: 0
@@ -26425,7 +26427,7 @@ GameObject:
   - component: {fileID: 1966983562}
   m_Layer: 0
   m_Name: Yes
-  m_TagString: Untagged
+  m_TagString: VoiceClip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27830,6 +27832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!1 &2059129857
 GameObject:
   m_ObjectHideFlags: 0

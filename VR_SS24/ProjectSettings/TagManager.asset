@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - TaskOne
   - TaskTwo
+  - VoiceClip
   layers:
   - Default
   - TransparentFX
