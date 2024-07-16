@@ -5853,7 +5853,7 @@ GameObject:
   - component: {fileID: 639518129}
   - component: {fileID: 639518130}
   m_Layer: 0
-  m_Name: Post Processing Earth
+  m_Name: Post Processing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9123,7 +9123,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 1113579662}
   m_CameraFloorOffsetObject: {fileID: 130550430}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 1.1176
+  m_CameraYOffset: 0.95
 --- !u!1 &1142783062
 GameObject:
   m_ObjectHideFlags: 0
@@ -18476,6 +18476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isMoonVisitable: 0
+  isEarthVisitable: 0
+  isGameDone: 0
 --- !u!1 &2066711554
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
             jupiterVisitButton.SetActive(GameManager.instance.IsGameDone);
             moonVisitButton.SetActive(GameManager.instance.IsGameDone);
             earthVisitButton.SetActive(GameManager.instance.IsGameDone);
-            homePanel.SetActive(GameManager.instance.IsGameDone);
+            homePanel.SetActive(false);
 
             if (GameManager.instance.IsGameDone)
             {
