@@ -14548,7 +14548,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -30164,9 +30164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  isMoonVisitable: 0
-  isEarthVisitable: 0
-  isGameDone: 0
 --- !u!1001 &4654938809525831410
 PrefabInstance:
   m_ObjectHideFlags: 0
