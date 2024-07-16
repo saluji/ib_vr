@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ButtonPlate : MonoBehaviour
 {
     XRBaseInteractable interactable;
+    SpawnManager spawnManager;
     float hoverCooldown = 1.0f;
     bool isCoolingDown = false;
     [SerializeField] AudioSource source;
@@ -14,6 +15,7 @@ public class ButtonPlate : MonoBehaviour
     {
         // Initialize the interactable component
         interactable = GetComponent<XRBaseInteractable>();
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         source = GetComponent<AudioSource>();
 
         if (interactable != null)
@@ -38,7 +40,25 @@ public class ButtonPlate : MonoBehaviour
 
     void OnHoverEnter(HoverEnterEventArgs args)
     {
-        if (!isCoolingDown)
+        switch (gameObject.tag)
+        {
+            case "Basketball":
+                spawnManager.SpawnBasketball();
+                isCoolingDown = true;
+                break;
+            case "Dart":
+                spawnManager.SpawnDart();
+                isCoolingDown = true;
+                break;
+            case "Tennisball":
+                spawnManager.SpawnTennisball();
+                isCoolingDown = true;
+                break;
+            default:
+                Debug.Log("No spawn button");
+                break;
+        }
+        if (isCoolingDown)
         {
             StartCoroutine(Cooldown());
             source.PlayOneShot(clip);
@@ -47,7 +67,6 @@ public class ButtonPlate : MonoBehaviour
 
     IEnumerator Cooldown()
     {
-        isCoolingDown = true;
         yield return new WaitForSeconds(hoverCooldown);
         isCoolingDown = false;
     }

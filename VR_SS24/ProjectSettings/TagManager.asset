@@ -13,6 +13,9 @@ TagManager:
   - TaskOne
   - TaskTwo
   - VoiceClip
+  - Basketball
+  - Dart
+  - Tennisball
   layers:
   - Default
   - TransparentFX
