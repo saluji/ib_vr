@@ -37,36 +37,70 @@ public class ButtonPlate : MonoBehaviour
             interactable.hoverEntered.RemoveListener(OnHoverEnter);
         }
     }
-
-    void OnHoverEnter(HoverEnterEventArgs args)
+    void Update()
     {
-        switch (gameObject.tag)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            case "Basketball":
-                spawnManager.SpawnBasketball();
-                isCoolingDown = true;
-                break;
-            case "Dart":
-                spawnManager.SpawnDart();
-                isCoolingDown = true;
-                break;
-            case "Tennisball":
-                spawnManager.SpawnTennisball();
-                isCoolingDown = true;
-                break;
-            default:
-                Debug.Log("No spawn button");
-                break;
-        }
-        if (isCoolingDown)
-        {
-            StartCoroutine(Cooldown());
-            source.PlayOneShot(clip);
+            OnHoverEnter();
         }
     }
+    
+    void OnHoverEnter(HoverEnterEventArgs args)
+    {
+        if (!isCoolingDown)
+        {
+            switch (gameObject.tag)
+            {
+                case "Basketball":
+                    spawnManager.SpawnBasketball();
+                    StartCoroutine(Cooldown());
+                    source.PlayOneShot(clip);
+                    break;
+                case "Dart":
+                    spawnManager.SpawnDart();
+                    StartCoroutine(Cooldown());
+                    source.PlayOneShot(clip);
+                    break;
+                case "Tennisball":
+                    spawnManager.SpawnTennisball();
+                    StartCoroutine(Cooldown());
+                    source.PlayOneShot(clip);
+                    break;
+                default:
+                    Debug.Log("No spawn button");
+                    break;
+            }
+        }
+    }
+    // void OnHoverEnter(HoverEnterEventArgs args)
+    // {
+    // switch (gameObject.tag)
+    // {
+    //     case "Basketball":
+    //         spawnManager.SpawnBasketball();
+    //         isCoolingDown = true;
+    //         break;
+    //     case "Dart":
+    //         spawnManager.SpawnDart();
+    //         isCoolingDown = true;
+    //         break;
+    //     case "Tennisball":
+    //         spawnManager.SpawnTennisball();
+    //         isCoolingDown = true;
+    //         break;
+    //     default:
+    //         Debug.Log("No spawn button");
+    //         break;
+    // }
+    //     if (isCoolingDown)
+    //     {
+    //         StartCoroutine(Cooldown());
+    //     }
+    // }
 
     IEnumerator Cooldown()
     {
+        source.PlayOneShot(clip);
         yield return new WaitForSeconds(hoverCooldown);
         isCoolingDown = false;
     }
