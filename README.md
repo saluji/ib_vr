@@ -1,30 +1,31 @@
-# VR
-In this repository all changes throughout the creation of this prototype are being held here.
+# Intergalactic Basketball VR
+You have reveiced a signal about an activity called 'basketball' and are hosting the intergalactic basketball championship. Your mission is to search for a fiting planet so you can host the championship with the perfect physical conditions.
 
 ## Author(s)
-* Erwin Oudomvylay
-* Thanh Pham
-* Max Kuhler
+Made by <a href="https://saluji.github.io/" target="_blank">Erwin Oudomvylay</a>, <a href="https://thanhpham00.itch.io/" target="_blank">Thanh Pham</a> and Max Kuhler
 
 ## Credits
 This app was created at the Visualization and Interaction in Digital Media (VIS) program of HS Ansbach. 
 
 Supervised by Prof. Florian Machill (Virtual Reality SS24)
 
+## <a href="https://saluji.itch.io/ibvr" target="_blank">Downloads the app from my itchio page</a>
+
 ## Third Party Credits
-Oculus hand model with animations
-* https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands
+<a href="https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands" target="_blank">Oculus hand model with animations</a>
 
-Some XR scripts taken from the 'Create with VR' Course
-* https://learn.unity.com/course/create-with-vr
+Some XR scripts taken from the <a href="https://learn.unity.com/course/create-with-vr" target="_blank">Create with VR</a> Course
 
-Black Future Font
-* https://www.freepik.com/font/black-future
+<a href="https://tallbeard.itch.io/music-loop-bundle" target="_blank">Music</a> by <a href="https://tallbeard.itch.io/" target="_blank">Tallbeard Studios</a>
 
-Sound from freesound.org
-* Dartboard and dart by soundman2733 -- https://freesound.org/s/654919/ -- License: Attribution 4.0
-* New Notification #7 by UNIVERSFIELD -- https://freesound.org/s/736267/ -- License: Attribution 4.0
-* CD_CONTACT_002FX_Space.wav by kevp888 -- https://freesound.org/s/706606/ -- License: Attribution 4.0
-* Game Sound Wrong.wav by Bertrof -- https://freesound.org/s/131657/ -- License: Attribution 3.0
+Sounds from <a href="freesound.org" target="_blank">freesound</a>
+* <a href="https://freesound.org/s/654919/" target="_blank">Dartboard and dart</a> by soundman2733 -- License: Attribution 4.0
+* <a href="https://freesound.org/s/736267/" target="_blank">New Notification #7</a> by UNIVERSFIELD -- License: Attribution 4.0
+* <a href="https://freesound.org/s/706606/" target="_blank">CD_CONTACT_002FX_Space.wav</a> by kevp888 -- License: Attribution 4.0
+* <a href="https://freesound.org/s/131657" target="_blank"> Game Sound Wrong.wav </a> by Bertrof -- License: Attribution 3.0
 
-Music from https://tallbeard.itch.io/music-loop-bundle
+Generated AI voices from <a href="https://ttsmaker.com/" target="_blank">TTS Maker</a>
+
+<a href="https://www.freepik.com/font/black-future" target="_blank">Black Future Font</a>
+
+Icons from <a href="https://www.flaticon.com/" target="_blank">Flaticon
