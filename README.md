@@ -14,6 +14,8 @@ Supervised by Prof. Florian Machill (Virtual Reality SS24)
 ## <a href="https://saluji.itch.io/ibvr" target="_blank">Downloads the app from my itchio page</a>
 
 ## Third Party Credits
+<a href="https://assetstore.unity.com/packages/3d/environments/sci-fi/polygon-sci-fi-space-low-poly-3d-art-by-synty-138857" target="_blank">Polygon SciFi</a> by <a href="https://assetstore.unity.com/publishers/5217" target="_blank">Synty Studios</a> (for educational purposes)
+
 <a href="https://github.com/Fist-Full-of-Shrimp/VR-Unity-Template-2023/tree/main/Assets/Oculus%20Hands" target="_blank">Oculus hand model with animations</a>
 
 Some XR scripts taken from the <a href="https://learn.unity.com/course/create-with-vr" target="_blank">Create with VR</a> Course
