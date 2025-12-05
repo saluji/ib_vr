@@ -2,8 +2,8 @@
 You have reveiced a signal about an activity called 'basketball' and are hosting the intergalactic basketball championship. Your mission is to search for a fiting planet so you can host the championship with the perfect physical conditions.
 
 ## Author(s)
-* <a href="https://saluji.github.io/" target="_blank">Erwin Oudomvylay</a> (Programmer & Sound Designer)
-* <a href="https://thanhpham00.itch.io/" target="_blank">Thanh Pham</a> (Art & Designer)
+* <a href="https://saluji.github.io/" target="_blank">saluji</a> (Programmer & Sound Designer)
+* <a href="https://thanhpham00.itch.io/" target="_blank">thanhpham00</a> (Art & Designer)
 * Max Kuhler (Modelling, Texturing & Lighting)
 
 ## Credits
